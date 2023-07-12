@@ -21,7 +21,7 @@
         <div class="tile">
           <h3 class="tile-title">Tạo mới lớp học</h3>
           <div class="tile-body">
-            <form class="row" action="./index.php?act=add_class" method="post">
+            <form class="row" action="../controller/index.php?act=add_class" method="post">
               <div class="form-group col-md-3">
                 <label class="control-label">Tên lớp học</label>
                 <input class="form-control" type="text" name="ten">
@@ -66,7 +66,7 @@
               </div>
     
               <input type="submit" name="them" value="Thêm Mới" class="btn btn-save">
-              <a class="btn btn-cancel" href="./index.php?act=class">Hủy bỏ</a>
+              <a class="btn btn-cancel" href="../controller/index.php?act=class">Hủy bỏ</a>
           </form>
           </div>
 

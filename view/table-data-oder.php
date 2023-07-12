@@ -75,7 +75,7 @@
                                     <td><?php extract($lt); echo $date_buy ?></td>
                                     <td><?php extract($lt); echo $price ?></td>
                                     <td>
-                                      <a href="./index.php?act=del_order&id=<?php extract($lt); echo $order_id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
+                                      <a href="../controller/index.php?act=del_order&id=<?php extract($lt); echo $order_id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
                                       <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button>
                                     </td>
                                   </tr>

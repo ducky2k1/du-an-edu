@@ -75,8 +75,8 @@
                     <td><?php extract($lt); echo $email ?></td>
                     <td><?php extract($lt); echo $pass ?></td>
                     <td>
-                      <a href="./index.php?act=del_mem&id=<?php extract($lt); echo $id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
-                      <a href="./index.php?act=edit_mem&id=<?php extract($lt); echo $id ?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></a>
+                      <a href="../controller/index.php?act=del_mem&id=<?php extract($lt); echo $id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
+                      <a href="../controller/index.php?act=edit_mem&id=<?php extract($lt); echo $id ?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></a>
                     </td>
                   </tr>
                 <?php
@@ -84,7 +84,7 @@
                   if( isset($data_mem) ){
                     foreach($data_mem as $lt){
                 ?>
-                 <tr>
+                <tr>
                     <td></td>
                     <td><?php extract($lt); echo $id ?></td>
                     <td><?php extract($lt); echo $name ?></td>
@@ -94,8 +94,8 @@
                     <td><?php extract($lt); echo $email ?></td>
                     <td><?php extract($lt); echo $pass ?></td>
                     <td>
-                      <a href="./index.php?act=del_mem&id=<?php extract($lt); echo $id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
-                      <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button>
+                      <a href="../controller/index.php?act=del_mem&id=<?php extract($lt); echo $id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
+                      <a href="../controller/index.php?act=edit_mem&id=<?php extract($lt); echo $id ?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></a>
                     </td>
                   </tr>
                 <?php

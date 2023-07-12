@@ -21,7 +21,7 @@
         <div class="tile">
           <h3 class="tile-title">Tạo mới khách hàng</h3>
           <div class="tile-body">
-            <form class="row" action="./index.php?act=add_mem" method="post" enctype="multipart/form-data">
+            <form class="row" action="../controller/index.php?act=add_mem" method="post" enctype="multipart/form-data">
 
               <div class="form-group col-md-4">
                 <label class="control-label">Họ và tên</label>
@@ -64,7 +64,7 @@
 
               </div>
               <input type="submit" name="them" value="Thêm Mới" class="btn btn-save">
-              <a class="btn btn-cancel" href="./index.php?act=mem">Hủy bỏ</a>
+              <a class="btn btn-cancel" href="../controller/index.php?act=mem">Hủy bỏ</a>
           </form>
           </div>
 

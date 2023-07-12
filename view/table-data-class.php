@@ -13,7 +13,7 @@
                         <div class="row element-button">
                             <div class="col-sm-2">
               
-                              <a class="btn btn-add btn-sm" href="./index.php?act=add_class" title="Thêm"><i class="fas fa-plus"></i>
+                              <a class="btn btn-add btn-sm" href="../controller/index.php?act=add_class" title="Thêm"><i class="fas fa-plus"></i>
                                 Tạo mới lớp học</a>
                             </div>
                             <div class="col-sm-2">
@@ -72,7 +72,7 @@
                                     <td><?php extract($lt); echo $time_start ?></td>
                                     <td><?php extract($lt); echo $time_end ?></td>
                                     <td>
-                                    <a href="./index.php?act=del_class&id=<?php extract($lt); echo $id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
+                                    <a href="../controller/index.php?act=del_class&id=<?php extract($lt); echo $id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
                                     <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button>
                                   </td>
                                   </tr>

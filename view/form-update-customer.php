@@ -20,7 +20,7 @@
 
                 <h3 class="tile-title">Cập nhật thông tin nhân viên</h3>
                 <div class="tile-body">
-                    <form class="row" action="./index.php?act=up_cus&id=<?php extract($edit_cus); echo $id ?>" method="post" enctype="multipart/form-data">
+                    <form class="row" action="../controller/index.php?act=up_cus&id=<?php extract($edit_cus); echo $id ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-4">
                             <label class="control-label">ID nhân viên</label>
                             <input class="form-control" type="text" name="id-nv" readonly value="<?php extract($edit_cus); echo $id ?>">
@@ -104,7 +104,7 @@
                             <span class="" style="color:red;"><?= $errer['img-nv'] ?? "" ?></span>
                         </div>
                         <input type="submit" name="capnhat" value="Cập nhật" class="btn btn-save">
-                        <a class="btn btn-cancel" href="./index.php?act=cus">Hủy bỏ</a>
+                        <a class="btn btn-cancel" href="../controller/index.php?act=cus">Hủy bỏ</a>
                     </form>
 
 

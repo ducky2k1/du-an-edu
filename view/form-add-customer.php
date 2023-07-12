@@ -20,7 +20,7 @@
 
           <h3 class="tile-title">Tạo mới nhân viên</h3>
           <div class="tile-body">
-            <form class="row" action="./index.php?act=add_cus" method="post" enctype="multipart/form-data">
+            <form class="row" action="../controller/index.php?act=add_cus" method="post" enctype="multipart/form-data">
               <div class="form-group col-md-4">
                 <label class="control-label">ID nhân viên</label>
                 <input class="form-control" type="text" name="id-nv" readonly>
@@ -62,7 +62,7 @@
                 <span class="" style="color:red;"><?= $errer['img-nv'] ?? "" ?></span>
               </div>
               <input type="submit" name="them" value="Thêm Mới" class="btn btn-save">
-              <a class="btn btn-cancel" href="./index.php?act=cus">Hủy bỏ</a>
+              <a class="btn btn-cancel" href="../controller/index.php?act=cus">Hủy bỏ</a>
             </form>
 
 
