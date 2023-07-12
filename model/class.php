@@ -1,6 +1,10 @@
 <?php
 function class_selectAll(){
-    $sql="SELECT `dtb_lop`.`id`,`dtb_course`.`name` as `ten_khoa`,`dtb_lop`.`name`,`dtb_customer`.`name` as `ten_customer`,`time`,`dtb_ca_hoc`.`name` as `ten_ca`,`dtb_ca_hoc`.`time_start`,`dtb_ca_hoc`.`time_end`,`customer_id` FROM `dtb_lop` JOIN `dtb_course` ON `dtb_lop`.`course_id` = `dtb_course`.`id` JOIN `dtb_ca_hoc` ON `dtb_lop`.`ca_hoc_id` = `dtb_ca_hoc`.`id` JOIN `dtb_customer` ON `dtb_lop`.`customer_id` = `dtb_customer`.`id`";
+    $sql="SELECT `dtb_lop`.`id`,`dtb_course`.`name` as `ten_khoa`,`dtb_lop`.`name`,`dtb_customer`.`name` 
+    as `ten_customer`,`time`,`dtb_ca_hoc`.`name` as `ten_ca`,`dtb_ca_hoc`.`time_start`,`dtb_ca_hoc`.`time_end`,`customer_id` 
+    FROM `dtb_lop` JOIN `dtb_course` ON `dtb_lop`.`course_id` = `dtb_course`.`id` 
+    JOIN `dtb_ca_hoc` ON `dtb_lop`.`ca_hoc_id` = `dtb_ca_hoc`.`id` 
+    JOIN `dtb_customer` ON `dtb_lop`.`customer_id` = `dtb_customer`.`id`";
     return pdo_query($sql);
 }
 // function add_mem($name, $pass, $mail, $anh, $loca, $phone){

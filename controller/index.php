@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Main CSS-->
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="../doc/css/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <!-- or -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -167,11 +167,11 @@
   
     <?php
       require "../pdo.php";
-      require "./product.php";
-      require "./table.php";
-      require "./class.php";
-      require "./customer.php";
-      require "./order.php";
+      require "../model/product.php";
+      require "../model/table.php";
+      require "../model/class.php";
+      require "../model/customer.php";
+      require "../model/order.php";
 
 
     
@@ -181,7 +181,7 @@
         case 'pro' :
 
           $list_course = product_selectAll();
-          require_once "./table-data-product.php";
+          require_once "../view/table-data-product.php";
           break;
         case 'add_pro':
           if (isset($_POST['them']) && ($_POST['them'])){
@@ -203,18 +203,18 @@
               $thongbao = "Thêm thành công";
             }
           }
-          require_once "./form-add-course.php";
+          require_once "../view/form-add-course.php";
           break;
         case 'del_pro':
           if (isset($_GET['id']) && ($_GET['id'] > 0)) {
             del_course($_GET['id']);
           }
           $list_course = product_selectAll();
-          require_once "./table-data-product.php";
+          require_once "../view/table-data-product.php";
           break;
         case 'mem':
           $list_member = member_selectAll();
-          require_once "./table-data-table.php";
+          require_once "../view/table-data-table.php";
           break;
         case 'add_mem':
           if (isset($_POST['them']) && ($_POST['them'])){
@@ -268,18 +268,77 @@
             }
 
           }
-          require_once "./form-add-member.php";
+          require_once "../view/form-add-member.php";
           break;
         case 'del_mem':
           if (isset($_GET['id']) && ($_GET['id'] > 0)) {
             del_mem($_GET['id']);
           }
         $data_mem = member_selectAll();
-        require_once "./table-data-table.php";
+        require_once "../view/table-data-table.php";
         break;
+        case 'edit_mem':
+
+          if (isset($_GET['id']) && ($_GET['id'])) {
+            $edit_mem = edit_member($_GET['id']);
+          }
+          require_once "../view/form-update-member.php";
+          break;
+        case 'up_mem':
+          if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+            $ma_us=$_GET['id'];
+            $name = $_POST['ten'];
+            $mail = $_POST['email'];
+            $loca = $_POST['loca'];
+            $phone = $_POST['num'];
+
+            $pass = $_POST['pass'];
+            $anh = $_POST['img-member'];
+            $anh_moi = $_FILES['anh'];
+            $errer = [];
+
+            if(empty($name)){
+              $errer['ten']="Họ tên không được bỏ trống!";
+            }
+            if(empty($mail)){
+              $errer['email']="Email không được bỏ trống!";
+            }            
+            if(empty($loca)){
+              $errer['loca']="Địa chỉ không được bỏ trống!";
+            }
+            if(empty($phone)){
+              $errer['num']="Số điện thoại không được bỏ trống!";
+            }
+            if(empty($pass)){
+              $errer['pass']="Mật khẩu không được bỏ trống!";
+            }
+            if ($anh_moi['size'] > 0) {
+              $duoianh = ['jpg', 'png', 'jpeg', 'gif'];
+              $duoi = pathinfo($anh_moi['name'], PATHINFO_EXTENSION);
+              if (!in_array($duoi, $duoianh)) {
+                  $errer['img-member'] = "File không phải là ảnh";
+              } else {
+                  $img = $anh_moi['name'];
+              }
+
+          } else {
+              $img = $anh;
+          }
+
+            if (empty($errer)) {
+              move_uploaded_file($anh_moi['tmp_name'], '../img_upload/' . $img);
+
+              up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone);
+              $thongbao = "Thêm thành công";
+            }
+          }
+          $list_member = member_selectAll();
+
+          require_once "../view/table-data-table.php";
+          break;
         case 'cus':
           $list_customer = customer_selectAll();
-          require_once "./table-data-customer.php";
+          require_once "../view/table-data-customer.php";
           break;
         case 'add_cus':
           if (isset($_POST['them']) && ($_POST['them'])){
@@ -336,21 +395,21 @@
             }
 
           }
-          require_once "./form-add-customer.php";
+          require_once "../view/form-add-customer.php";
           break;
         case 'del_cus':
           if (isset($_GET['id']) && ($_GET['id'] > 0)) {
             del_cus($_GET['id']);
           }
           $list_customer = customer_selectAll();
-          require_once "./table-data-customer.php";
+          require_once "../view/table-data-customer.php";
           break;
         case 'edit_cus':
 
           if (isset($_GET['id']) && ($_GET['id'])) {
             $edit_cus = edit_customer($_GET['id']);
           }
-          require_once "./form-update-customer.php";
+          require_once "../view/form-update-customer.php";
           break;
         case 'up_cus':
           if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
@@ -418,12 +477,12 @@
           }
           $list_customer = customer_selectAll();
 
-          require_once "./table-data-customer.php";
+          require_once "../view/table-data-customer.php";
           break;
 
         case 'class':
           $list_class = class_selectAll();
-          require_once "./table-data-class.php";
+          require_once "../view/table-data-class.php";
           break;
         case 'add_class':
           $list_course = product_selectAll();
@@ -454,37 +513,37 @@
             }
 
           }
-          require_once "./form-add-class.php";
+          require_once "../view/form-add-class.php";
           break;
           case 'del_class':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
               del_class($_GET['id']);
             }
             $list_class = class_selectAll();
-            require_once "./table-data-class.php";
+            require_once "../view/table-data-class.php";
             break;
           case 'order':
             $list_order = order_selectAll();
-            require_once "./table-data-oder.php";
+            require_once "../view/table-data-oder.php";
             break;
           case 'del_order':            
           if (isset($_GET['id']) && ($_GET['id'] > 0)) {
             del_order($_GET['id']);
           }
           $list_order = order_selectAll();
-          require_once "./table-data-oder.php";
+          require_once "../view/table-data-oder.php";
           break;
 
         case 'ca':
           $list_ca = ca_hoc_selectAll();
-          require_once "./table-data-ca-hoc.php";
+          require_once "../view/table-data-ca-hoc.php";
           break;
 
 
 
     }
   }else {
-      require_once "./footer.php";
+      require_once "../doc/footer.php";
   }
 
 

@@ -12,7 +12,7 @@ function validate() {
           close: true,
           button: false,
         });
-      window.location = "doc/index.php";
+      window.location = "./controller/index.php";
       return true;
   }
   //Nếu không nhập gì mà nhấn đăng nhập thì sẽ báo lỗi
@@ -24,9 +24,9 @@ function validate() {
           close: true,
           button: "Thử lại",
         });
-       
+      
       return false;
-     
+    
   }
   //Nếu không nhập mật khẩu mà đúng tài khoản 
   if (username == "admin" && password == "") {
