@@ -65,7 +65,7 @@
                                     <td><?php extract($lt); echo $mo_ta ?></td>
                                     <td>
                                       <a href="../controller/index.php?act=del_pro&id=<?php extract($lt); echo $id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
-                                      <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button>
+                                      <a href="../controller/index.php?act=edit_pro&id=<?php extract($lt); echo $id ?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></a>
                                     </td>
                                   </tr>
                                 <?php

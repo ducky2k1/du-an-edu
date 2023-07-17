@@ -21,4 +21,12 @@ function del_course($ma_us){
     $sql= "DELETE FROM `dtb_course` where id = ".$ma_us;
     pdo_execute($sql);
 }
+function edit_pro($ma_us){
+    $sql="SELECT * FROM `dtb_course` where id=".$ma_us;
+    return pdo_query_one($sql);
+}
+function up_pro($ma_us,$fullname, $gia, $mota){
+    $sql="UPDATE `dtb_course` SET `name`='".$fullname."',`price`='".$gia."',`mo_ta`='".$mota."' WHERE id=".$ma_us;
+    pdo_execute($sql);
+}
 ?>

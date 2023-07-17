@@ -11,11 +11,11 @@
                 <div class="tile">
                     <div class="tile-body">
                         <div class="row element-button">
-                            <div class="col-sm-2">
+                            <!-- <div class="col-sm-2">
               
                               <a class="btn btn-add btn-sm" href="../controller/index.php?act=add_class" title="Thêm"><i class="fas fa-plus"></i>
                                 Tạo mới lớp học</a>
-                            </div>
+                            </div> -->
                             <div class="col-sm-2">
                               <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
                                   class="fas fa-file-upload"></i> Tải từ file</a>

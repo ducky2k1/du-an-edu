@@ -22,7 +22,7 @@
                 <div class="tile-body">
                     <form class="row" action="../controller/index.php?act=up_mem&id=<?php extract($edit_mem); echo $id ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-4">
-                            <label class="control-label">ID nhân viên</label>
+                            <label class="control-label">Mã khách hàng</label>
                             <input class="form-control" type="text" name="ten" readonly value="<?php extract($edit_mem); echo $id ?>">
                         </div>
                         <div class="form-group col-md-4">

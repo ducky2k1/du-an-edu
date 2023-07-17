@@ -212,6 +212,37 @@
           $list_course = product_selectAll();
           require_once "../view/table-data-product.php";
           break;
+        case 'edit_pro':         
+          if (isset($_GET['id']) && ($_GET['id'])) {
+            $edit_pro = edit_pro($_GET['id']);
+          }
+          require_once "../view/form-update-course.php";
+          break;
+        case 'up_pro':
+          if (isset($_POST['them']) && ($_POST['them'])){
+            $ma_us=$_GET['id'];
+            $fullname = $_POST['ten'];
+            $gia = $_POST['gia'];
+            $mota = $_POST['mota'];
+            $errer = [];
+            if (empty($fullname)) {
+              $errer['ten'] = "Tên khóa học không được để trống!";
+            }
+            if (empty($gia)) {
+              $errer['gia'] = "Giá khóa học không được để trống!";
+            }
+            if (empty($mota)) {
+              $errer['mota'] = "Mô tả khóa học không được để trống!";
+            }             
+            if (empty($errer)) {
+              up_pro($ma_us,$fullname, $gia, $mota);
+              $thongbao = "Thêm thành công";
+            }
+          }
+          $list_course = product_selectAll();
+          require_once "../view/table-data-product.php";
+          break;
+
         case 'mem':
           $list_member = member_selectAll();
           require_once "../view/table-data-table.php";
@@ -443,18 +474,6 @@
             if(empty($date)){
               $errer['date-nv']="Ngày sinh không được bỏ trống!";
             }
-
-            // if ($anh['size'] <= 0) {
-            //   $errer['img'] = "Vui lòng chọn file ảnh";
-            //   } else {
-            //   $duoianh = ['jpg', 'png', 'jpeg', 'gif'];
-            //   $duoi = pathinfo($anh['name'], PATHINFO_EXTENSION);
-            //   if (!in_array($duoi, $duoianh)) {
-            //       $errer['img-nv'] = "File không phải là ảnh";
-            //   } else {
-            //       $img = $anh['name'];
-            //   }
-            // }
             if ($anh_moi['size'] > 0) {
               $duoianh = ['jpg', 'png', 'jpeg', 'gif'];
               $duoi = pathinfo($anh_moi['name'], PATHINFO_EXTENSION);

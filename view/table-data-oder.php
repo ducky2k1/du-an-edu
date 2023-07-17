@@ -48,6 +48,7 @@
                     <th width="10"><input type="checkbox" id="all"></th>
                     <th>ID đơn hàng</th>
                     <th>Tên khóa học</th>
+                    <th>Lớp</th>
                     <th>Khách hàng</th>
                     <th>ID khách hàng</th>
                     <th>SĐT</th>
@@ -67,6 +68,7 @@
                                     <td></td>
                                     <td><?php extract($lt); echo $order_id ?></td>
                                     <td><?php extract($lt); echo $course_name ?></td>
+                                    <td><?php extract($lt); echo $class_name ?></td>
                                     <td><?php extract($lt); echo $member_name ?></td>
                                     <td><?php extract($lt); echo $member_id ?></td>
                                     <td><?php extract($lt); echo $phone ?></td>
