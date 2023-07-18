@@ -16,10 +16,7 @@ function countMem(){
     WHERE dtb_order_item.course_id=? AND dtb_lop.id=?";
     pdo_execute($sql);
 }
-function ca_hoc_selectAll(){
-    $sql="SELECT * FROM `dtb_ca_hoc`";
-    return pdo_query($sql);
-}
+
 function gv_selectAll(){
     $sql="SELECT * FROM `dtb_customer` WHERE `role`='gv'";
     return pdo_query($sql);

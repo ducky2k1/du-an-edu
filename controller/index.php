@@ -172,6 +172,7 @@
       require "../model/class.php";
       require "../model/customer.php";
       require "../model/order.php";
+      require "../model/ca.php";
 
 
     
@@ -557,7 +558,36 @@
           $list_ca = ca_hoc_selectAll();
           require_once "../view/table-data-ca-hoc.php";
           break;
+        case 'add_ca':
+          if (isset($_POST['them']) && ($_POST['them'])){
+            $name = $_POST['ten'];
+            $time_s = $_POST['time-start'];
+            $time_e = $_POST['time-end'];
+            $errer = [];            
+            if(empty($name)){
+              $errer['ten']="Vui lòng chọn khóa học!";
+            }            
+            if(empty($time_s)){
+              $errer['time-start']="Vui lòng chọn thời gian bắt đầu!";
+            }
+            if(empty($time_e)){
+              $errer['time-end']="Vui lòng chọn thời gian kết thúc!";
+            }
+            if (empty($errer)) {
+              add_ca($name,$time_s,$time_e);
+              $thongbao = "Thêm thành công";
+            }
 
+          }
+          require_once "../view/form-add-ca.php";
+          break;
+        case 'del_ca':
+          if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+            del_ca($_GET['id']);
+          }
+          $list_ca = ca_hoc_selectAll();
+          require_once "../view/table-data-ca-hoc.php";
+          break;
 
 
     }
