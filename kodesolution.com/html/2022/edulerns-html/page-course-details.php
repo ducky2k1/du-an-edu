@@ -106,7 +106,7 @@
 							</li>
 							<li class="dropdown"><a href="#">Courses</a>
 								<ul>
-									<li><a href="page-courses.html">Courses List</a></li>
+									<li><a href="page-courses.php">Courses List</a></li>
 									<li><a href="page-course-details.html">Course Details</a></li>
 								</ul>
 							</li>
