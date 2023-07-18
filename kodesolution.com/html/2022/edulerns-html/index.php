@@ -1,3 +1,31 @@
+<?php
+	include "./model/pdo.php";
+	include "./model/course.php";
+	include "./model/class.php";
+	$listcourse = loadall_course();
+
+	if(isset($_GET['act']) && $_GET['act'] != "") {
+		$act = $_GET['act'];
+		switch ($act) {
+			case 'class':
+				if(isset($_GET['idkh']) && ($_GET['idkh']>0)) {
+					$id = $_GET['idkh'];
+					$listclass = load_same_course($id);
+					// var_dump($listclass);
+					// die();
+					include "page-course-details.php";
+				} else {
+					include "index.php";
+				}
+				break;
+		default:
+				include "index.php";
+				break;
+		}
+	}
+	// $listclass = load_same_course();
+	// var_dump($listcourse); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -498,35 +526,40 @@
 					<!-- Courses Carousel -->
 					<div class="courses-carousel owl-carousel owl-theme default-nav">
 						<!-- Course Block -->
-						<div class="course-block">
-							<div class="inner-box">
-								<div class="image-box">
-									<figure class="image"><a href="page-course-details.html"><img
-												src="images/resource/course-1.jpg" alt=""></a></figure>
-									<span class="price">$49.00</span>
-									<div class="value">Advanced</div>
-								</div>
-								<div class="content-box">
-									<ul class="course-info">
-										<li><i class="fa fa-book"></i> 8 Lessons</li>
-										<li><i class="fa fa-users"></i> 16 Students</li>
-									</ul>
-									<h5 class="title"><a href="page-course-details.html">IELTS</a></h5>
-									<div class="other-info">
-										<div class="rating-box">
-											<span class="text">(4.9 /8 Rating)</span>
-											<div class="rating"><span class="fa fa-star"></span><span
-													class="fa fa-star"></span><span class="fa fa-star"></span><span
-													class="fa fa-star"></span><span class="fa fa-star"></span></div>
+						<?php
+						foreach ($listcourse as $course) {
+							extract($course);
+							$link = "index.php?act=class&idkh=".$id;
+							echo '
+							<div class="course-block">
+								<div class="inner-box">
+									<div class="image-box">
+										<figure class="image"><a href="'.$link.'"><img
+													src="images/resource/course-1.jpg" alt=""></a></figure>
+										<span class="price">$'.$price.'</span>
+										<div class="value">'.$mo_ta.'</div>
+									</div>
+									<div class="content-box">
+										<ul class="course-info">
+											<li><i class="fa fa-book"></i> 8 Lessons</li>
+											<li><i class="fa fa-users"></i> 16 Students</li>
+										</ul>
+										<h5 class="title"><a href="'.$link.'">'.$name.'</a></h5>
+										<div class="other-info">
+											<div class="rating-box">
+												<span class="text">(4.9 /8 Rating)</span>
+												<div class="rating"><span class="fa fa-star"></span><span
+														class="fa fa-star"></span><span class="fa fa-star"></span><span
+														class="fa fa-star"></span><span class="fa fa-star"></span></div>
+											</div>
+											<div class="duration"><i class="fa fa-clock"></i> 3 Weeks</div>
 										</div>
-										<div class="duration"><i class="fa fa-clock"></i> 3 Weeks</div>
 									</div>
 								</div>
-							</div>
-						</div>
-
+							</div> '; }
+						?>
 						<!-- Course Block -->
-						<div class="course-block">
+						<!-- <div class="course-block">
 							<div class="inner-box">
 								<div class="image-box">
 									<figure class="image"><a href="page-course-details.html"><img
@@ -551,10 +584,10 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Course Block -->
-						<div class="course-block">
+						<!-- <div class="course-block">
 							<div class="inner-box">
 								<div class="image-box">
 									<figure class="image"><a href="page-course-details.html"><img
@@ -580,10 +613,10 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Course Block -->
-						<div class="course-block">
+						<!-- <div class="course-block">
 							<div class="inner-box">
 								<div class="image-box">
 									<figure class="image"><a href="page-course-details.html"><img
@@ -610,7 +643,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 

@@ -22,8 +22,14 @@
 	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 <style>
+	.w-30 {
+	}
 	.mr-10 {
 		margin-right: 10px;
+	}
+	.grid-col-4 {
+	display: grid;
+  	grid-template-columns: auto auto auto;
 	}
 </style>
 
@@ -40,7 +46,7 @@
 			<!-- Main box -->
 			<div class="main-box">
 				<div class="logo-box">
-					<div class="logo"><a href="index.html"><img src="images/logo.png" alt="" title="Tronis"></a></div>
+					<div class="logo"><a href="index.php"><img src="images/logo.png" alt="" title="Tronis"></a></div>
 				</div>
 
 				<!--Nav Box-->
@@ -268,55 +274,61 @@
 					<!--Start courses Details Content-->
 					<div class="col-xl-8 col-lg-8">
 						<div class="courses-details__content">
-							<img src="images/resource/course-details.jpg" alt="" />
-							<h2 class="mt-4">Courses Overview</h2>
+							<!-- <img src="images/resource/course-details.jpg" alt="" /> -->
+							<h2 class="mt-4">Classes</h2>
 							<div class="carousel-outer">
 								<!-- Courses Carousel -->
-								<div class="courses-carousel owl-carousel owl-theme default-nav">
+								<div class="grid-col-4">
 									<!-- Course Block -->
-									<div class="course-block mr-10">
-										<div class="inner-box">
-											<div class="image-box">
-												<figure class="image"><a href="page-course-details.html"><img
-															src="images/resource/course-1.jpg" alt=""></a></figure>
-												<span class="price">$49.00</span>
-												<div class="value">Advanced</div>
-												<!-- <a href="" class="value theme-btn btn-style-one ">BUY THIS COURSE</a> -->
-												<!-- <div class="value">BUY THIS COURSE</div> -->
-											</div>
-											<div class="content-box">
-												<ul class="course-info">
-													<li><i class="fa fa-book"></i> 8 Lessons</li>
-													<li><i class="fa fa-users"></i> 16 Students</li>
-												</ul>
-												<h5 class="title"><a href="page-course-details.html">IELTS 1.1</a></h5>
-
-												<div class="other-info">
-													<div class="rating-box">
-														<span class="text">(4.9 /8 Rating)</span>
-														<div class="rating"><span class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span></div>
+									<?php
+									// var_dump($listclass);
+									// die();
+									foreach ($listclass as $class) {
+										extract($class);
+										echo '
+											<div class="course-block mr-10 w-30">
+												<div class="inner-box">
+													<div class="image-box">
+														<figure class="image"><a href="page-course-details.html"><img
+																	src="images/resource/course-1.jpg" alt=""></a></figure>
+														<span class="price">$price</span>
+														<div class="value">Ca '.$ca_hoc_id.'</div>
+														<!-- <a href="" class="value theme-btn btn-style-one ">BUY THIS COURSE</a> -->
+														<!-- <div class="value">BUY THIS COURSE</div> -->
 													</div>
-													<div class="duration"><i class="fa fa-clock"></i> 3 Weeks</div>
+													<div class="content-box">
+														<ul class="course-info">
+															<li><i class="fa fa-book"></i> 8 Lessons</li>
+															<li><i class="fa fa-users"></i> 16 Students</li>
+														</ul>
+														<h5 class="title"><a href="page-course-details.html">'.$name.'</a></h5>
+
+														<div class="other-info">
+															<div class="rating-box">
+																<span class="text">(4.9 /8 Rating)</span>
+																<div class="rating"><span class="fa fa-star"></span><span
+																		class="fa fa-star"></span><span
+																		class="fa fa-star"></span><span
+																		class="fa fa-star"></span><span
+																		class="fa fa-star"></span></div>
+															</div>
+															<div class="duration"><i class="fa fa-clock"></i> 3 Weeks</div>
+
+														</div>
+													</div>
+
 
 												</div>
-											</div>
+												<div class="center">
+													<a href="#"
+														class="value theme-btn btn-style-one course-details-price-btn">Detail</a>
+												</div>
+											</div> ';
+									}
 
-
-										</div>
-										<div class="center">
-											<a href="#"
-												class="value theme-btn btn-style-one course-details-price-btn">Buy
-												This
-												Course</a>
-										</div>
-									</div>
-
+									?>
 									<!-- Course Block -->
-									<div class="course-block mr-10">
+									<!-- <div class="course-block mr-10">
 										<div class="inner-box">
 											<div class="image-box">
 												<figure class="image"><a href="page-course-details.html"><img
@@ -351,10 +363,10 @@
 												This
 												Course</a>
 										</div>
-									</div>
+									</div> -->
 
 									<!-- Course Block -->
-									<div class="course-block mr-10">
+									<!-- <div class="course-block mr-10">
 										<div class="inner-box">
 											<div class="image-box">
 												<figure class="image"><a href="page-course-details.html"><img
@@ -390,10 +402,10 @@
 												This
 												Course</a>
 										</div>
-									</div>
+									</div> -->
 
 									<!-- Course Block -->
-									<div class="course-block mr-10">
+									<!-- <div class="course-block mr-10">
 										<div class="inner-box">
 											<div class="image-box">
 												<figure class="image"><a href="page-course-details.html"><img
@@ -428,7 +440,7 @@
 												This
 												Course</a>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 							<!-- <div class="grid-col-3">
