@@ -54,8 +54,8 @@
 
 					<nav class="nav main-menu">
 						<ul class="navigation">
-							<li class="current dropdown"><a href="index.html">Home</a>
-								<ul>
+							<li class="current "><a href="index.php">Home</a>
+								<!-- <ul>
 									<li><a href="index.html">Home page 01</a></li>
 									<li><a href="index-2.html">Home page 02</a></li>
 									<li class="dropdown"><a href="#">Single</a>
@@ -87,9 +87,9 @@
 											<li><a href="index-2.html">Header Style Two</a></li>
 										</ul>
 									</li>
-								</ul>
+								</ul> -->
 							</li>
-							<li class="dropdown"><a href="#">Pages</a>
+							<!-- <li class="dropdown"><a href="#">Pages</a>
 								<ul>
 									<li><a href="page-about.html">About</a></li>
 									<li class="dropdown"><a href="#">Team</a>
@@ -103,14 +103,14 @@
 									<li><a href="page-faq.html">FAQ</a></li>
 									<li><a href="page-404.html">Page 404</a></li>
 								</ul>
-							</li>
+							</li> -->
 							<li class="dropdown"><a href="#">Courses</a>
 								<ul>
 									<li><a href="page-courses.php">Courses List</a></li>
-									<li><a href="page-course-details.html">Course Details</a></li>
+									<!-- <li><a href="page-course-details.html">Course Details</a></li> -->
 								</ul>
 							</li>
-							<li class="dropdown"><a href="#">Shop</a>
+							<!-- <li class="dropdown"><a href="#">Shop</a>
 								<ul>
 									<li><a href="shop-products.html">Products</a></li>
 									<li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
@@ -118,35 +118,38 @@
 									<li><a href="shop-cart.html">Cart</a></li>
 									<li><a href="shop-checkout.html">Checkout</a></li>
 								</ul>
-							</li>
-							<li class="dropdown"><a href="#">News</a>
+							</li> -->
+							<!-- <li class="dropdown"><a href="#">News</a>
 								<ul>
 									<li><a href="news-grid.html">News Grid</a></li>
 									<li><a href="news-details.html">News Details</a></li>
 								</ul>
-							</li>
+							</li> -->
 							<li><a href="page-contact.html">Contact</a></li>
 						</ul>
 					</nav>
 					<!-- Main Menu End-->
-
+					<div class="" style="margin-left: 340px;">
+							<a href="./signin.html" style="margin-right:14px"><button class="theme-btn btn-style-one">Signin</button></a>
+							<a href="./signup.html"><button class="theme-btn btn-style-one">Signup</button></a>
+						</div>
 
 					<div class="outer-box">
-						<a href="tel:+92(8800)9806" class="info-btn">
+						<!-- <a href="tel:+92(8800)9806" class="info-btn">
 							<i class="icon fa fa-phone"></i>
 							<small>Call Anytime</small><br> +92 (8800) - 8960
-						</a>
-						<a href="./signin.html" style="margin-right:12px">Signin</a>
-						<a href="./signup.html">Signup</a>
+						</a> -->
+						
 
 						<!-- <div class="ui-btn-outer">
 							<button class="ui-btn ui-btn search-btn">
-								<span class="icon lnr lnr-icon-search"></span>
+								<span class="icon lnr lnr-icon-search">Login</span>
+
 							</button>
 							<a href="#" class="ui-btn"><i class="lnr-icon-shopping-cart"></i></a>
 						</div> -->
 
-						<a href="#" class="theme-btn btn-style-one"><span class="btn-title">Try For Free</span></a>
+						<!-- <a href="#" class="theme-btn btn-style-one"><span class="btn-title">Try For Free</span></a> -->
 
 						<!-- Mobile Nav toggler -->
 						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
@@ -162,7 +165,7 @@
 				<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 				<nav class="menu-box">
 					<div class="upper-box">
-						<div class="nav-logo"><a href="index.html"><img src="images/logo-2.png" alt="" title=""></a>
+						<div class="nav-logo"><a href="index.php"><img src="images/logo-2.png" alt="" title=""></a>
 						</div>
 						<div class="close-btn"><i class="icon fa fa-times"></i></div>
 					</div>
@@ -227,9 +230,9 @@
 			<div class="sticky-header">
 				<div class="auto-container">
 					<div class="inner-container">
-						<!--Logo-->
+						<!--Logo nav-->
 						<div class="logo">
-							<a href="index.html" title=""><img src="images/logo.png" alt="" title=""></a>
+							<a href="index.php" title=""><img src="images/logo.png" alt="" title=""></a>
 						</div>
 
 						<!--Right Col-->
@@ -242,9 +245,13 @@
 									</ul>
 								</div>
 							</nav><!-- Main Menu End-->
-
+						
 							<!--Mobile Navigation Toggler-->
 							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
+						</div>
+						<div class="">
+							<a href="./signin.html" style="margin-right:14px"><button class="theme-btn btn-style-one">Signin</button></a>
+							<a href="./signup.html"><button class="theme-btn btn-style-one">Signup</button></a>
 						</div>
 					</div>
 				</div>
