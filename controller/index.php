@@ -513,6 +513,7 @@
             $khoaHoc = $_POST['course'];
             $caHoc = $_POST['ca'];
             $giangVien = $_POST['gv'];
+            $ngayHoc = $_POST['ngay'];
             $errer = [];
 
             if(empty($name)){
@@ -527,8 +528,11 @@
             if(empty($giangVien)){
               $errer['gv']="Vui lòng chọn giảng viên!";
             }
+            if(empty($ngayHoc)){
+              $errer['ngay']="Vui lòng chọn ngày học!";
+            }
             if (empty($errer)) {
-              add_class($khoaHoc,$name , $giangVien,$caHoc);
+              add_class($khoaHoc,$name , $giangVien,$caHoc,$ngayHoc);
               $thongbao = "Thêm thành công";
             }
 
@@ -542,6 +546,49 @@
             $list_class = class_selectAll();
             require_once "../view/table-data-class.php";
             break;
+          case 'edit_class':
+              if (isset($_GET['id']) && ($_GET['id'])) {
+                $edit_class = edit_class($_GET['id']);
+              }
+              $list_course = product_selectAll();
+              $list_ca = ca_hoc_selectAll();
+              $list_gv = gv_selectAll();
+              require_once "../view/form-update-class.php";
+            break; 
+          case 'up_class':
+            $list_course = product_selectAll();
+            $list_ca = ca_hoc_selectAll();
+            $list_gv = gv_selectAll();
+            if (isset($_POST['them']) && ($_POST['them'])){
+              $name = $_POST['ten'];
+              $caHoc = $_POST['ca'];
+              $giangVien = $_POST['gv'];
+              $ngayHoc = $_POST['ngay'];
+              $time = $_POST['time'];
+              $ma_us=$_GET['id'];
+              $errer = [];
+  
+              if(empty($name)){
+                $errer['ten']="Tên lớp học không được bỏ trống!";
+              }         
+              if(empty($caHoc)){
+                $errer['ca']="Vui lòng chọn ca học!";
+              }
+              if(empty($giangVien)){
+                $errer['gv']="Vui lòng chọn giảng viên!";
+              }
+              if(empty($ngayHoc)){
+                $errer['ngay']="Vui lòng chọn ngày học!";
+              }
+              if (empty($errer)) {
+                up_class($ma_us,$name,$giangVien,$time,$caHoc,$ngayHoc);
+                $thongbao = "Thêm thành công";
+              }
+  
+            }
+            $list_class = class_selectAll();
+            require_once "../view/table-data-class.php";
+            break;         
           case 'order':
             $list_order = order_selectAll();
             require_once "../view/table-data-oder.php";
@@ -588,6 +635,38 @@
           $list_ca = ca_hoc_selectAll();
           require_once "../view/table-data-ca-hoc.php";
           break;
+        case 'edit_ca':
+
+            if (isset($_GET['id']) && ($_GET['id'])) {
+              $edit_ca = edit_ca($_GET['id']);
+            }
+            require_once "../view/form-update-ca.php";
+            break;
+        case 'up_ca':
+            if (isset($_POST['them']) && ($_POST['them'])){
+              $name = $_POST['ten'];
+              $time_s = $_POST['time-start'];
+              $time_e = $_POST['time-end'];
+              $ma_us=$_GET['id'];
+
+              $errer = [];            
+            if(empty($name)){
+              $errer['ten']="Vui lòng chọn khóa học!";
+            }            
+            if(empty($time_s)){
+              $errer['time-start']="Vui lòng chọn thời gian bắt đầu!";
+            }
+            if(empty($time_e)){
+              $errer['time-end']="Vui lòng chọn thời gian kết thúc!";
+            }
+            if (empty($errer)) {
+              up_ca($ma_us,$name,$time_s,$time_e);
+              $thongbao = "Sửa thành công";
+            }
+              }
+              $list_ca = ca_hoc_selectAll();
+              require_once "../view/table-data-ca-hoc.php";
+              break;
 
 
     }

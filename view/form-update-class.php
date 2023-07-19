@@ -10,7 +10,7 @@
       <h5 class=""><?php if (isset($thongbao) && ($thongbao != ""))  {
                                                                                 echo $thongbao;
                                                                             } else {
-                                                                                echo "Đang thêm lớp học";
+                                                                                echo "Đang sửa lớp học";
                                                                             } ?></h5>
     </div>
 
@@ -19,29 +19,28 @@
 
       <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Tạo mới lớp học</h3>
+          <h3 class="tile-title">Sửa lớp học</h3>
           <div class="tile-body">
-            <form class="row" action="../controller/index.php?act=add_class" method="post">
+            <form class="row" action="../controller/index.php?act=up_class&id=<?php extract($edit_class); echo $id ?>" method="post">
               <div class="form-group col-md-5">
                 <label class="control-label">Tên lớp học</label>
-                <input class="form-control" type="text" name="ten">
+                <input class="form-control" type="text" name="ten" value="<?php extract($edit_class); echo $name ?>">
                 <span class="" style="color:red;"><?= $errer['ten'] ?? "" ?></span>
               </div>
               <div class="form-group col-md-5">
-                  <label for="exampleSelect1" class="control-label">Khóa học</label>
-                  <select class="form-control" id="exampleSelect1" name="course">
-                    <option value="">-- Chọn khóa học --</option>
-                      <?php foreach($list_course as $lt){ ?>
-                        <option value="<?php extract($lt); echo $id ?> "><?php extract($lt); echo $name ?>
-                    </option>
-                      <?php } ?>
-                  </select>
-                  <span class="" style="color:red;"><?= $errer['course'] ?? "" ?></span>
+                <label class="control-label">Khóa học</label>
+                <input class="form-control" type="text" name="course" value="<?php extract($edit_class); echo $ten_khoa ?>" readonly>
+                <span class="" style="color:red;"><?= $errer['ten'] ?? "" ?></span>
+              </div>
+              <div class="form-group col-md-5">
+                <label class="control-label">Thời gian</label>
+                <input class="form-control" type="time" name="time" value="<?php extract($edit_class); echo $time ?>">
+                <span class="" style="color:red;"><?= $errer['ten'] ?? "" ?></span>
               </div>
               <div class="form-group col-md-5">
                   <label for="exampleSelect1" class="control-label">Ca học</label>
                   <select class="form-control" id="exampleSelect1" name="ca">
-                    <option value="">-- Chọn ca học --</option>
+                    <option value="<?php extract($edit_class); echo $ca_id ?>"><?php extract($edit_class); echo $ten_ca ?></option>
                     <?php foreach($list_ca as $lt){ ?>
                       <option value="<?php extract($lt); echo $id ?> ">
                         <?php extract($lt); echo $name ?> 
@@ -56,16 +55,18 @@
               <div class="form-group col-md-5">
                   <label for="exampleSelect1" class="control-label">Ngày học</label>
                   <select class="form-control" id="exampleSelect1" name="ngay">
-                    <option value="">-- Chọn ngày học --</option>
-                    <option value="Ngày chẵn (Thứ 2,4,6)">-- Ngày chẵn (Thứ 2,4,6) --</option>
-                    <option value="Ngày lẻ (Thứ 3,5,7)">-- Ngày lẻ (Thứ 3,5,7) --</option>
+                    <option value="<?php extract($edit_class); echo $day ?>"><?php extract($edit_class); echo $day ?></option>
+                    <?php
+                      echo ($edit_class['day'] == 'Ngày lẻ (Thứ 3,5,7)') ? '<option value="Ngày chẵn (Thứ 2,4,6)">Ngày chẵn (Thứ 2,4,6)</option>' : '<option value="Ngày lẻ (Thứ 3,5,7)">Ngày lẻ (Thứ 3,5,7)</option>';
+                    ?>
+
                   </select>
                   <span class="" style="color:red;"><?= $errer['ngay'] ?? "" ?></span>
               </div>         
               <div class="form-group col-md-5">
                   <label for="exampleSelect1" class="control-label">Giảng viên</label>
                   <select class="form-control" id="exampleSelect1" name="gv">
-                    <option value="">-- Chọn giảng viên --</option>
+                    <option value="<?php extract($edit_class); echo $customer_id ?>"><?php extract($edit_class); echo $ten_customer ?></option>
                       <?php foreach($list_gv as $lt){ ?>
                         <option value="<?php extract($lt); echo $id ?> "><?php extract($lt); echo $name ?>
                     </option>
@@ -73,10 +74,10 @@
                   </select>
                   <span class="" style="color:red;"><?= $errer['gv'] ?? "" ?></span>
               </div>
-              <div class="form-group col-md-7">
+              <div class="form-group col-md-2">
               </div> 
     
-              <input type="submit" name="them" value="Thêm Mới" class="btn btn-save">
+              <input type="submit" name="them" value="Sửa" class="btn btn-save">
               <a class="btn btn-cancel" href="../controller/index.php?act=class">Hủy bỏ</a>
           </form>
           </div>

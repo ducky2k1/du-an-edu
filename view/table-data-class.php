@@ -51,6 +51,7 @@
                                     <th>Tên lớp</th>
                                     <th>Tên giáo viên</th>
                                     <th>Thời gian</th>
+                                    <th>Lịch học</th>
                                     <th>Ca học</th>
                                     <th>Thời gian bắt đầu</th>
                                     <th>Thời gian kết thúc</th>
@@ -68,12 +69,13 @@
                                     <td><?php extract($lt); echo $name ?></td>
                                     <td><?php extract($lt); echo $ten_customer ?> - <?php extract($lt); echo $customer_id ?></td>
                                     <td><?php extract($lt); echo $time ?></td>
+                                    <td><?php extract($lt); echo $day ?></td>
                                     <td><?php extract($lt); echo $ten_ca ?></td>
                                     <td><?php extract($lt); echo $time_start ?></td>
                                     <td><?php extract($lt); echo $time_end ?></td>
                                     <td>
                                     <a href="../controller/index.php?act=del_class&id=<?php extract($lt); echo $id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
-                                    <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button>
+                                    <a href="../controller/index.php?act=edit_class&id=<?php extract($lt); echo $id ?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></a>
                                   </td>
                                   </tr>
                                 <?php
