@@ -1,3 +1,7 @@
+<?php
+	// var_dump($listclass);
+	// die();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,17 +89,18 @@
 													<div class="image-box">
 														<figure class="image"><a href="page-course-details.html"><img
 																	src="images/resource/course-1.jpg" alt=""></a></figure>
-														<span class="price">$price</span>
-														<div class="value">Ca '.$ca_hoc_id.'</div>
+														<span class="price">$'.$gia.'</span>
+														<div class="value">'.$cahoc.'</div>
 														<!-- <a href="" class="value theme-btn btn-style-one ">BUY THIS COURSE</a> -->
 														<!-- <div class="value">BUY THIS COURSE</div> -->
 													</div>
 													<div class="content-box">
 														<ul class="course-info">
-															<li><i class="fa fa-book"></i> 8 Lessons</li>
-															<li><i class="fa fa-users"></i> 16 Students</li>
+															<li><i class="fa fa-clock"></i> '.$cahoc_start.' - '.$cahoc_end.'</li>
+															<li><i class="fa fa-user-circle"></i> '.$tengv.'</li>
+															<!--	<li><i class="fa fa-users"></i> 16 Students</li>  -->
 														</ul>
-														<h5 class="title"><a href="page-course-details.html">'.$name.'</a></h5>
+														<h5 class="title"><a href="page-course-details.html">'.$tenlop.'</a></h5>
 
 														<div class="other-info">
 															<div class="rating-box">
@@ -391,7 +396,7 @@
 								</li>
 								<li class="course-details-info-link">
 									<span class="course-details-info-icon"><i class="far fa-bell"></i></span>
-									Time: <span>7:30 AM - 9:30 AM</span>
+									Time: <span>8:30 AM - 9:30 PM</span>
 								</li>
 							</ul>
 
@@ -403,7 +408,34 @@
 
 							<div class="latest-course mb-30">
 								<h4 class="latest-course-title mb-30">Diffirent Courses</h4>
-								<div class="latest-course-item">
+								<?php
+									foreach ($listcourse as $course) {
+										extract($course);
+										if($id != $idkh) {
+											$link = "index.php?act=class&idkh=".$id;
+												echo '<div class="latest-course-item">
+												<div class="latest-course-img">
+													<img src="images/resource/course-1.jpg" alt="">
+												</div>
+												<div class="latest-course-content">
+													<a class="latest-course-author" href="#">Khóa học <span>'.$mo_ta.'</span></a>
+													<h5><a href="'.$link.'">'.$name.'</a></h5>
+			
+													<div class="latest-course-stars">
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<span>4.8</span>
+			
+													</div>
+												</div>
+											</div>';
+										}
+									}
+								?>
+								<!-- <div class="latest-course-item">
 									<div class="latest-course-img">
 										<img src="images/resource/course-1.jpg" alt="">
 									</div>
@@ -421,8 +453,8 @@
 
 										</div>
 									</div>
-								</div>
-								<div class="latest-course-item">
+								</div> -->
+								<!-- <div class="latest-course-item">
 									<div class="latest-course-img">
 										<img src="images/resource/course-2.jpg" alt="">
 									</div>
@@ -438,8 +470,8 @@
 											<span>5.0</span>
 										</div>
 									</div>
-								</div>
-								<div class="latest-course-item">
+								</div> -->
+								<!-- <div class="latest-course-item">
 									<div class="latest-course-img">
 										<img src="images/resource/course-3.jpg" alt="">
 									</div>
@@ -455,7 +487,7 @@
 											<span>4.9</span>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 
 						</div>

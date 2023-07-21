@@ -10,8 +10,10 @@
 		switch ($act) {
 			case 'class':
 				if(isset($_GET['idkh']) && ($_GET['idkh']>0)) {
-					$id = $_GET['idkh'];
-					$listclass = load_same_course($id);
+					$idkh = $_GET['idkh'];
+					$listclass = loadall_info_class($idkh);
+					// var_dump($listclass);
+					// die();
 					include "page-course-details.php";
 					die();
 				} else {

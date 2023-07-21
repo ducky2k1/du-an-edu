@@ -61,9 +61,17 @@
 									<li><a href="page-404.html">Page 404</a></li>
 								</ul>
 							</li> -->
-							<li class="dropdown"><a href="#">Courses</a>
+							<li class="dropdown"><a href="page-courses.php">Courses</a>
 								<ul>
-									<li><a href="page-courses.php">Courses List</a></li>
+									<?php
+										foreach ($listcourse as $course) {
+											extract($course);
+											$link = "index.php?act=class&idkh=".$id;
+											echo '
+												<li><a href="'.$link.'">'.$name.'</a></li>
+												';
+										}
+									?>
 									<!-- <li><a href="page-course-details.html">Course Details</a></li> -->
 								</ul>
 							</li>
