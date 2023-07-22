@@ -9,7 +9,7 @@ else if(isset($_POST['submit']) && isset($_POST['username']) &&isset($_POST['pas
      $username=$_POST['username'];
      $row=mysqli_fetch_array(mysqli_query($db_con,"SELECT * FROM dtb_member WHERE pass='$pass' and email='$username'"));
      if($pass!=$Rpass){echo "<script>alert('Mật khẩu không khớp')</script>";}
-     else if(!$row){echo "<script>alert('Sai email hoặc pass')</script>";
+     else if(!$row){echo "<script>alert('Sai email hoặc password')</script>";
      }
      else{
           $_SESSION['user_id']=$row['id'];
@@ -23,6 +23,10 @@ else if(isset($_POST['submit']) && isset($_POST['username']) &&isset($_POST['pas
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="./css/bootstrap.min.css" rel=" stylesheet">
+    <!-- THư viện phụ sweet  -->
+    <link class="main-stylesheet" href="https://shopclone6.cmsnt.site/public/sweetalert2/default.css" rel="stylesheet"
+        type="text/css">
+    <script src="https://shopclone6.cmsnt.site/public/sweetalert2/sweetalert2.js"></script>
 
 </head>
 
@@ -38,7 +42,7 @@ else if(isset($_POST['submit']) && isset($_POST['username']) &&isset($_POST['pas
 
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
 
-                                    <form class="mx-1 mx-md-4" action="" method="post">
+                                    <form class="mx-1 mx-md-4" action="" method="post" id="form_login">
 
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -69,12 +73,50 @@ else if(isset($_POST['submit']) && isset($_POST['username']) &&isset($_POST['pas
                                                     password</label>
                                             </div>
                                         </div>
+                                        <div class="col">
+                                            <!-- Simple link -->
+                                            <a href="#!" onclick="show_popup(1)">Quên mật khẩu</a>
+                                        </div>
 
 
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                             <button type="submit" name="submit" class="btn btn-primary btn-lg">Sign
                                                 In</button>
+                                        </div>
+
+                                    </form>
+                                    <?php
+                                    if(isset($_POST['submit_pass'])){
+                                        $email=$_POST['email'];
+                                        $rows=mysqli_fetch_array(mysqli_query($db_con,"SELECT * FROM dtb_member WHERE email='$email' LIMIT 1"));
+                                        if(!$rows)echo "<script>Swal.fire('Thất bại','Email không tồn tại','error')</script>";
+                                        else echo "<script>Swal.fire('Thành công','Thành viên {".$rows['name']."}  đăng kí với mật khẩu là :".$rows['pass']."','success')</script>";
+
+                                    }   
+                                    ?>
+                                    <form class="mx-1 mx-md-4" action="" method="post" id="form_password"
+                                        style="display:none">
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <input type="text" id="form3Example1c" class="form-control" name="email"
+                                                    type="text" type="email">
+                                                <label class="form-label" for="form3Example1c"> Nhập email đã đăng
+                                                    kí</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <!-- Simple link -->
+                                            <a href="#!" onclick="show_popup(2)">Quay lại đăng nhập</a>
+                                        </div>
+
+
+
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="submit" name="submit_pass" class="btn btn-primary btn-lg">Nhận
+                                                lại mật khẩu</button>
                                         </div>
 
                                     </form>
@@ -92,6 +134,18 @@ else if(isset($_POST['submit']) && isset($_POST['username']) &&isset($_POST['pas
             </div>
         </div>
     </section>
+
+    <script>
+    function show_popup(id) {
+        if (id == 1) {
+            document.getElementById("form_login").style.display = "none"
+            document.getElementById("form_password").style.display = "block"
+        } else if (id == 2) {
+            document.getElementById("form_login").style.display = "block"
+            document.getElementById("form_password").style.display = "none"
+        }
+    }
+    </script>
 
 </body>
 
