@@ -62,22 +62,25 @@
 										if(isset($info)&&($info)){
 											echo $info['image'];
 										} ?>" alt="" style="width:50px;height:50px;border-radius: 50%; border:1px solid black; margin-right: 20px;">
-								<div class="dropdown" >
-									<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-									<?php 
-										if(isset($info)&&($info)){
-											echo $info['name'];
-										}
-									?>
-									<span class="caret"></span></button>
-									<ul class="dropdown-menu">
-									  <li><a tabindex="-1" href="#">Thông tin</a></li>
-									  <li><a tabindex="-1" href="#">Hóa đơn</a></li>
-									  <li >
-										<a class="test" tabindex="-1" href="./index.php?act=dx">Đăng xuất </a>
-									   </li>
+								<nav class="nav main-menu">
+									<ul class="navigation">
+										<li class="dropdown"><a href="page-courses.php">									
+											<?php 
+												if(isset($info)&&($info)){
+													echo $info['name'];
+												}
+											?></a>
+											<ul>
+												<li><a tabindex="-1" href="./buy.php?act=info">Thông tin</a></li>
+												<li><a tabindex="-1" href="#">Hóa đơn</a></li>
+												<li >
+													<a class="test" tabindex="-1" href="./index.php?act=dx">Đăng xuất </a>
+												</li>
+												<!-- <li><a href="page-course-details.html">Course Details</a></li> -->
+											</ul>
+										</li>
 									</ul>
-								</div>
+								</nav>
 								</div>
 
 										

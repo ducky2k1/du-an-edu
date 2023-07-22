@@ -1,3 +1,8 @@
+<?php
+	include "./model/pdo.php";
+	include "./model/course.php";
+	$listcourse = loadall_course();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

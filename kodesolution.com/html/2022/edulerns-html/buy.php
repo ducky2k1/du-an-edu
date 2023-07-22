@@ -116,6 +116,9 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                 }
                 }
                 break;
+        case 'info':
+            include "./fi.php";
+            break;
     default:
             include "home.php";
             break;
