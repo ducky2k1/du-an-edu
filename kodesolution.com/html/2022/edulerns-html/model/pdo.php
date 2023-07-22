@@ -4,7 +4,7 @@ function pdo_get_connection(){
     dbname=demo_academy;
     charset=utf8";
     $username = "root";
-    $password = "tung7433";
+    $password = "trinhduc2001";
     try{
         $conn = new PDO($dburl,$username,$password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -20,6 +20,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
 	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <style>
 	.w-30 {
@@ -69,213 +72,6 @@
 					<div class="col-xl-8 col-lg-8">
 						<div class="courses-details__content">
 							<!-- <img src="images/resource/course-details.jpg" alt="" /> -->
-							<h2 class="mt-4">Classes</h2>
-							<div class="carousel-outer">
-								<!-- Courses Carousel -->
-								<div class="grid-col-4">
-									<!-- Course Block -->
-									<?php
-									// var_dump($listclass);
-									// die();
-									foreach ($listclass as $class) {
-										extract($class);
-										echo '
-											<div class="course-block mr-10 w-30">
-												<div class="inner-box">
-													<div class="image-box">
-														<figure class="image"><a href="page-course-details.html"><img
-																	src="images/resource/course-1.jpg" alt=""></a></figure>
-														<span class="price">$price</span>
-														<div class="value">Ca '.$ca_hoc_id.'</div>
-														<!-- <a href="" class="value theme-btn btn-style-one ">BUY THIS COURSE</a> -->
-														<!-- <div class="value">BUY THIS COURSE</div> -->
-													</div>
-													<div class="content-box">
-														<ul class="course-info">
-															<li><i class="fa fa-book"></i> 8 Lessons</li>
-															<li><i class="fa fa-users"></i> 16 Students</li>
-														</ul>
-														<h5 class="title"><a href="page-course-details.html">'.$name.'</a></h5>
-
-														<div class="other-info">
-															<div class="rating-box">
-																<span class="text">(4.9 /8 Rating)</span>
-																<div class="rating"><span class="fa fa-star"></span><span
-																		class="fa fa-star"></span><span
-																		class="fa fa-star"></span><span
-																		class="fa fa-star"></span><span
-																		class="fa fa-star"></span></div>
-															</div>
-															<div class="duration"><i class="fa fa-clock"></i> 3 Weeks</div>
-
-														</div>
-													</div>
-
-
-												</div>
-												<div class="center">
-													<a href="#"
-														class="value theme-btn btn-style-one course-details-price-btn">Register</a>
-												</div>
-											</div> ';
-									}
-
-									?>
-									<!-- Course Block -->
-									<!-- <div class="course-block mr-10">
-										<div class="inner-box">
-											<div class="image-box">
-												<figure class="image"><a href="page-course-details.html"><img
-															src="images/resource/course-2.jpg" alt=""></a></figure>
-												<span class="price">$49.00</span>
-												<div class="value">Advanced</div>
-											</div>
-											<div class="content-box">
-												<ul class="course-info">
-													<li><i class="fa fa-book"></i> 8 Lessons</li>
-													<li><i class="fa fa-users"></i> 16 Students</li>
-												</ul>
-												<h5 class="title"><a href="page-course-details.html">IELTS 1.2</a></h5>
-												<div class="other-info">
-													<div class="rating-box">
-														<span class="text">(4.9 /8 Rating)</span>
-														<div class="rating"><span class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span></div>
-													</div>
-													<div class="duration">3 Weeks</div>
-												</div>
-											</div>
-
-
-										</div>
-										<div class="center">
-											<a href="#"
-												class="value theme-btn btn-style-one course-details-price-btn">Buy
-												This
-												Course</a>
-										</div>
-									</div> -->
-
-									<!-- Course Block -->
-									<!-- <div class="course-block mr-10">
-										<div class="inner-box">
-											<div class="image-box">
-												<figure class="image"><a href="page-course-details.html"><img
-															src="images/resource/course-3.jpg" alt=""></a></figure>
-												<span class="price">$49.00</span>
-												<div class="value">Advanced</div>
-											</div>
-											<div class="content-box">
-												<ul class="course-info">
-													<li><i class="fa fa-book"></i> 8 Lessons</li>
-													<li><i class="fa fa-users"></i> 16 Students</li>
-												</ul>
-												<h5 class="title"><a href="page-course-details.html">IELTS 2.1
-													</a></h5>
-												<div class="other-info">
-													<div class="rating-box">
-														<span class="text">(4.9 /8 Rating)</span>
-														<div class="rating"><span class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span></div>
-													</div>
-													<div class="duration">3 Weeks</div>
-												</div>
-											</div>
-
-
-										</div>
-										<div class="">
-											<a href="#"
-												class="value theme-btn btn-style-one course-details-price-btn">Buy
-												This
-												Course</a>
-										</div>
-									</div> -->
-
-									<!-- Course Block -->
-									<!-- <div class="course-block mr-10">
-										<div class="inner-box">
-											<div class="image-box">
-												<figure class="image"><a href="page-course-details.html"><img
-															src="images/resource/course-4.jpg" alt=""></a></figure>
-												<span class="price">$49.00</span>
-												<div class="value">Advanced</div>
-											</div>
-											<div class="content-box">
-												<ul class="course-info">
-													<li><i class="fa fa-book"></i> 8 Lessons</li>
-													<li><i class="fa fa-users"></i> 16 Students</li>
-												</ul>
-												<h5 class="title"><a href="page-course-details.html">IELTS 2.2
-													</a></h5>
-												<div class="other-info">
-													<div class="rating-box">
-														<span class="text">(4.9 /8 Rating)</span>
-														<div class="rating"><span class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span><span
-																class="fa fa-star"></span>
-														</div>
-													</div>
-													<div class="duration">3 Weeks</div>
-												</div>
-											</div>
-										</div>
-										<div class="">
-											<a href="#"
-												class="value theme-btn btn-style-one course-details-price-btn">Buy
-												This
-												Course</a>
-										</div>
-									</div> -->
-								</div>
-							</div>
-							<!-- <div class="grid-col-3">
-								<div class="course-block">
-									<div class="inner-box">
-										<div class="image-box">
-											<figure class="image"><a href="page-course-details.html"><img
-														src="images/resource/course-3.jpg" alt=""></a></figure>
-											<span class="price">$49.00</span>
-											<div class="value">Advanced</div>
-										</div>
-										<div class="content-box">
-											<ul class="course-info">
-												<li><i class="fa fa-book"></i> 8 Lessons</li>
-												<li><i class="fa fa-users"></i> 16 Students</li>
-											</ul>
-											<h5 class="title"><a href="page-course-details.html">TOEIC 1.1
-												</a></h5>
-											<div class="other-info">
-												<div class="rating-box">
-													<span class="text">(4.9 /8 Rating)</span>
-													<div class="rating"><span class="fa fa-star"></span><span
-															class="fa fa-star"></span><span
-															class="fa fa-star"></span><span
-															class="fa fa-star"></span><span class="fa fa-star"></span>
-													</div>
-												</div>
-												<div class="duration">3 Weeks</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div> -->
-							<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
-								dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta sunt
-								explicabo. Aelltes port lacus quis enim var sed efficitur turpis gilla sed sit amet
-								finibus eros. Lorem Ipsum is simply dummy text of the printing.</p>
-							<p>When an unknown printer took a galley of type and scrambled it to make a type specimen
-								book. It has survived not only five centuries, but also the leap into electronic
-								typesetting, remaining essentially unchanged. </p>
 							<div class="content mt-40">
 								<div class="text">
 									<h3>What You Will Learn?</h3>
@@ -365,6 +161,56 @@
 									</li>
 								</ul>
 							</div>
+							<h2 class="mt-4">Classes</h2>
+							<div class="carousel-outer">
+								<!-- Courses Carousel -->
+								<div class="grid-col-4">
+									<!-- Course Block -->
+									
+									<?php 
+										// require_once "./model/class.php";
+									foreach ($listclass as $class) {  ?>
+										
+										
+											<div class="course-block mr-10 w-30">
+												<div class="inner-box">
+													<div class="image-box">
+														<figure class="image"><a href="page-course-details.html"><img
+																	src="images/resource/course-1.jpg" alt=""></a></figure>
+														<span class="price"><?php extract($class); echo $ca_name ?></span>
+														<div class="value"> <?php extract($class); echo $day ?></div>
+														<!-- <a href="" class="value theme-btn btn-style-one ">BUY THIS COURSE</a> -->
+														<!-- <div class="value">BUY THIS COURSE</div> -->
+													</div>
+													<div class="content-box">
+														<ul class="course-info">
+															<li><i class="fa fa-book"></i> 8 Lessons</li>
+															<li><i class="fa fa-users"></i> 16 Students</li>
+															<li><i class="fa fa-chalkboard-teacher"></i> <?php extract($class); echo $customer_name ?></li>
+														</ul>
+														<h5 class="title"><a href="page-course-details.html"><?php extract($class); echo $name ?></a></h5>
+														<div class="other-info">
+															<!-- <div class="rating-box">
+																<span class="text">(4.9 /8 Rating)</span>
+																<div class="rating"><span class="fa fa-star"></span><span
+																		class="fa fa-star"></span><span
+																		class="fa fa-star"></span><span
+																		class="fa fa-star"></span><span
+																		class="fa fa-star"></span></div>
+															</div>
+															<div class="duration"><i class="fa fa-clock"></i> 3 Weeks</div> -->
+														</div>
+													</div>
+
+
+												</div>
+												<div class="center">
+													<a href="./buy.php?act=buy" class="value theme-btn btn-style-one course-details-price-btn">Buy</a>
+												</div>
+											</div> 
+									<?php } ?>
+								</div>
+							</div>
 						</div>
 					</div>
 					<!--End courses Details Content-->
@@ -389,10 +235,19 @@
 									<span class="course-details-info-icon"><i class="far fa-flag"></i></span>
 									Skill Level: <span>Basic</span>
 								</li>
+								<?php foreach($listca as $cl){
+										?> 
 								<li class="course-details-info-link">
 									<span class="course-details-info-icon"><i class="far fa-bell"></i></span>
-									Time: <span>7:30 AM - 9:30 AM</span>
+									Time: 
+									<span><?php extract($cl); echo $name  ?></span>
+									<span><?php extract($cl); echo $time_start  ?>  <?php extract($cl); echo $time_end  ?></span>
+										
+										
+									
 								</li>
+								<?php
+									} ?> 
 							</ul>
 
 							<!-- <div class="course-details-price">
@@ -403,14 +258,18 @@
 
 							<div class="latest-course mb-30">
 								<h4 class="latest-course-title mb-30">Diffirent Courses</h4>
+								<?php foreach ($listcourse as $class) {
+								// $link = "index.php?act=class&idkh=".$_GET['idkh'];
+							?>
+
 								<div class="latest-course-item">
 									<div class="latest-course-img">
 										<img src="images/resource/course-1.jpg" alt="">
 									</div>
 									<div class="latest-course-content">
-										<a class="latest-course-author" href="#">by <span>Basic</span></a>
-										<h5><a href="page-course-details.html">TOEIC 1.1</a></h5>
-
+										
+										<a class="latest-course-author" href="#">by <span>Basic</span></a>										
+										<h5><a href="./index.php?act=class&idkh=<?php extract($class); echo $id ?>"><?php extract($class); echo $name ?></a></h5>
 										<div class="latest-course-stars">
 											<i class="fas fa-star"></i>
 											<i class="fas fa-star"></i>
@@ -420,46 +279,18 @@
 											<span>4.8</span>
 
 										</div>
+											
+										
+
 									</div>
+									
 								</div>
-								<div class="latest-course-item">
-									<div class="latest-course-img">
-										<img src="images/resource/course-2.jpg" alt="">
-									</div>
-									<div class="latest-course-content">
-										<a class="latest-course-author" href="#">by <span>Advanced</span></a>
-										<h5><a href="page-course-details.html">TOEIC 1.2</a></h5>
-										<div class="latest-course-stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<span>5.0</span>
-										</div>
-									</div>
-								</div>
-								<div class="latest-course-item">
-									<div class="latest-course-img">
-										<img src="images/resource/course-3.jpg" alt="">
-									</div>
-									<div class="latest-course-content">
-										<a class="latest-course-author" href="#">by <span>Advanced</span></a>
-										<h5><a href="page-course-details.html">Development Studies</a></h5>
-										<div class="latest-course-stars">
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<i class="fas fa-star"></i>
-											<span>4.9</span>
-										</div>
-									</div>
-								</div>
+								<?php } ?>
 							</div>
 
 						</div>
 					</div>
+					
 					<!--End courses Details Sidebar-->
 				</div>
 			</div>
@@ -564,6 +395,7 @@
 
 	<!-- Scroll To Top -->
 	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
 
 
 	<script src="js/jquery.js"></script>
