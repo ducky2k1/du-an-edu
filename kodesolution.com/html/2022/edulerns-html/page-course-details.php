@@ -54,7 +54,11 @@
 		<section class="page-title" style="background-image: url(images/background/page-title.jpg);">
 			<div class="auto-container">
 				<div class="title-outer">
-					<h1 class="title">IELTS</h1>
+					<h1 class="title">
+						<?php 
+							$tenkh = $listclass[0]["tenkh"];
+							echo $tenkh;
+						?></h1>
 					<ul class="page-breadcrumb">
 						<li><a href="index.html">Home</a></li>
 						<li><a href="#">Pages</a></li>
@@ -97,7 +101,7 @@
 													<div class="content-box">
 														<ul class="course-info">
 															<li><i class="fa fa-clock"></i> '.$cahoc_start.' - '.$cahoc_end.'</li>
-															<li><i class="fa fa-user-circle"></i> '.$tengv.'</li>
+															<li><i class="fa fa-chalkboard-teacher"></i> '.$tengv.'</li>
 															<!--	<li><i class="fa fa-users"></i> 16 Students</li>  -->
 														</ul>
 														<h5 class="title"><a href="page-course-details.html">'.$tenlop.'</a></h5>
