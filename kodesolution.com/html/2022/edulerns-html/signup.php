@@ -13,8 +13,10 @@
 </style>
 
 <body>
+
+
     <section class="vh-100" style="background-color: #eee;">
-        <div class="p-10 mlt10 col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+        <div class="p-10 col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
             <a href="index.php"><img src="images/logo.png" class="" alt=""></a>
         </div>
         <div class="container h-100">
@@ -25,9 +27,9 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign In</p>
 
-                                    <form class="mx-1 mx-md-4" action="index.php?act=dangky" method="post">
+                                    <form class="mx-1 mx-md-4" action="./index.php?act=dangky" method="post">
 
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <div class="form-outline flex-fill mb-0">
@@ -73,6 +75,7 @@
                                             
                                         ?>
                                     </h2>
+
                                 </div>
 
                             </div>

@@ -36,7 +36,7 @@
 
 		<!-- Main Header-->
 		<?php
-			include "header.php";	
+			include "./header.php";
 		?>
 		<!--End Main Header -->
 
@@ -61,6 +61,7 @@
 				<div class="row">
 					<!-- Course Block Two-->
 					<?php
+					$listcourse = loadall_course();
 					foreach ($listcourse as $course) {
 						extract($course);
 						$link = "index.php?act=class&idkh=".$id;

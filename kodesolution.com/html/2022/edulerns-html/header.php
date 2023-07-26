@@ -1,4 +1,15 @@
-<header class="main-header header-style-one">
+
+<?php
+    // session_start();
+    // require "./model/pdo.php";
+    if (isset($_SESSION['email'])) {
+        $email=$_SESSION['email'];
+        $sql="SELECT * from dtb_member where email='$email'";
+        $info=pdo_query_one($sql);
+        $ma_us=$info['id'];
+    }
+?>
+<header class="main-header header-style-one" style="z-index:100; position: fixed;  top: 0; background-color:aliceblue;">
 
 			<!-- Main box -->
 			<div class="main-box">
@@ -12,55 +23,9 @@
 					<nav class="nav main-menu">
 						<ul class="navigation">
 							<li class="current "><a href="index.php">Home</a>
-								<!-- <ul>
-									<li><a href="index.html">Home page 01</a></li>
-									<li><a href="index-2.html">Home page 02</a></li>
-									<li class="dropdown"><a href="#">Single</a>
-										<ul>
-											<li><a href="index-1-single.html">Home Single 1</a></li>
-											<li><a href="index-2-single.html">Home Single 2</a></li>
-										</ul>
-									</li>
-									<li class="dropdown"><a href="#">Dark</a>
-										<ul>
-											<li><a href="index-1-dark.html">Home Dark 1</a></li>
-											<li><a href="index-2-dark.html">Home Dark 2</a></li>
-										</ul>
-									</li>
-									<li class="dropdown"><a href="#">Boxed</a>
-										<ul>
-											<li><a href="index-1-boxed.html">Home Boxed 1</a></li>
-											<li><a href="index-2-boxed.html">Home Boxed 2</a></li>
-										</ul>
-									</li>
-									<li class="dropdown"><a href="#">RTL</a>
-										<ul>
-											<li><a href="index-1-rtl.html">Home RTL 1</a></li>
-										</ul>
-									</li>
-									<li class="dropdown"><a href="#">Header Styles</a>
-										<ul>
-											<li><a href="index.html">Header Style One</a></li>
-											<li><a href="index-2.html">Header Style Two</a></li>
-										</ul>
-									</li>
-								</ul> -->
+
 							</li>
-							<!-- <li class="dropdown"><a href="#">Pages</a>
-								<ul>
-									<li><a href="page-about.html">About</a></li>
-									<li class="dropdown"><a href="#">Team</a>
-										<ul>
-											<li><a href="page-team.html">Team List</a></li>
-											<li><a href="page-team-details.html">Team Details</a></li>
-										</ul>
-									</li>
-									<li><a href="page-testimonial.html">Testimonial</a></li>
-									<li><a href="page-pricing.html">Pricing</a></li>
-									<li><a href="page-faq.html">FAQ</a></li>
-									<li><a href="page-404.html">Page 404</a></li>
-								</ul>
-							</li> -->
+
 							<li class="dropdown"><a href="page-courses.php">Courses</a>
 								<ul>
 									<?php
@@ -75,47 +40,60 @@
 									<!-- <li><a href="page-course-details.html">Course Details</a></li> -->
 								</ul>
 							</li>
-							<!-- <li class="dropdown"><a href="#">Shop</a>
-								<ul>
-									<li><a href="shop-products.html">Products</a></li>
-									<li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-									<li><a href="shop-product-details.html">Product Details</a></li>
-									<li><a href="shop-cart.html">Cart</a></li>
-									<li><a href="shop-checkout.html">Checkout</a></li>
-								</ul>
-							</li> -->
-							<!-- <li class="dropdown"><a href="#">News</a>
-								<ul>
-									<li><a href="news-grid.html">News Grid</a></li>
-									<li><a href="news-details.html">News Details</a></li>
-								</ul>
-							</li> -->
+
 							<li><a href="page-contact.php">Contact</a></li>
 						</ul>
 					</nav>
 					<!-- Main Menu End-->
 					<div class="" style="margin-left: 340px;">
-							<a href="./signin.php" style="margin-right:14px"><button class="theme-btn btn-style-one">Signin</button></a>
-							<a href="./signup.php"><button class="theme-btn btn-style-one">Signup</button></a>
+							<!-- <a href="./signin.php" style="margin-right:14px"><button class="theme-btn btn-style-one">Signin</button></a>
+							<a href="./signup.php"><button class="theme-btn btn-style-one">Signup</button></a> -->
+							<?php
+								if (!isset($_SESSION['email'])) {
+									echo '
+									<a href="./index.php?act=dn"><button class="theme-btn btn-style-one">Signin</button></a>
+									<a href="./index.php?act=dangky"><button class="theme-btn btn-style-one">Signup</button></a>
+								</a>
+									';
+								} else { ?>
+
+								<div class="" style="display:flex;justify-content:center;align-items:center;">
+								<img src="./img_upload/<?php 										
+										if(isset($info)&&($info)){
+											echo $info['image'];
+										} ?>" alt="" style="width:50px;height:50px;border-radius: 50%; border:1px solid black; margin-right: 20px;">
+								<nav class="nav main-menu">
+									<ul class="navigation">
+										<li class="dropdown"><a href="page-courses.php">									
+											<?php 
+												if(isset($info)&&($info)){
+													echo $info['name'];
+												}
+											?></a>
+											<ul>
+												<li><a tabindex="-1" href="./buy.php?act=info">Thông tin</a></li>
+												<li><a tabindex="-1" href="#">Hóa đơn</a></li>
+												<li >
+													<a class="test" tabindex="-1" href="./index.php?act=dx">Đăng xuất </a>
+												</li>
+												<!-- <li><a href="page-course-details.html">Course Details</a></li> -->
+											</ul>
+										</li>
+									</ul>
+								</nav>
+								</div>
+
+										
+
+
+
+
+							<?php	}
+							?>
+
 						</div>
 
 					<div class="outer-box">
-						<!-- <a href="tel:+92(8800)9806" class="info-btn">
-							<i class="icon fa fa-phone"></i>
-							<small>Call Anytime</small><br> +92 (8800) - 8960
-						</a> -->
-						
-
-						<!-- <div class="ui-btn-outer">
-							<button class="ui-btn ui-btn search-btn">
-								<span class="icon lnr lnr-icon-search">Login</span>
-
-							</button>
-							<a href="#" class="ui-btn"><i class="lnr-icon-shopping-cart"></i></a>
-						</div> -->
-
-						<!-- <a href="#" class="theme-btn btn-style-one"><span class="btn-title">Try For Free</span></a> -->
-
 						<!-- Mobile Nav toggler -->
 						<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
 					</div>
@@ -191,34 +169,5 @@
 			</div>
 			<!-- End Header Search -->
 
-			<!-- Sticky Header  -->
-			<div class="sticky-header">
-				<div class="auto-container">
-					<div class="inner-container">
-						<!--Logo nav-->
-						<div class="logo">
-							<a href="index.php" title=""><img src="images/logo.png" alt="" title=""></a>
-						</div>
-
-						<!--Right Col-->
-						<div class="nav-outer">
-							<!-- Main Menu -->
-							<nav class="main-menu">
-								<div class="navbar-collapse show collapse clearfix">
-									<ul class="navigation clearfix">
-										<!--Keep This Empty / Menu will come through Javascript-->
-									</ul>
-								</div>
-							</nav><!-- Main Menu End-->
-						
-							<!--Mobile Navigation Toggler-->
-							<div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-						</div>
-						<div class="">
-							<a href="./signin.php" style="margin-right:14px"><button class="theme-btn btn-style-one">Signin</button></a>
-							<a href="./signup.php"><button class="theme-btn btn-style-one">Signup</button></a>
-						</div>
-					</div>
-				</div>
-			</div><!-- End Sticky Menu -->
+			
 		</header>
