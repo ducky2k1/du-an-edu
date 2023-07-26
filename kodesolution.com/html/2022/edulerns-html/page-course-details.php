@@ -20,7 +20,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!--[if lt IE 9]><script src="js/html5shiv.js"></script><![endif]-->
 	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -171,7 +171,7 @@
 										// require_once "./model/class.php";
 									foreach ($listclass as $class) {  ?>
 										
-										
+											<form action="./buy.php?act=buy" method="POST" >
 											<div class="course-block mr-10 w-30">
 												<div class="inner-box">
 													<div class="image-box">
@@ -205,10 +205,12 @@
 
 												</div>
 												<div class="center">
-													<a href="./buy.php?act=buy" class="value theme-btn btn-style-one course-details-price-btn">Buy</a>
+													<button type="submit" name="redirect" class="value theme-btn btn-style-one course-details-price-btn">Buy</button>
 												</div>
 											</div> 
-									<?php } ?>
+											</form>
+									<?php } 
+									?>
 								</div>
 							</div>
 						</div>
