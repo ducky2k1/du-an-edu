@@ -19,7 +19,7 @@
     }
     function count_num($id){
         $sql ="SELECT COUNT(lop_id) as count_lop_id
-        FROM dtb_order
+        FROM dtb_hoadon
         WHERE lop_id = $id";
         return pdo_query($sql);
     }

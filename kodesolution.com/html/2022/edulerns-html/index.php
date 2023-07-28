@@ -5,6 +5,7 @@
 	include "./model/course.php";
 	include "./model/class.php";
 	include "./model/taikhoan.php";
+	include "./model/cart.php";
 	$listcourse = loadall_course();
 
 
@@ -77,6 +78,11 @@
 				case 'dx':
 					require_once "./logout.php";
 					// delete_cookie('duc');
+					header('location:home.php');
+				break;
+				case 'hoadon':
+					$listhoadon = loadall_hoadon_member($_SESSION['id_mem']);
+					require_once "./hoadon.php";
 					header('location:home.php');
 				break;
 		default:

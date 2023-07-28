@@ -1,6 +1,9 @@
 <?php
-    $_SESSION['id_class'] = $_GET['id_class'];
-    $_SESSION['price-class'] = $_GET['price'];
+    // var_dump($listhoadon);
+    // die();
+    // session_start();
+    // $_SESSION['id_class'] = $_GET['id_class'];
+    // $_SESSION['price-class'] = $_GET['price'];
 ?>
 <head>
 	<meta charset="utf-8">
@@ -152,8 +155,11 @@ hr {
 }
 
 </style>
-
+<body>
     
+<?php
+    include "./header.php";
+?>
 <div class="page-content container">
     <div class="page-header text-blue-d2">
         <!-- <h1 class="page-title text-secondary-d1">
@@ -185,7 +191,7 @@ hr {
                     <div class="col-12">
                         <div class="text-center text-150">
                             <i class="fa fa-book fa-2x text-success-m2 mr-1"></i>
-                            <span class="text-default-d3">Hóa đơn thanh toán</span>
+                            <span class="text-default-d3">Tất cả hóa đơn</span>
                         </div>
                     </div>
                 </div>
@@ -193,7 +199,7 @@ hr {
 
                 <hr class="row brc-default-l1 mx-n1 mb-4" />
 
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-sm-6">
                         <div><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
                             <span class="text-sm text-grey-m2 align-middle">To :</span>
@@ -226,49 +232,49 @@ hr {
                             </b></div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 
                 <?php 
-                    $listCart = getListCart($ma_us);
-                    $getList = getListCartNew($ma_us);
+                    // $listCart = getListCart($ma_us);
+                    // $getList = getListCartNew($ma_us);
                 ?>
                 <form action="./buy.php?act=payment" method="post">
                     <table class="table" id="myTable">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">Product</th>
-                                <th scope="col">Unit Price</th>
-                                <th scope="col">Tax</th>
-                                <th scope="col">Amount</th>
+                                <th scope="col">Tên lớp</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Thời gian đăng ký</th>
+                                <th scope="col">Thời gian thanh toán</th>
+                                <th scope="col">Ngân hàng</th>
+                                <th scope="col">Trạng thái</th>
+                                <th scope="col">Hình thức</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($getList as $lt){ 
-                                $all = 0;
-                                for($i=0;$i < count($getList);$i++){
-                                    
-                                
-                        ?>
-
+                            <?php foreach($listhoadon as $hoadon){ 
+                                extract($hoadon);
+                            ?>
                             <tr>
-                                <td scope="row"><?php extract($lt); echo $course_name ?></td>
-                                <td><?php extract($lt); echo $price ?></td>
-                                <td>10%</td>
-                                <td>
-                                    <?php extract($lt); 
-                                    $sum = $price - $price*0.1;
-                                    echo $sum; 
-                                    ?>
-                                </td>
-
+                                <td scope="row"><?=$lop_id?></td>
+                                <td scope="row"><?=$sotien_vnd?>$</td>
+                                <td scope="row"><?=$payment_time?></td>
+                                <td scope="row"><?=$register_time?></td>
+                                <td scope="row"><?=$bank_name?></td>
+                                <td scope="row"><?=$status?></td>
+                                <td scope="row"><?=$hinhthuc?></td>
+                                <td scope="row">
+                                    <button><a href="">
+                                        <?php if($status == 'Chưa thanh toán' && $hinhthuc != 'Thanh toán tại trung tâm') echo 'Thanh toán'; ?>
+                                    </a></button></td>
                             </tr>
-                            <?php $all += $price; }} ?>
-
+                            <?php } ?>
                         </tbody>
                     </table>
                     <div class="row border-b-2 brc-default-l2"></div>
 
-                    <div class="row mt-3">
+                    <!-- <div class="row mt-3">
                         <div class="col-12 col-sm-7 text-grey-d2 text-95 mt-2 mt-lg-0">
                             Extra note such as company or payment information...
                         </div>
@@ -305,19 +311,20 @@ hr {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <span class="text-secondary-d1 text-105">Thank you for your business</span>
+                    </div> -->
+                    <!-- <div> -->
+                        <!-- <span class="text-secondary-d1 text-105">Thank you for your business</span> -->
                         <!-- <button class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0" value="Pay Now"></button> -->
                         <!-- <a href="./buy.php?act=add_order" class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0" name="pay">Pay Now</a> -->
-                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                            <input type="submit" name="pay" value="Chuyển khoản" class="mr10 btn btn-primary btn-lg">
-                            <input type="submit" name="pay-center" value="Thanh toán tại trung tâm" class="btn btn-primary btn-lg">
-                        </div>
-                    </div>
+                        <!-- <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"> -->
+                            <!-- <input type="submit" name="pay" value="Chuyển khoản" class="mr10 btn btn-primary btn-lg"> -->
+                            <!-- <input type="submit" name="pay-center" value="Thanh toán tại trung tâm" class="btn btn-primary btn-lg"> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
                 </form>
 
             </div>
         </div>
     </div>
 </div>
+</body>

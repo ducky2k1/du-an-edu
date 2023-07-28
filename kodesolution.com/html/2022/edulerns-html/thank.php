@@ -3,7 +3,9 @@
     require "./model/pdo.php";
     require "./model/cart.php";
     $vnd = $_GET['vnp_Amount'] / 100;
-    set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $vnd, $_GET['vnp_BankCode'], $_GET['vnp_PayDate']);
+    $hinhthuc = 'Chuyển khoản';
+    $status = 'Đã thanh toán';
+    update_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_GET['vnp_BankCode'], $_GET['vnp_PayDate'], $status, $hinhthuc);
     // echo $_SESSION['id_class'].'<br>';
     // echo $_SESSION['id_mem'].'<br>';
     // echo $_SESSION['sumAll'];

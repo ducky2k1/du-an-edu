@@ -32,7 +32,16 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                     date_default_timezone_set("Asia/Ho_Chi_Minh");
                     $getDate = date("Y-m-d");
                     setCart($ma_us,$id_course,$getDate,$id_class);
-                        require "./cart.php";
+
+                    echo '<script>alert("Đặt chỗ lớp học thành công. Vùi lòng thanh toán!")</script>';
+                    
+                    require "./cart.php";
+                    // Lấy thời gian đăng ký
+                    $dateTime = new DateTime();
+                    $currentDateTime = $dateTime->format("Y-m-d H:i:s");
+                    $_SESSION['regis-time'] = $currentDateTime;
+                    $status = 'Chưa thanh toán';
+                    set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_SESSION['price-class'], NULL, $_SESSION['regis-time'], NULL, $status, NULL );
 
                     }             
                 } } else{
@@ -46,9 +55,10 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         break;
 
         case 'payment':
+            
             if(isset($_POST['pay']) && ($_POST['pay'])){
                 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-                        $vnp_Returnurl = "http://localhost/26-7-duan1/du-an-edu/kodesolution.com/html/2022/edulerns-html/thank.php";
+                        $vnp_Returnurl = "http://localhost/du-an-edu/kodesolution.com/html/2022/edulerns-html/thank.php";
                         $vnp_TmnCode = "LZD9B10K";//Mã website tại VNPAY 
                         $vnp_HashSecret = "JPJXJNQVZJOROQJMZHJNENDTQVFICYUM"; //Chuỗi bí mật
                         
@@ -149,6 +159,17 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                                 echo json_encode($returnData);
                             }
             }
+            else if(isset($_POST['pay-center']) && ($_POST['pay-center'])) {
+                
+                // var_dump($currentDateTime);
+                // die();
+                // var_dump($_SESSION['regis-time']);
+                // die();
+                $hinhthuc = 'Thanh toán tại trung tâm';
+                $status = 'Chưa thanh toán';
+                update_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], NULL, NULL, $status, $hinhthuc );
+                echo '<script>alert("Thành công! Vui lòng đến trung tâm để thanh toán!")</script>';
+                echo '<script>window.location.href="index.php";</script>';            }
             break;
         case 'add_order':
             $listCartNew = getListCartNew($ma_us);

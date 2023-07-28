@@ -160,7 +160,7 @@
 
 												</div>
 												<div class="center">
-													<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>" class="value theme-btn btn-style-one course-details-price-btn">Buy</a>
+													<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
 												</div>
 											</div> 
 									<?php } ?>

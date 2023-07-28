@@ -72,7 +72,7 @@
 											?></a>
 											<ul>
 												<li><a tabindex="-1" href="./buy.php?act=info">Thông tin</a></li>
-												<li><a tabindex="-1" href="#">Hóa đơn</a></li>
+												<li><a tabindex="-1" href="./index.php?act=hoadon">Hóa đơn</a></li>
 												<li >
 													<a class="test" tabindex="-1" href="./index.php?act=dx">Đăng xuất </a>
 												</li>
