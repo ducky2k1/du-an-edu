@@ -83,7 +83,7 @@
 				case 'hoadon':
 					$listhoadon = loadall_hoadon_member($_SESSION['id_mem']);
 					require_once "./hoadon.php";
-					header('location:home.php');
+					// header('location:home.php');
 				break;
 		default:
 				include "home.php";

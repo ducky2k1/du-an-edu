@@ -7,6 +7,7 @@
     require "./model/cart.php";
     require "./model/order.php";
 
+    // $listhoadon = loadall_hoadon_member($_SESSION['id_mem']);
     if (isset($_SESSION['email'])) {
         $email=$_SESSION['email'];
         $sql="SELECT * from dtb_member where email='$email'";
@@ -26,6 +27,10 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                         require_once "./fi.php";
 
                     } else {
+                        if(loadsame_hoadon_member($_SESSION['id_mem'], $_GET['id_class']) == false) {
+                            echo '<script>alert("Bạn đã đăng ký khóa học này trước đó, vui lòng kiểm tra hóa đơn");
+                                        window.location.href="index.php?act=hoadon";</script>';
+                        } else {
                     $listCart = getListCart($ma_us);
                     $id_course = $_GET['id_course'];
                     $id_class = $_GET['id_class'];
@@ -42,7 +47,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                     $_SESSION['regis-time'] = $currentDateTime;
                     $status = 'Chưa thanh toán';
                     set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_SESSION['price-class'], NULL, $_SESSION['regis-time'], NULL, $status, NULL );
-
+                        }
                     }             
                 } } else{
                     echo '<script>
@@ -65,7 +70,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                         $vnp_TxnRef = rand(00,9999); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
                         $vnp_OrderInfo = 'Noi dung thanh toan';
                         $vnp_OrderType = 'billpayment';
-                        $vnp_Amount = $_SESSION['sumAll'] * 23500 * 100;
+                        $vnp_Amount = $_SESSION['sumAll'] * 100;
                         $vnp_Locale = 'vn';
                         $vnp_BankCode = 'VNPAY';
                         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];

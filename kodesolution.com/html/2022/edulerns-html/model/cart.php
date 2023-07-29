@@ -103,8 +103,31 @@
         pdo_execute($sql);
     }
     function loadall_hoadon_member($id) {
-        $sql = "SELECT * from dtb_hoadon where member_id = $id";
+        $sql = "SELECT * FROM dtb_hoadon 
+                INNER JOIN dtb_lop ON dtb_hoadon.lop_id = dtb_lop.id
+                WHERE member_id = $id";
         $listhoadon = pdo_query($sql);
         return $listhoadon;
     }
+    // function loadsame_hoadon_member($mem_id, $lop_id) {
+    //     $sql = "SELECT * from dtb_hoadon where member_id = $mem_id and lop_id = $lop_id";
+    //     $listhoadon = pdo_query($sql);
+    //     return $listhoadon;
+    // }
+    function loadsame_hoadon_member($mem_id, $lop_id) {
+        $sql = "SELECT * from dtb_hoadon where member_id = $mem_id and lop_id = $lop_id";
+        $listhoadon = pdo_query($sql);
+    
+        // Kiểm tra số lượng bản ghi trả về từ câu truy vấn SQL
+        $numRows = count($listhoadon);
+    
+        if ($numRows > 0) {
+            // Nếu có bản ghi trả về, trả về danh sách hóa đơn
+            return false;
+        } else {
+            // Nếu không có bản ghi nào trả về, trả về false
+            return true;
+        }
+    }
+    
 ?>

@@ -22,11 +22,11 @@
 
 					<nav class="nav main-menu">
 						<ul class="navigation">
-							<li class="current "><a href="index.php">Home</a>
+							<li class="current "><a href="index.php">Trang chủ</a>
 
 							</li>
 
-							<li class="dropdown"><a href="page-courses.php">Courses</a>
+							<li class="dropdown"><a href="page-courses.php">Khóa học</a>
 								<ul>
 									<?php
 										foreach ($listcourse as $course) {
@@ -41,7 +41,7 @@
 								</ul>
 							</li>
 
-							<li><a href="page-contact.php">Contact</a></li>
+							<li><a href="page-contact.php">Liên hệ</a></li>
 						</ul>
 					</nav>
 					<!-- Main Menu End-->
@@ -51,8 +51,8 @@
 							<?php
 								if (!isset($_SESSION['email'])) {
 									echo '
-									<a href="./index.php?act=dn"><button class="theme-btn btn-style-one">Signin</button></a>
-									<a href="./index.php?act=dangky"><button class="theme-btn btn-style-one">Signup</button></a>
+									<a href="./index.php?act=dn"><button class="theme-btn btn-style-one">Đăng ký</button></a>
+									<a href="./index.php?act=dangky"><button class="theme-btn btn-style-one">Đăng nhập</button></a>
 								</a>
 									';
 								} else { ?>

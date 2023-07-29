@@ -1,6 +1,11 @@
 <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        // Hàm session_start() chưa được gọi, bạn có thể gọi nó ở đây.
+        session_start();
+    }
     $_SESSION['id_class'] = $_GET['id_class'];
     $_SESSION['price-class'] = $_GET['price'];
+
 ?>
 <head>
 	<meta charset="utf-8">
@@ -229,41 +234,25 @@ hr {
                 </div>
                 
                 <?php 
-                    $listCart = getListCart($ma_us);
-                    $getList = getListCartNew($ma_us);
+                    // $hoadon = loadone_hoadon_member($_SESSION['id_mem'], $_GET['id_class']);
+                    // extract($hoadon);
+                    // $listCart = getListCart($ma_us);
+                    // $getList = getListCartNew($ma_us);
                 ?>
                 <form action="./buy.php?act=payment" method="post">
                     <table class="table" id="myTable">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">Product</th>
-                                <th scope="col">Unit Price</th>
-                                <th scope="col">Tax</th>
-                                <th scope="col">Amount</th>
+                                <th scope="col">Tên lớp</th>
+                                <th scope="col">Giá($)</th>
+                                <th scope="col">Thành tiền(vnd)</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($getList as $lt){ 
-                                $all = 0;
-                                for($i=0;$i < count($getList);$i++){
-                                    
-                                
-                        ?>
-
                             <tr>
-                                <td scope="row"><?php extract($lt); echo $course_name ?></td>
-                                <td><?php extract($lt); echo $price ?></td>
-                                <td>10%</td>
-                                <td>
-                                    <?php extract($lt); 
-                                    $sum = $price - $price*0.1;
-                                    echo $sum; 
-                                    ?>
-                                </td>
-
-                            </tr>
-                            <?php $all += $price; }} ?>
-
+                                <td scope="row"><?php echo $_GET['tenlop']; ?></td>
+                                <td scope="row"><?php echo $_GET['price']; ?></td>
+                                <td scope="row"><?php echo $_GET['price'] *23500; ?></td>
                         </tbody>
                     </table>
                     <div class="row border-b-2 brc-default-l2"></div>
@@ -279,31 +268,12 @@ hr {
                                     Total price
                                 </div>
                                 <div class="col-5">
-                                    <span class="text-120 text-secondary-d1"><?php echo $all ?></span>
+                                    <span class="text-120 text-secondary-d1"><?php echo $_GET['price'] *23500 ?> VND</span>
                                 </div>
                             </div>
-
-                            <div class="row my-2">
-                                <div class="col-7 text-right">
-                                    Tax (10%)
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-110 text-secondary-d1"><?php $tax = $price*0.1; echo $tax ?></span>
-                                </div>
-                            </div>
-
-                            <div class="row my-2 align-items-center bgc-primary-l3 p-2">
-                                <div class="col-7 text-right">
-                                    Total Amount
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-150 text-success-d3 opacity-2">
-                                        <?php $sumAll = $all + $tax; echo $sumAll;
-                                            $_SESSION['sumAll'] = $sumAll;
-                                        ?>
-                                    </span>
-                                </div>
-                            </div>
+                        <?php
+                            $_SESSION['sumAll'] = $_GET['price'] *23500;
+                        ?>
                         </div>
                     </div>
                     <div>

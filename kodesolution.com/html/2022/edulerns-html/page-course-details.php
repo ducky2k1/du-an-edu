@@ -72,49 +72,7 @@
 					<div class="col-xl-8 col-lg-8">
 						<div class="courses-details__content">
 							<!-- <img src="images/resource/course-details.jpg" alt="" /> -->
-							<div class="content mt-40">
-								<div class="text">
-									<h3>What You Will Learn?</h3>
-									<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est
-										qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae
-										vitae dicta sunt explicabo.</p>
-								</div>
-								<div class="row mt-30">
-									<!-- Category Block Two -->
-									<div class="category-block-current-two col-lg-4 col-md-6 col-sm-6">
-										<div class="inner-box">
-											<div class="icon-box">
-												<i class="icon flaticon-elearning"></i>
-											</div>
-											<h4 class="title">Online degree programs</h4>
-											<span class="sub-title">26 Courses</span>
-										</div>
-									</div>
-
-									<!-- Category Block Two -->
-									<div class="category-block-current-two col-lg-4 col-md-6 col-sm-6">
-										<div class="inner-box">
-											<div class="icon-box">
-												<i class="icon flaticon-study-1"></i>
-											</div>
-											<h4 class="title">Non-degree programs</h4>
-											<span class="sub-title">38 Courses</span>
-										</div>
-									</div>
-
-									<!-- Category Block Two -->
-									<div class="category-block-current-two col-lg-4 col-md-6 col-sm-6">
-										<div class="inner-box">
-											<div class="icon-box">
-												<i class="icon flaticon-study"></i>
-											</div>
-											<h4 class="title">Off campus programs</h4>
-											<span class="sub-title">13 Courses</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<h2 class="mt-4">Classes</h2>
+							<h2 class="mt-4">Tất cả lớp học</h2>
 							<div class="carousel-outer">
 								<!-- Courses Carousel -->
 								<div class="grid-col-4">
@@ -160,12 +118,55 @@
 
 												</div>
 												<div class="center">
-													<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
+													<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>&tenlop=<?php extract($class); echo $name ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
 												</div>
 											</div> 
 									<?php } ?>
 								</div>
 							</div>
+							<div class="content mt-40">
+								<div class="text">
+									<h3>What You Will Learn?</h3>
+									<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est
+										qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae
+										vitae dicta sunt explicabo.</p>
+								</div>
+								<div class="row mt-30">
+									<!-- Category Block Two -->
+									<div class="category-block-current-two col-lg-4 col-md-6 col-sm-6">
+										<div class="inner-box">
+											<div class="icon-box">
+												<i class="icon flaticon-elearning"></i>
+											</div>
+											<h4 class="title">Online degree programs</h4>
+											<span class="sub-title">26 Courses</span>
+										</div>
+									</div>
+
+									<!-- Category Block Two -->
+									<div class="category-block-current-two col-lg-4 col-md-6 col-sm-6">
+										<div class="inner-box">
+											<div class="icon-box">
+												<i class="icon flaticon-study-1"></i>
+											</div>
+											<h4 class="title">Non-degree programs</h4>
+											<span class="sub-title">38 Courses</span>
+										</div>
+									</div>
+
+									<!-- Category Block Two -->
+									<div class="category-block-current-two col-lg-4 col-md-6 col-sm-6">
+										<div class="inner-box">
+											<div class="icon-box">
+												<i class="icon flaticon-study"></i>
+											</div>
+											<h4 class="title">Off campus programs</h4>
+											<span class="sub-title">13 Courses</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 							<div class=" mt-25">
 								<h3>Frequently Asked Question</h3>
 								<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
@@ -224,19 +225,19 @@
 							<ul class="course-details-info">
 								<li class="course-details-info-link">
 									<span class="course-details-info-icon"><i class="far fa-clock"></i></span>
-									Durations: <span>20 hours</span>
+									Thời lượng: <span>20 hours</span>
 								</li>
 								<li class="course-details-info-link">
 									<span class="course-details-info-icon"><i class="far fa-folder-open"></i></span>
-									Lectures: <span>4</span>
+									Giảng viên: <span>4</span>
 								</li>
 								<li class="course-details-info-link">
 									<span class="course-details-info-icon"><i class="far fa-user-circle"></i></span>
-									Students: <span>Max 20</span>
+									Học sinh: <span>Tối đa 20</span>
 								</li>
 								<li class="course-details-info-link">
 									<span class="course-details-info-icon"><i class="far fa-flag"></i></span>
-									Skill Level: <span>Basic</span>
+									Trình độ: <span>Cơ bản</span>
 								</li>
 								 
 							</ul>
@@ -248,7 +249,7 @@
 							</div> -->
 
 							<div class="latest-course mb-30">
-								<h4 class="latest-course-title mb-30">Diffirent Courses</h4>
+								<h4 class="latest-course-title mb-30">Khóa học khác</h4>
 								<?php foreach ($listcourse as $class) {
 								// $link = "index.php?act=class&idkh=".$_GET['idkh'];
 							?>

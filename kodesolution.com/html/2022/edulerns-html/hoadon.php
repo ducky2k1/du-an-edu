@@ -239,10 +239,11 @@ hr {
                     // $getList = getListCartNew($ma_us);
                 ?>
                 <form action="./buy.php?act=payment" method="post">
-                    <table class="table" id="myTable">
+                    <table class="table table-striped" id="myTable">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">Tên lớp</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Lớp</th>
                                 <th scope="col">Giá</th>
                                 <th scope="col">Thời gian đăng ký</th>
                                 <th scope="col">Thời gian thanh toán</th>
@@ -253,19 +254,22 @@ hr {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($listhoadon as $hoadon){ 
+                            <?php
+                                $i = 0; 
+                                foreach($listhoadon as $hoadon){ 
                                 extract($hoadon);
                             ?>
                             <tr>
-                                <td scope="row"><?=$lop_id?></td>
-                                <td scope="row"><?=$sotien_vnd?>$</td>
-                                <td scope="row"><?=$payment_time?></td>
-                                <td scope="row"><?=$register_time?></td>
-                                <td scope="row"><?=$bank_name?></td>
-                                <td scope="row"><?=$status?></td>
-                                <td scope="row"><?=$hinhthuc?></td>
-                                <td scope="row">
-                                    <button><a href="">
+                                <td scope="row"><?=++$i?></td>
+                                <td><?=$name?></td>
+                                <td><?=$sotien_vnd?>$</td>
+                                <td><?=$register_time?></td>
+                                <td><?=$payment_time?></td>
+                                <td><?=$bank_name?></td>
+                                <td><?=$status?></td>
+                                <td><?=$hinhthuc?></td>
+                                <td>
+                                    <button><a href="./cart.php?&id_class=<?=$lop_id?>&price=<?=$sotien_vnd?>&tenlop=<?=$name?>">
                                         <?php if($status == 'Chưa thanh toán' && $hinhthuc != 'Thanh toán tại trung tâm') echo 'Thanh toán'; ?>
                                     </a></button></td>
                             </tr>
