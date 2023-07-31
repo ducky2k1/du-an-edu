@@ -48,11 +48,12 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         case 'payment':
             if(isset($_POST['pay']) && ($_POST['pay'])){
                 $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-                        $vnp_Returnurl = "http://localhost/26-7-duan1/du-an-edu/kodesolution.com/html/2022/edulerns-html/thank.php";
+                        $vnp_Returnurl = "http://localhost/du-an-edu/kodesolution.com/html/2022/edulerns-html/thank.php";
                         $vnp_TmnCode = "LZD9B10K";//Mã website tại VNPAY 
                         $vnp_HashSecret = "JPJXJNQVZJOROQJMZHJNENDTQVFICYUM"; //Chuỗi bí mật
                         
-                        $vnp_TxnRef = rand(00,9999); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+                        $vnp_TxnRef = rand(00,9999);
+                         //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY 
                         $vnp_OrderInfo = 'Noi dung thanh toan';
                         $vnp_OrderType = 'billpayment';
                         $vnp_Amount = $_SESSION['sumAll'] * 23500 * 100;

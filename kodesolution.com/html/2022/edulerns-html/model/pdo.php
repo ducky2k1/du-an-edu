@@ -1,10 +1,11 @@
 <?php
+$db_con=mysqli_connect("localhost","root","","demo_academy");
 function pdo_get_connection(){
     $dburl = "mysql:host=localhost;
     dbname=demo_academy;
     charset=utf8";
     $username = "root";
-    $password = "tung7433";
+    $password = "";
     try{
         $conn = new PDO($dburl,$username,$password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
