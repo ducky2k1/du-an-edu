@@ -36,8 +36,10 @@
 					$pass = $_POST['pass'];
 					// var_dump($name);
 					insert_taikhoan_member($email,$pass,$name);
-
-					$thongbao = 'Đã đăng ký thành công. Vui lòng <a href="./signin.php"> đăng nhập </a> ';
+					echo '<script>alert("Đã đăng ký thành công. Vui lòng đăng nhập");
+                                        window.location.href="signin.php";</script>';
+					// echo '<script>alert("Đã đăng ký thành công. Vui lòng <a href="./signin.php"> đăng nhập </a>")</script>';
+					// $thongbao = 'Đã đăng ký thành công. Vui lòng <a href="./signin.php"> đăng nhập </a> ';
 					
 				}
 				require_once './signup.php';
@@ -83,6 +85,11 @@
 				case 'hoadon':
 					$listhoadon = loadall_hoadon_member($_SESSION['id_mem']);
 					require_once "./hoadon.php";
+					// header('location:home.php');
+				break;
+				case 'lopcuatoi':
+					$listhoadon = load_same_hoadon($_SESSION['id_mem']);
+					require_once "./lopcuatoi.php";
 					// header('location:home.php');
 				break;
 		default:

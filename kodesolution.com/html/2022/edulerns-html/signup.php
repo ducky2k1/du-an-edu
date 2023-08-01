@@ -34,21 +34,21 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="form3Example1c">Họ và tên </label>
-                                                <input type="text" id="form3Example1c" class="form-control" name="name" />
+                                                <input type="text" id="form3Example1c" class="form-control" name="name" required />
                                             </div>
                                         </div>
 
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="form3Example3c"> Email</label>
-                                                <input type="email" id="form3Example3c" class="form-control" name="email" />
+                                                <input type="email" id="form3Example3c" class="form-control" name="email"  required/>
                                             </div>
                                         </div>
 
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="form3Example4c">Password</label>
-                                                <input type="password" id="form3Example4c" class="form-control" name="pass" />
+                                                <input type="password" id="form3Example4c" class="form-control" name="pass"  required/>
                                             </div>
                                         </div>
 
@@ -56,7 +56,7 @@
                                             <div class="form-outline flex-fill mb-0">
                                                 <label class="form-label" for="form3Example4cd">Repeat your
                                                         password</label>
-                                                <input type="password" id="form3Example4cd" class="form-control" name="repass" />
+                                                <input type="password" id="form3Example4cd" class="form-control" name="repass"  required/>
                                             </div>
                                         </div>
 
@@ -69,9 +69,9 @@
                                     </form>
                                     <h2 class="thongbao">
                                         <?php
-                                            if(isset($thongbao) && ($thongbao!="")) {
-                                                echo $thongbao;
-                                            }
+                                            // if(isset($thongbao) && ($thongbao!="")) {
+                                                // echo $thongbao;
+                                            // }
                                             
                                         ?>
                                     </h2>

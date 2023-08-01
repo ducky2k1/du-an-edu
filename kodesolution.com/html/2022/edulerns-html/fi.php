@@ -21,7 +21,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                             <div class="form-outline flex-fill mb-0">
                                 <label class="control-label">Họ và tên</label>
-                                    <input class="form-control" type="text" name="ten" 
+                                    <input class="form-control" type="text" name="ten" required
                                                     value="<?php if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                                                         echo $_POST['ten'];
                                                     } else {
@@ -33,7 +33,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                             <div class="form-outline flex-fill mb-0">
                                 <label class="control-label">Địa chỉ email</label>
-                                <input class="form-control" type="text" name="email" 
+                                <input class="form-control" type="text" name="email" required
                                                 value="<?php if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                                                     echo $_POST['email'];
                                                 } else {
@@ -45,7 +45,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                             <div class="form-outline flex-fill mb-0">
                                 <label class="control-label">Địa chỉ thường trú</label>
-                                <input class="form-control" type="text" name="loca"
+                                <input class="form-control" type="text" name="loca" required
                                                 value="<?php if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                                                     echo $_POST['loca'];
                                                 } else {
@@ -58,7 +58,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                             <div class="form-outline flex-fill mb-0">
                             <label class="control-label">Số điện thoại</label>
-                            <input class="form-control" type="number" name="num"
+                            <input class="form-control" type="number" name="num" required
                                             value="<?php if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                                                 echo $_POST['phone-nv'];
                                             } else {
@@ -71,7 +71,7 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                             <div class="form-outline flex-fill mb-0">
                             <label class="control-label">Mật khẩu</label>
-                            <input class="form-control" type="text" name="pass"
+                            <input class="form-control" type="text" name="pass" required
                                             value="<?php if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                                                 echo $_POST['pass'];
                                             } else {
@@ -91,7 +91,7 @@
                                             echo $info['image'];
 
                                         } ?>" alt="" class="" style="width:50px;height:50px;">
-                                <input type="hidden" name="img-member" 
+                                <input type="hidden" name="img-member"  
                                                 value="<?php if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                                                             echo $_POST['img-member'];
                                                         } else {

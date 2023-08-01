@@ -129,5 +129,20 @@
             return true;
         }
     }
-    
+    function load_same_hoadon($id) {
+        $sql = "SELECT `dtb_lop`.`id`,`dtb_lop`.`course_id`,`dtb_lop`.`name` as tenlop,`dtb_lop`.`customer_id`
+        ,`dtb_lop`.`time`,`dtb_lop`.`ca_hoc_id`,`dtb_lop`.`day` as ngayhoc
+        , `dtb_ca_hoc`.`name` as ca_name, time_start,time_end,
+        dtb_customer.name as customer_name, dtb_lop.slot,dtb_course.price
+        from dtb_hoadon
+        join dtb_member on dtb_hoadon.member_id = dtb_member.id 
+        join dtb_lop on dtb_hoadon.lop_id = dtb_lop.id 
+        join dtb_ca_hoc on dtb_lop.ca_hoc_id=dtb_ca_hoc.id 
+        join dtb_customer on dtb_lop.customer_id = dtb_customer.id
+        join dtb_course on dtb_lop.course_id = dtb_course.id
+        where dtb_hoadon.member_id = $id and `status` = 'Đã thanh toán'
+        order by id  asc";
+        $listhoadon = pdo_query($sql);
+        return $listhoadon;
+    }
 ?>
