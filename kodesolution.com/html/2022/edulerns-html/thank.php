@@ -2,10 +2,14 @@
     session_start();
     require "./model/pdo.php";
     require "./model/cart.php";
-    $vnd = $_GET['vnp_Amount'] / 100;
+    $vnd = $_GET['vnp_Amount'] / 2350000;
     $hinhthuc = 'Chuyển khoản';
     $status = 'Đã thanh toán';
-    update_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_GET['vnp_BankCode'], $_GET['vnp_PayDate'], $status, $hinhthuc);
+    if(loadsame_hoadon_member($_SESSION['id_mem'], $_SESSION['id_class']) == true) {
+        set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $vnd, $_GET['vnp_BankCode'], NULL, $_GET['vnp_PayDate'], $status, $hinhthuc);
+    } else {
+        update_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_GET['vnp_BankCode'], $_GET['vnp_PayDate'], $status, $hinhthuc);
+    }
     // echo $_SESSION['id_class'].'<br>';
     // echo $_SESSION['id_mem'].'<br>';
     // echo $_SESSION['sumAll'];
@@ -17,7 +21,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bootstrap 5 Thank You Example</title>
+        <title>Successful!</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
 

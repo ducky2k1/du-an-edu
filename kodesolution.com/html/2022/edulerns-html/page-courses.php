@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include "./model/pdo.php";
 	include "./model/course.php";
 	$listcourse = loadall_course();

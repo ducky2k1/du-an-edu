@@ -2,6 +2,9 @@
     if (session_status() == PHP_SESSION_NONE) {
         // Hàm session_start() chưa được gọi, bạn có thể gọi nó ở đây.
         session_start();
+    include_once "./model/pdo.php";
+    include_once "./model/cart.php";
+
     }
     $_SESSION['id_class'] = $_GET['id_class'];
     $_SESSION['price-class'] = $_GET['price'];
@@ -282,7 +285,11 @@ hr {
                         <!-- <a href="./buy.php?act=add_order" class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0" name="pay">Pay Now</a> -->
                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                             <input type="submit" name="pay" value="Chuyển khoản" class="mr10 btn btn-primary btn-lg">
-                            <input type="submit" name="pay-center" value="Thanh toán tại trung tâm" class="btn btn-primary btn-lg">
+                            <?php 
+                                if(loadsame_hoadon_member($_SESSION['id_mem'], $_GET['id_class']) == true) {
+                                    echo '<input type="submit" name="pay-center" value="Thanh toán tại trung tâm" class="btn btn-primary btn-lg">';
+                                }    
+                            ?>
                         </div>
                     </div>
                 </form>

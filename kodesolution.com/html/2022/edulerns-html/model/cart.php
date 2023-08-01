@@ -96,7 +96,7 @@
         // Tạo câu lệnh SQL UPDATE với giá trị đã được xử lí NULL và điều kiện WHERE
         $sql = "UPDATE `dtb_hoadon`
                 SET `bank_name` = $bank_value, 
-                    `payment_time` = $time_value, `status` = '$status', `hinhthuc` = $hinhthuc_value
+                    `payment_time` = $time_value, `status` = '$status', `hinhthuc` = $hinhthuc_value , `register_time` = NULL
                 WHERE `member_id` = $mem_id AND `lop_id` = $lop_id";
     
         // Thực thi câu lệnh SQL
@@ -122,10 +122,10 @@
         $numRows = count($listhoadon);
     
         if ($numRows > 0) {
-            // Nếu có bản ghi trả về, trả về danh sách hóa đơn
+            // Nếu có bản ghi trả về, trả về false
             return false;
         } else {
-            // Nếu không có bản ghi nào trả về, trả về false
+            // Nếu không có bản ghi nào trả về, trả về true
             return true;
         }
     }

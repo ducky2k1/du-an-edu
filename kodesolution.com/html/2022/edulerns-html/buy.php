@@ -31,22 +31,22 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                             echo '<script>alert("Bạn đã đăng ký khóa học này trước đó, vui lòng kiểm tra hóa đơn");
                                         window.location.href="index.php?act=hoadon";</script>';
                         } else {
-                    $listCart = getListCart($ma_us);
-                    $id_course = $_GET['id_course'];
-                    $id_class = $_GET['id_class'];
-                    date_default_timezone_set("Asia/Ho_Chi_Minh");
-                    $getDate = date("Y-m-d");
-                    setCart($ma_us,$id_course,$getDate,$id_class);
+                    // $listCart = getListCart($ma_us);
+                    // $id_course = $_GET['id_course'];
+                    // $id_class = $_GET['id_class'];
+                    // date_default_timezone_set("Asia/Ho_Chi_Minh");
+                    // $getDate = date("Y-m-d");
+                    // setCart($ma_us,$id_course,$getDate,$id_class);
 
-                    echo '<script>alert("Đặt chỗ lớp học thành công. Vùi lòng thanh toán!")</script>';
+                    // echo '<script>alert("Đặt chỗ lớp học thành công. Vui lòng thanh toán!")</script>';
                     
                     require "./cart.php";
                     // Lấy thời gian đăng ký
-                    $dateTime = new DateTime();
-                    $currentDateTime = $dateTime->format("Y-m-d H:i:s");
-                    $_SESSION['regis-time'] = $currentDateTime;
-                    $status = 'Chưa thanh toán';
-                    set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_SESSION['price-class'], NULL, $_SESSION['regis-time'], NULL, $status, NULL );
+                    // $dateTime = new DateTime();
+                    // $currentDateTime = $dateTime->format("Y-m-d H:i:s");
+                    // $_SESSION['regis-time'] = $currentDateTime;
+                    // $status = 'Chưa thanh toán';
+                    // set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_SESSION['price-class'], NULL, $_SESSION['regis-time'], NULL, $status, NULL );
                         }
                     }             
                 } } else{
@@ -172,7 +172,12 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                 // die();
                 $hinhthuc = 'Thanh toán tại trung tâm';
                 $status = 'Chưa thanh toán';
-                update_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], NULL, NULL, $status, $hinhthuc );
+                $dateTime = new DateTime();
+                    $currentDateTime = $dateTime->format("Y-m-d H:i:s");
+                    // $_SESSION['regis-time'] = $currentDateTime;
+                    // $status = 'Chưa thanh toán';
+                set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_SESSION['price-class'], NULL, $currentDateTime, NULL, $status, $hinhthuc );
+                // update_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], NULL, NULL, $status, $hinhthuc );
                 echo '<script>alert("Thành công! Vui lòng đến trung tâm để thanh toán!")</script>';
                 echo '<script>window.location.href="index.php";</script>';            }
             break;

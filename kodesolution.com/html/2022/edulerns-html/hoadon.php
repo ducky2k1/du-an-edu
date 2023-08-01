@@ -269,8 +269,9 @@ hr {
                                 <td><?=$status?></td>
                                 <td><?=$hinhthuc?></td>
                                 <td>
-                                    <button><a href="./cart.php?&id_class=<?=$lop_id?>&price=<?=$sotien_vnd?>&tenlop=<?=$name?>">
-                                        <?php if($status == 'Chưa thanh toán' && $hinhthuc != 'Thanh toán tại trung tâm') echo 'Thanh toán'; ?>
+                                    
+                                    <button><a href="./cart.php?id_class=<?=$lop_id?>&price=<?=$sotien_vnd?>&tenlop=<?=$name?>">
+                                        <?php if($status == 'Chưa thanh toán' && $hinhthuc == 'Thanh toán tại trung tâm') echo 'Thanh toán chuyển khoản'; ?>
                                     </a></button></td>
                             </tr>
                             <?php } ?>

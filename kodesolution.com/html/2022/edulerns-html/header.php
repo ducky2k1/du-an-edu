@@ -51,8 +51,8 @@
 							<?php
 								if (!isset($_SESSION['email'])) {
 									echo '
-									<a href="./index.php?act=dn"><button class="theme-btn btn-style-one">Đăng ký</button></a>
-									<a href="./index.php?act=dangky"><button class="theme-btn btn-style-one">Đăng nhập</button></a>
+									<a href="./index.php?act=dn"><button class="theme-btn btn-style-one">Đăng nhập</button></a>
+									<a href="./index.php?act=dangky"><button class="theme-btn btn-style-one">Đăng ký</button></a>
 								</a>
 									';
 								} else { ?>
@@ -64,7 +64,7 @@
 										} ?>" alt="" style="width:50px;height:50px;border-radius: 50%; border:1px solid black; margin-right: 20px;">
 								<nav class="nav main-menu">
 									<ul class="navigation">
-										<li class="dropdown"><a href="page-courses.php">									
+										<li class="dropdown"><a href="#">									
 											<?php 
 												if(isset($info)&&($info)){
 													echo $info['name'];
