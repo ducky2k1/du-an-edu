@@ -15,7 +15,7 @@ function del_course($ma_us){
     $sqlDelClass= "DELETE FROM `dtb_lop` where course_id = ".$ma_us;
     pdo_execute($sqlDelClass);
 
-    $sqlDelOrItem= "DELETE FROM `dtb_order_item` where course_id = ".$ma_us;
+    $sqlDelOrItem= "DELETE FROM `dtb_order` where course_id = ".$ma_us;
     pdo_execute($sqlDelOrItem);
 
     $sql= "DELETE FROM `dtb_course` where id = ".$ma_us;
@@ -28,5 +28,9 @@ function edit_pro($ma_us){
 function up_pro($ma_us,$fullname, $gia, $mota){
     $sql="UPDATE `dtb_course` SET `name`='".$fullname."',`price`='".$gia."',`mo_ta`='".$mota."' WHERE id=".$ma_us;
     pdo_execute($sql);
+}
+function count_course(){
+    $sql ="SELECT COUNT(id) as count_course FROM dtb_course";
+    return pdo_query($sql);
 }
 ?>

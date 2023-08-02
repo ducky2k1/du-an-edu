@@ -47,16 +47,16 @@
                   <tr>
                     <th width="10"><input type="checkbox" id="all"></th>
                     <th>ID đơn hàng</th>
-                    <th>Tên khóa học</th>
                     <th>Lớp</th>
                     <th>Khách hàng</th>
-                    <th>ID khách hàng</th>
                     <th>SĐT</th>
                     <th>Email</th>
                     <th>Địa chỉ</th>
-                    <th>Ngày mua</th>
-                    <th>Tổng tiền</th>
-                    <!-- <th>Tình trạng</th> -->
+                    <th>Ngày đăng kí</th>
+                    <th>Ngày thanh toán</th>
+                    <th>Hình thức thanh toán</th>
+                    <th>Trạng thái</th>
+                    <th>Tổng tiền (vnd)</th>
                     <th>Tính năng</th>
                   </tr>
                 </thead>
@@ -67,18 +67,29 @@
                                   <tr>
                                     <td></td>
                                     <td><?php extract($lt); echo $order_id ?></td>
-                                    <td><?php extract($lt); echo $course_name ?></td>
                                     <td><?php extract($lt); echo $class_name ?></td>
                                     <td><?php extract($lt); echo $member_name ?></td>
-                                    <td><?php extract($lt); echo $member_id ?></td>
                                     <td><?php extract($lt); echo $phone ?></td>
                                     <td><?php extract($lt); echo $email ?></td>
                                     <td><?php extract($lt); echo $location ?></td>
-                                    <td><?php extract($lt); echo $date_buy ?></td>
-                                    <td><?php extract($lt); echo $price ?></td>
+                                    <td><?php extract($lt); echo $register_time ?></td>
+                                    <td><?php extract($lt); echo $payment_time ?></td>
+                                    <td><?php extract($lt); echo $hinhthuc ?></td>
+                                    <td>
+                                      <?php extract($lt); if($status == 'Đã thanh toán'){ ?>
+                                        <span class="badge bg-success">Đã thanh toán</span>
+                                      <?php } else { ?>
+                                        <span class="badge bg-danger">Chưa thanh toán</span>
+                                      <?php } ?>
+                                      
+                                    
+                                      </td>
+                                    <td><?php extract($lt); echo $sotien_vnd*23500 ?></td>
                                     <td>
                                       <a href="../controller/index.php?act=del_order&id=<?php extract($lt); echo $order_id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
-                                      <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button>
+                                      <?php extract($lt); if($status != 'Đã thanh toán'){ ?>
+                                      <a href="../controller/index.php?act=edit_order&id=<?php extract($lt); echo $order_id ?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></a>
+                                      <?php } ?>
                                     </td>
                                   </tr>
                                 <?php
@@ -91,95 +102,4 @@
         </div>
       </div>
     </main>
-  <!-- Essential javascripts for application to work-->
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="src/jquery.table2excel.js"></script>
-  <script src="js/main.js"></script>
-  <!-- The javascript plugin to display page loading on top-->
-  <script src="js/plugins/pace.min.js"></script>
-  <!-- Page specific javascripts-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-  <!-- Data table plugin-->
-  <script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
-  <script type="text/javascript">$('#sampleTable').DataTable();</script>
-  <script>
-    //Thời Gian
-    function time() {
-      var today = new Date();
-      var weekday = new Array(7);
-      weekday[0] = "Chủ Nhật";
-      weekday[1] = "Thứ Hai";
-      weekday[2] = "Thứ Ba";
-      weekday[3] = "Thứ Tư";
-      weekday[4] = "Thứ Năm";
-      weekday[5] = "Thứ Sáu";
-      weekday[6] = "Thứ Bảy";
-      var day = weekday[today.getDay()];
-      var dd = today.getDate();
-      var mm = today.getMonth() + 1;
-      var yyyy = today.getFullYear();
-      var h = today.getHours();
-      var m = today.getMinutes();
-      var s = today.getSeconds();
-      m = checkTime(m);
-      s = checkTime(s);
-      nowTime = h + " giờ " + m + " phút " + s + " giây";
-      if (dd < 10) {
-        dd = '0' + dd
-      }
-      if (mm < 10) {
-        mm = '0' + mm
-      }
-      today = day + ', ' + dd + '/' + mm + '/' + yyyy;
-      tmp = '<span class="date"> ' + today + ' - ' + nowTime +
-        '</span>';
-      document.getElementById("clock").innerHTML = tmp;
-      clocktime = setTimeout("time()", "1000", "Javascript");
-
-      function checkTime(i) {
-        if (i < 10) {
-          i = "0" + i;
-        }
-        return i;
-      }
-    }
-    //In dữ liệu
-    var myApp = new function () {
-      this.printTable = function () {
-        var tab = document.getElementById('sampleTable');
-        var win = window.open('', '', 'height=700,width=700');
-        win.document.write(tab.outerHTML);
-        win.document.close();
-        win.print();
-      }
-    }
-    //     //Sao chép dữ liệu
-    //     var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
-
-    // copyTextareaBtn.addEventListener('click', function(event) {
-    //   var copyTextarea = document.querySelector('.js-copytextarea');
-    //   copyTextarea.focus();
-    //   copyTextarea.select();
-
-    //   try {
-    //     var successful = document.execCommand('copy');
-    //     var msg = successful ? 'successful' : 'unsuccessful';
-    //     console.log('Copying text command was ' + msg);
-    //   } catch (err) {
-    //     console.log('Oops, unable to copy');
-    //   }
-    // });
-
-
-    //Modal
-    $("#show-emp").on("click", function () {
-      $("#ModalUP").modal({ backdrop: false, keyboard: false })
-    });
-  </script>
-</body>
-
-</html>
+  

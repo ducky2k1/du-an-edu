@@ -9,19 +9,22 @@ function add_mem($name, $pass, $mail, $anh, $loca, $phone){
 }
 function del_mem($ma_us)
 {
-    // get order id
-    $sqlSelOrderId = "SELECT `dtb_order`.`id` FROM `dtb_order` WHERE `dtb_order`.`member_id` = ".$ma_us;
-    $runSqlSelOrderId = pdo_query($sqlSelOrderId);
-    $i = 0;
-    foreach ($runSqlSelOrderId as $runSql){
-        foreach ($runSql as $run){
-            if($i == 0){
-                $sqlDelOrderItem= "DELETE FROM `dtb_order_item` where order_id = ".$run;
-                pdo_execute($sqlDelOrderItem);
-            }
-            $i++;
-        }
-    }
+    // // get order id
+    // $sqlSelOrderId = "SELECT `dtb_order`.`id` FROM `dtb_order` WHERE `dtb_order`.`member_id` = ".$ma_us;
+    // $runSqlSelOrderId = pdo_query($sqlSelOrderId);
+    // $i = 0;
+    // foreach ($runSqlSelOrderId as $runSql){
+    //     foreach ($runSql as $run){
+    //         if($i == 0){
+    //             $sqlDelOrderItem= "DELETE FROM `dtb_order_item` where order_id = ".$run;
+    //             pdo_execute($sqlDelOrderItem);
+    //         }
+    //         $i++;
+    //     }
+    // }
+    // delete cart
+    $sqlDelCart= "DELETE FROM `dtb_cart` where member_id = ".$ma_us;
+    pdo_execute($sqlDelCart);
     // delete order in order
     $sqlDelOrder= "DELETE FROM `dtb_order` where member_id = ".$ma_us;
     pdo_execute($sqlDelOrder);

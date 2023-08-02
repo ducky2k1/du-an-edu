@@ -1,178 +1,15 @@
 
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>Quản trị Admin</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Main CSS-->
-  <link rel="stylesheet" type="text/css" href="../doc/css/main.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <!-- or -->
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-  <!-- Font-icon css-->
-  <link rel="stylesheet" type="text/css"
-    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
-
-</head>
-
-<body onload="time()" class="app sidebar-mini rtl">
-<style>
-    .Choicefile {
-      display: block;
-      background: #14142B;
-      border: 1px solid #fff;
-      color: #fff;
-      width: 150px;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      padding: 5px 0px;
-      border-radius: 5px;
-      font-weight: 500;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .Choicefile:hover {
-      text-decoration: none;
-      color: white;
-    }
-
-    #uploadfile,
-    .removeimg {
-      display: none;
-    }
-
-    #thumbbox {
-      position: relative;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-
-    .removeimg {
-      height: 25px;
-      position: absolute;
-      background-repeat: no-repeat;
-      top: 5px;
-      left: 5px;
-      background-size: 25px;
-      width: 25px;
-      /* border: 3px solid red; */
-      border-radius: 50%;
-
-    }
-
-    .removeimg::before {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      content: '';
-      border: 1px solid red;
-      background: red;
-      text-align: center;
-      display: block;
-      margin-top: 11px;
-      transform: rotate(45deg);
-    }
-
-    .removeimg::after {
-      /* color: #FFF; */
-      /* background-color: #DC403B; */
-      content: '';
-      background: red;
-      border: 1px solid red;
-      text-align: center;
-      display: block;
-      transform: rotate(-45deg);
-      margin-top: -2px;
-    }
-  </style>
-  <!-- Navbar-->
-  <header class="app-header">
-    <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
-      aria-label="Hide Sidebar"></a>
-    <!-- Navbar Right Menu-->
-    <ul class="app-nav">
-
-
-      <!-- User Menu-->
-      <li><a class="app-nav__item" href="../index.html"><i class='bx bx-log-out bx-rotate-180'></i> </a>
-
-      </li>
-    </ul>
-  </header>
-  <!-- Sidebar menu-->
-  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-  <aside class="app-sidebar">
-    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/images/hay.jpg" width="50px"
-        alt="User Image">
-      <div>
-        <p class="app-sidebar__user-name"><b>ADMIN</b></p>
-        <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
-      </div>
-    </div>
-    <hr>
-    <ul class="app-menu">
-      <li><a class="app-menu__item haha" href="phan-mem-ban-hang.html"><i class='app-menu__icon bx bx-cart-alt'></i>
-          <span class="app-menu__label">POS Bán Hàng</span></a></li>
-      <li><a class="app-menu__item active" href="./index.php"><i class='app-menu__icon bx bx-tachometer'></i><span
-            class="app-menu__label">Bảng điều khiển</span></a></li>
-      <li><a class="app-menu__item " href="./index.php?act=cus"><i class='app-menu__icon bx bx-id-card'></i> <span
-            class="app-menu__label">Customer</span></a></li>
-      <li><a class="app-menu__item" href="./index.php?act=mem"><i class='app-menu__icon bx bx-user-voice'></i><span
-            class="app-menu__label">Quản lý khách hàng</span></a></li>
-      <li><a class="app-menu__item" href="./index.php?act=pro"><i
-            class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý Khóa học</span></a>
-      </li>
-      <li><a class="app-menu__item" href="./index.php?act=class"><i
-            class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý lớp học</span></a>
-      </li>
-      <li><a class="app-menu__item" href="./index.php?act=ca"><i
-            class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý ca học</span></a>
-      </li>
-      <li><a class="app-menu__item" href="./index.php?act=order"><i class='app-menu__icon bx bx-task'></i><span
-            class="app-menu__label">Quản lý đơn hàng</span></a></li>
-      <!-- <li><a class="app-menu__item" href="table-data-banned.html"><i class='app-menu__icon bx bx-run'></i><span
-            class="app-menu__label">Quản lý nội bộ
-          </span></a></li>
-      <li><a class="app-menu__item" href="table-data-money.html"><i class='app-menu__icon bx bx-dollar'></i><span
-            class="app-menu__label">Bảng kê lương</span></a></li>
-      <li><a class="app-menu__item" href="quan-ly-bao-cao.html"><i
-            class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Báo cáo doanh thu</span></a>
-      </li>
-      <li><a class="app-menu__item" href="page-calendar.html"><i class='app-menu__icon bx bx-calendar-check'></i><span
-            class="app-menu__label">Lịch công tác </span></a></li>
-      <li><a class="app-menu__item" href="#"><i class='app-menu__icon bx bx-cog'></i><span class="app-menu__label">Cài
-            đặt hệ thống</span></a></li> -->
-    </ul>
-  </aside>
-  <main class="app-content">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="app-title">
-          <ul class="app-breadcrumb breadcrumb">
-            <li class="breadcrumb-item"><a href="#"><b>Bảng điều khiển</b></a></li>
-          </ul>
-          <div id="clock"></div>
-        </div>
-      </div>
-    </div>
-  
     <?php
-      require "../pdo.php";
+
+      require "../view/home.php";
+      // require "../pdo.php";
       require "../model/product.php";
       require "../model/table.php";
       require "../model/class.php";
       require "../model/customer.php";
       require "../model/order.php";
       require "../model/ca.php";
+      require "../model/cart.php";
 
 
     
@@ -183,6 +20,7 @@
 
           $list_course = product_selectAll();
           require_once "../view/table-data-product.php";
+          require_once "../view/footer.php";
           break;
         case 'add_pro':
           if (isset($_POST['them']) && ($_POST['them'])){
@@ -205,6 +43,7 @@
             }
           }
           require_once "../view/form-add-course.php";
+          require_once "../view/footer.php";
           break;
         case 'del_pro':
           if (isset($_GET['id']) && ($_GET['id'] > 0)) {
@@ -212,12 +51,14 @@
           }
           $list_course = product_selectAll();
           require_once "../view/table-data-product.php";
+          require_once "../view/footer.php";
           break;
         case 'edit_pro':         
           if (isset($_GET['id']) && ($_GET['id'])) {
             $edit_pro = edit_pro($_GET['id']);
           }
           require_once "../view/form-update-course.php";
+          require_once "../view/footer.php";
           break;
         case 'up_pro':
           if (isset($_POST['them']) && ($_POST['them'])){
@@ -242,11 +83,13 @@
           }
           $list_course = product_selectAll();
           require_once "../view/table-data-product.php";
+          require_once "../view/footer.php";
           break;
 
         case 'mem':
           $list_member = member_selectAll();
           require_once "../view/table-data-table.php";
+          require_once "../view/footer.php";
           break;
         case 'add_mem':
           if (isset($_POST['them']) && ($_POST['them'])){
@@ -301,6 +144,7 @@
 
           }
           require_once "../view/form-add-member.php";
+          require_once "../view/footer.php";
           break;
         case 'del_mem':
           if (isset($_GET['id']) && ($_GET['id'] > 0)) {
@@ -308,6 +152,7 @@
           }
         $data_mem = member_selectAll();
         require_once "../view/table-data-table.php";
+        require_once "../view/footer.php";
         break;
         case 'edit_mem':
 
@@ -315,6 +160,7 @@
             $edit_mem = edit_member($_GET['id']);
           }
           require_once "../view/form-update-member.php";
+          require_once "../view/footer.php";
           break;
         case 'up_mem':
           if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
@@ -367,10 +213,12 @@
           $list_member = member_selectAll();
 
           require_once "../view/table-data-table.php";
+          require_once "../view/footer.php";
           break;
         case 'cus':
           $list_customer = customer_selectAll();
           require_once "../view/table-data-customer.php";
+          require_once "../view/footer.php";
           break;
         case 'add_cus':
           if (isset($_POST['them']) && ($_POST['them'])){
@@ -428,6 +276,7 @@
 
           }
           require_once "../view/form-add-customer.php";
+          require_once "../view/footer.php";
           break;
         case 'del_cus':
           if (isset($_GET['id']) && ($_GET['id'] > 0)) {
@@ -435,6 +284,7 @@
           }
           $list_customer = customer_selectAll();
           require_once "../view/table-data-customer.php";
+          require_once "../view/footer.php";
           break;
         case 'edit_cus':
 
@@ -442,6 +292,7 @@
             $edit_cus = edit_customer($_GET['id']);
           }
           require_once "../view/form-update-customer.php";
+          require_once "../view/footer.php";
           break;
         case 'up_cus':
           if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
@@ -498,11 +349,16 @@
           $list_customer = customer_selectAll();
 
           require_once "../view/table-data-customer.php";
+          require_once "../view/footer.php";
           break;
 
         case 'class':
           $list_class = class_selectAll();
+          foreach($list_class as $lClass) {
+						$count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
+					}
           require_once "../view/table-data-class.php";
+          require_once "../view/footer.php";
           break;
         case 'add_class':
           $list_course = product_selectAll();
@@ -537,14 +393,23 @@
             }
 
           }
+          $list_class = class_selectAll();
+          foreach($list_class as $lClass) {
+						$count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
+					}
           require_once "../view/form-add-class.php";
+          require_once "../view/footer.php";
           break;
           case 'del_class':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
               del_class($_GET['id']);
             }
             $list_class = class_selectAll();
+            foreach($list_class as $lClass) {
+              $count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
+            }
             require_once "../view/table-data-class.php";
+            require_once "../view/footer.php";
             break;
           case 'edit_class':
               if (isset($_GET['id']) && ($_GET['id'])) {
@@ -553,7 +418,12 @@
               $list_course = product_selectAll();
               $list_ca = ca_hoc_selectAll();
               $list_gv = gv_selectAll();
+              $list_class = class_selectAll();
+              foreach($list_class as $lClass) {
+                $count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
+              }
               require_once "../view/form-update-class.php";
+              require_once "../view/footer.php";
             break; 
           case 'up_class':
             $list_course = product_selectAll();
@@ -581,29 +451,73 @@
                 $errer['ngay']="Vui lòng chọn ngày học!";
               }
               if (empty($errer)) {
-                up_class($ma_us,$name,$giangVien,$time,$caHoc,$ngayHoc);
+                up_class($ma_us,$name,$caHoc,$time,$giangVien,$ngayHoc);
                 $thongbao = "Thêm thành công";
               }
   
             }
             $list_class = class_selectAll();
+            foreach($list_class as $lClass) {
+              $count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
+            }
             require_once "../view/table-data-class.php";
+            require_once "../view/footer.php";
             break;         
           case 'order':
             $list_order = order_selectAll();
+            // $list_cart = getListCart();
             require_once "../view/table-data-oder.php";
+            require_once "../view/footer.php";
             break;
           case 'del_order':            
           if (isset($_GET['id']) && ($_GET['id'] > 0)) {
             del_order($_GET['id']);
           }
           $list_order = order_selectAll();
+          // $list_cart = getListCart();
           require_once "../view/table-data-oder.php";
+          require_once "../view/footer.php";
           break;
-
+          // case 'del_cart':            
+          //   if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+          //     del_cart($_GET['id']);
+          //   }
+          //   $list_order = order_selectAll();
+          //   $list_cart = getListCart();
+          //   require_once "../view/table-data-oder.php";
+          //   require_once "../view/footer.php";
+          //   break;
+          case 'edit_order':
+            // $ma_us=$_GET['id'];
+            // $ma_cart=$_GET['id_cart'];
+            //     $listCartNew = getListCartNew($ma_us);
+            //     $id_course = $listCartNew[0]['course_id'];
+            //     $id_class = $listCartNew[0]['class_id'];
+            //     $sumAll = $listCartNew[0]['tong_tien'];
+            //     // date_default_timezone_set("Asia/Ho_Chi_Minh");
+            //     $getDate = $listCartNew[0]['day_buy'];
+            //     setOrder($ma_us,$id_course,$getDate,$id_class,$sumAll);
+            //     del_cart($ma_cart);
+            
+            // $list_order = order_selectAll();
+            // $list_cart = getListCart();
+            // echo '<script>window.location.href="index.php?act=order"</script>';
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+              // $dateTime = new DateTime();
+              // $currentDateTime = $dateTime->format("Y-m-d H:i:s");
+              date_default_timezone_set("Asia/Ho_Chi_Minh");
+              $getDate = date("Y-m-d");
+              edit_order($_GET['id'],$getDate);
+            }         
+            $list_order = order_selectAll();
+            // $list_cart = getListCart();
+            require_once "../view/table-data-oder.php";
+            require_once "../view/footer.php";
+            break;
         case 'ca':
           $list_ca = ca_hoc_selectAll();
           require_once "../view/table-data-ca-hoc.php";
+          require_once "../view/footer.php";
           break;
         case 'add_ca':
           if (isset($_POST['them']) && ($_POST['them'])){
@@ -667,10 +581,27 @@
               $list_ca = ca_hoc_selectAll();
               require_once "../view/table-data-ca-hoc.php";
               break;
+        case 'dt':
+
+              $dem = count_customer();
+              $demCourse = count_course();
+              $demClass = count_class();
+              $demOrder = count_order();
+              $demNotOrder = count_not_order();
+              $list_order = order_selectAll();
+              $tongTien = tong_tien();
+              $get = getOrder();
+              date_default_timezone_set("Asia/Ho_Chi_Minh");
+              $getDate = date("Y-m-d");
+              $getByDay = getOrderByDay($getDate);
+
+              require_once "../view/quan-ly-bao-cao.php";
+              break;
 
 
     }
   }else {
+    // require_once "../view/home.php";
       require_once "../doc/footer.php";
   }
 

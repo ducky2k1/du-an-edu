@@ -26,4 +26,8 @@ function edit_customer($ma_us){
     $sql="SELECT * FROM `dtb_customer` where id=".$ma_us;
     return pdo_query_one($sql);
 }
+function count_customer(){
+    $sql ="SELECT COUNT(id) as count_gv FROM dtb_customer WHERE `role`='gv'";
+    return pdo_query($sql);
+}
 ?>

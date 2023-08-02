@@ -57,7 +57,12 @@
                   <select class="form-control" id="exampleSelect1" name="ngay">
                     <option value="<?php extract($edit_class); echo $day ?>"><?php extract($edit_class); echo $day ?></option>
                     <?php
-                      echo ($edit_class['day'] == 'Ngày lẻ (Thứ 3,5,7)') ? '<option value="Ngày chẵn (Thứ 2,4,6)">Ngày chẵn (Thứ 2,4,6)</option>' : '<option value="Ngày lẻ (Thứ 3,5,7)">Ngày lẻ (Thứ 3,5,7)</option>';
+                    // if($edit_class['day'] == 'Ngày lẻ (Thứ 3,5,7)'){
+                    //   echo '<option value="Ngày chẵn (Thứ 2,4,6)">Ngày chẵn (Thứ 2,4,6)</option>';
+                    // } else {
+                    //   echo '<option value="Ngày lẻ (Thứ 3,5,7)">Ngày lẻ (Thứ 3,5,7)</option>';
+                    // }
+                      echo ($edit_class['day'] == 'Thứ 3 5 7') ? '<option value="Thứ 2 4 6">Ngày chẵn (Thứ 2,4,6)</option>' : '<option value="Thứ 3 5 7">Ngày lẻ (Thứ 3,5,7)</option>';
                     ?>
 
                   </select>
