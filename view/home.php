@@ -144,8 +144,10 @@
             class="app-menu__label">Customer</span></a></li>
       <li><a class="app-menu__item" href="./index.php?act=mem"><i class='app-menu__icon bx bx-user-voice'></i><span
             class="app-menu__label">Quản lý khách hàng</span></a></li>
+      <li><a class="app-menu__item" href="./index.php?act=comment"><i class="app-menu__icon  far fa-comment-dots"></i><span
+            class="app-menu__label">Quản lý bình luận</span></a></li>
       <li><a class="app-menu__item" href="./index.php?act=pro"><i
-            class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý Khóa học</span></a>
+            class='app-menu__icon fas fa-school'></i><span class="app-menu__label">Quản lý Khóa học</span></a>
       </li>
       <li><a class="app-menu__item" href="./index.php?act=class"><i
             class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý lớp học</span></a>

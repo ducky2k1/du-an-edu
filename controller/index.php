@@ -10,6 +10,7 @@
       require "../model/order.php";
       require "../model/ca.php";
       require "../model/cart.php";
+      require "../model/comment.php";
 
 
     
@@ -597,6 +598,28 @@
 
               require_once "../view/quan-ly-bao-cao.php";
               break;
+        case 'comment':
+              $listComment = getComment();
+              require_once "../view/table-data-comment.php";
+              require_once "../view/footer.php";
+              break;
+        case 'del_comment':            
+              if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delComment($_GET['id']);
+              }
+              $listComment = getComment();
+              require_once "../view/table-data-comment.php";
+              require_once "../view/footer.php";
+              break;
+        case 'edit_comment':
+              if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                editComment($_GET['id']);
+              }         
+              $listComment = getComment();
+              require_once "../view/table-data-comment.php";
+              require_once "../view/footer.php";
+              break;
+
 
 
     }
