@@ -12,36 +12,44 @@
     </div>
         <div class="row">
             <div class="col-md-6 col-lg-3">
-                <div class="widget-small primary coloured-icon"><i class='icon  bx bxs-user fa-3x'></i>
-                    <div class="info">
-                        <h4>Tổng Nhân viên</h4>
-                        <p><b><?php   echo $dem[0]['count_gv'] ?> nhân viên</b></p>
+                <a href="../controller/index.php?act=cus">
+                    <div class="widget-small primary coloured-icon"><i class='icon  bx bxs-user fa-3x'></i>
+                        <div class="info">
+                            <h4>Tổng giảng viên</h4>
+                            <p><b><?php   echo $dem[0]['count_gv'] ?> giảng viên</b></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-md-6 col-lg-3">
-                <div class="widget-small info coloured-icon"><i class='icon bx bxs-purchase-tag-alt fa-3x' ></i>
-                    <div class="info">
-                        <h4>Tổng khóa học</h4>
-                        <p><b><?php echo $demCourse[0]['count_course'] ?> khóa học</b></p>
+                <a href="../controller/index.php?act=pro">
+                    <div class="widget-small info coloured-icon"><i class='icon bx bxs-purchase-tag-alt fa-3x' ></i>
+                        <div class="info">
+                            <h4>Tổng khóa học</h4>
+                            <p><b><?php echo $demCourse[0]['count_course'] ?> khóa học</b></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-md-6 col-lg-3">
-                <div class="widget-small info coloured-icon"><i class='icon bx bxs-purchase-tag-alt fa-3x' ></i>
-                    <div class="info">
-                        <h4>Tổng lớp học</h4>
-                        <p><b><?php echo $demClass[0]['count_class'] ?> lớp học</b></p>
+                <a href="../controller/index.php?act=class">
+                    <div class="widget-small info coloured-icon"><i class='icon bx bxs-purchase-tag-alt fa-3x' ></i>
+                        <div class="info">
+                            <h4>Tổng lớp học</h4>
+                            <p><b><?php echo $demClass[0]['count_class'] ?> lớp học</b></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-md-6 col-lg-3">
-                <div class="widget-small warning coloured-icon"><i class='icon fa-3x bx bxs-shopping-bag-alt'></i>
-                    <div class="info">
-                        <h4>Tổng hóa đơn</h4>
-                        <p><b><?php echo $demOrder[0]['count_order'] ?> đơn</b></p>
+                <a href="../controller/index.php?act=order">
+                    <div class="widget-small warning coloured-icon"><i class='icon fa-3x bx bxs-shopping-bag-alt'></i>
+                        <div class="info">
+                            <h4>Tổng hóa đơn</h4>
+                            <p><b><?php echo $demOrder[0]['count_order'] ?> đơn</b></p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <!-- <div class="col-md-6 col-lg-3">
                 <div class="widget-small danger coloured-icon"><i class='icon fa-3x bx bxs-info-circle' ></i>
@@ -57,7 +65,7 @@
                 <div class="widget-small primary coloured-icon"><i class='icon fa-3x bx bxs-chart' ></i>
                     <div class="info">
                         <h4>Tổng doanh thu</h4>
-                        <p><b><?php echo $tongTien[0]['sum']*22350 ?> VND</b></p>
+                        <p><b><?php echo number_format($tongTien[0]['sum']*23500) ?> VND</b></p>
                     </div>
                 </div>
             </div>
@@ -100,7 +108,7 @@
 
                     <!-- <div id="chart" style="height: 348.75px;width:620px"></div> -->
                     <div
-                    id="myChart" style="width:620px; height:348.75px;">
+                    id="myChart" style="width:559.6px; height:348.75px;">
                     </div>
                 </div>
             </div>
@@ -108,7 +116,7 @@
                 <div class="tile">
                     <h3 class="tile-title">THỐNG KÊ DOANH SỐ</h3>
                     <div
-                    id="myChart2" style="width:620px; height:348.75px;">
+                    id="myChart2" style="width:559.6px; height:348.75px;">
                     </div>
                 </div>
             </div>
@@ -138,7 +146,7 @@
                     } else {
                         $dau = ",";
                     }
-                    echo "['".$gt['course_name']."',".$gt['tong']."*22350]".$dau;
+                    echo "['".$gt['course_name']."',".$gt['tong']."*23500]".$dau;
                     $i+=1;
                 } 
             ?>
@@ -175,7 +183,7 @@
                     } else {
                         $dau = ",";
                     }
-                    echo "['".$gt['course_name']."',".$gt['tong']."*22350]".$dau;
+                    echo "['".$gt['course_name']."',".$gt['tong']."*23500]".$dau;
                     $i+=1;
                 } 
             ?>

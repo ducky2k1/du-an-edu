@@ -84,7 +84,7 @@
                                       
                                     
                                       </td>
-                                    <td><?php extract($lt); echo $sotien_vnd*23500 ?></td>
+                                    <td><?php extract($lt); echo number_format($sotien_vnd*23500) ?></td>
                                     <td>
                                       <a href="../controller/index.php?act=del_order&id=<?php extract($lt); echo $order_id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
                                       <?php extract($lt); if($status != 'Đã thanh toán'){ ?>
