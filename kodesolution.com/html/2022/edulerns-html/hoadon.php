@@ -162,13 +162,7 @@ hr {
 ?>
 <div class="page-content container">
     <div class="page-header text-blue-d2">
-        <!-- <h1 class="page-title text-secondary-d1">
-            Invoice
-            <small class="page-info">
-                <i class="fa fa-angle-double-right text-80"></i>
-                ID: #111-222
-            </small>
-        </h1> -->
+
 
         <div class="page-tools">
             <div class="action-buttons">
@@ -199,45 +193,9 @@ hr {
 
                 <hr class="row brc-default-l1 mx-n1 mb-4" />
 
-                <!-- <div class="row">
-                    <div class="col-sm-6">
-                        <div><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
-                            <span class="text-sm text-grey-m2 align-middle">To :</span>
-                            <span class="text-600 text-110 text-blue align-middle"><?php  if(isset($info)&&($info)){
-                                echo $info['name'];
-                            } ?></span>
-                        </div>
-                        <div><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
-                            <span class="text-sm text-grey-m2 align-middle">Email :</span>
-                            <span class="text-600 text-110 text-blue align-middle"><?php  if(isset($info)&&($info)){
-                                echo $info['email'];
-                            } ?></span>
-                        </div>
-                        <div class="text-grey-m2">
-                            <div class="my-1"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
-                            <span>Location : </span>
 
-                            <?php  if(isset($info)&&($info)){
-                                echo $info['location'];
-                            } ?> 
-                            </div>
-                            <div class="my-1"><i class="fa fa-circle text-blue-m2 text-xs mr-1"></i>
-                                <i class="fa fa-phone fa-flip-horizontal text-secondary"></i> 
-                            <span>Number Phone : </span>
-
-                            <b class="text-600">
-                                <?php  if(isset($info)&&($info)){
-                                echo $info['phone'];
-                                } ?>
-                            </b></div>
-                        </div>
-                    </div>
-                </div> -->
                 
-                <?php 
-                    // $listCart = getListCart($ma_us);
-                    // $getList = getListCartNew($ma_us);
-                ?>
+
                 <form action="./buy.php?act=payment" method="post">
                     <table class="table table-striped" id="myTable">
                         <thead class="thead-dark">
@@ -250,7 +208,7 @@ hr {
                                 <th scope="col">Ngân hàng</th>
                                 <th scope="col">Trạng thái</th>
                                 <th scope="col">Hình thức</th>
-                                <th scope="col"></th>
+                                <th scope="col">Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -262,70 +220,29 @@ hr {
                             <tr>
                                 <td scope="row"><?=++$i?></td>
                                 <td><?=$name?></td>
-                                <td><?=$sotien_vnd?>$</td>
+                                <td><?=number_format($sotien_vnd*23500)?> VND</td>
                                 <td><?=$register_time?></td>
                                 <td><?=$payment_time?></td>
                                 <td><?=$bank_name?></td>
                                 <td><?=$status?></td>
                                 <td><?=$hinhthuc?></td>
                                 <td>
-                                    
-                                    <button><a href="./cart.php?id_class=<?=$lop_id?>&price=<?=$sotien_vnd?>&tenlop=<?=$name?>">
+                                    <button>
+                                        <a href="./cart.php?id_class=<?=$lop_id?>&price=<?=$sotien_vnd?>&tenlop=<?=$name?>">
                                         <?php if($status == 'Chưa thanh toán' && $hinhthuc == 'Thanh toán tại trung tâm') echo 'Thanh toán chuyển khoản'; ?>
-                                    </a></button></td>
+                                        </a>
+                                    </button>
+                                    <button >
+                                        <a href="./buy.php?act=del_order&id=<?=$id?>">
+                                        <?php if($status == 'Chưa thanh toán' && $hinhthuc == 'Thanh toán tại trung tâm') echo 'Hủy'; ?>
+                                        </a>
+                                    </button>
+                                </td>
                             </tr>
                             <?php } ?>
                         </tbody>
                     </table>
                     <div class="row border-b-2 brc-default-l2"></div>
-
-                    <!-- <div class="row mt-3">
-                        <div class="col-12 col-sm-7 text-grey-d2 text-95 mt-2 mt-lg-0">
-                            Extra note such as company or payment information...
-                        </div>
-
-                        <div class="col-12 col-sm-5 text-grey text-90 order-first order-sm-last">
-                            <div class="row my-2">
-                                <div class="col-7 text-right" id="columnSum">
-                                    Total price
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-120 text-secondary-d1"><?php echo $all ?></span>
-                                </div>
-                            </div>
-
-                            <div class="row my-2">
-                                <div class="col-7 text-right">
-                                    Tax (10%)
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-110 text-secondary-d1"><?php $tax = $price*0.1; echo $tax ?></span>
-                                </div>
-                            </div>
-
-                            <div class="row my-2 align-items-center bgc-primary-l3 p-2">
-                                <div class="col-7 text-right">
-                                    Total Amount
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-150 text-success-d3 opacity-2">
-                                        <?php $sumAll = $all + $tax; echo $sumAll;
-                                            $_SESSION['sumAll'] = $sumAll;
-                                        ?>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div> -->
-                        <!-- <span class="text-secondary-d1 text-105">Thank you for your business</span> -->
-                        <!-- <button class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0" value="Pay Now"></button> -->
-                        <!-- <a href="./buy.php?act=add_order" class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0" name="pay">Pay Now</a> -->
-                        <!-- <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"> -->
-                            <!-- <input type="submit" name="pay" value="Chuyển khoản" class="mr10 btn btn-primary btn-lg"> -->
-                            <!-- <input type="submit" name="pay-center" value="Thanh toán tại trung tâm" class="btn btn-primary btn-lg"> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
                 </form>
 
             </div>

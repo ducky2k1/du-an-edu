@@ -34,6 +34,9 @@
 	display: grid;
 	grid-template-columns: auto auto auto;
 	}
+
+
+	body{background: #eee}.date{font-size: 11px}.comment-text{font-size: 12px}.fs-12{font-size: 12px}.shadow-none{box-shadow: none}.name{color: #007bff}.cursor:hover{color: blue}.cursor{cursor: pointer}.textarea{resize: none}
 </style>
 
 <body>
@@ -53,11 +56,11 @@
 		<section class="page-title" style="background-image: url(images/background/page-title.jpg);">
 			<div class="auto-container">
 				<div class="title-outer">
-					<h1 class="title">IELTS</h1>
+					<h1 class="title"><?php echo $listclass[0]['course_name'] ?></h1>
 					<ul class="page-breadcrumb">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="#">Pages</a></li>
-						<li>Courses</li>
+						<li><a href="index.html">Trang chủ</a></li>
+						<li><a href="#">Courses</a></li>
+						<li><?php echo $listclass[0]['course_name'] ?></li>
 					</ul>
 				</div>
 			</div>
@@ -71,65 +74,58 @@
 					<!--Start courses Details Content-->
 					<div class="col-xl-8 col-lg-8">
 						<div class="courses-details__content">
-							<!-- <img src="images/resource/course-details.jpg" alt="" /> -->
-							<h2 class="mt-4">Tất cả lớp học</h2>
-							<div class="carousel-outer">
-								<!-- Courses Carousel -->
-								<div class="grid-col-4">
-									<!-- Course Block -->
-									
-									<?php 
-										// require_once "./model/class.php";
-									foreach ($listclass as $class) {  ?>
-										
-										
-											<div class="course-block mr-10 w-30">
-												<div class="inner-box">
-													<div class="image-box">
-														<figure class="image"><a href="page-course-details.html"><img
-																	src="images/resource/course-1.jpg" alt=""></a></figure>
-														<span class="price"><?php extract($class); echo "$".$price ?></span>
-														<div class="value"><?php extract($class); echo $ca_name ?> - <?php extract($class); echo $day ?></div>
-														<!-- <a href="" class="value theme-btn btn-style-one ">BUY THIS COURSE</a> -->
-														<!-- <div class="value">BUY THIS COURSE</div> -->
-													</div>
-													<div class="content-box">
-														<ul class="course-info">
-															<li><i class="fa fa-clock"></i>
-																<?php extract($class); echo $time_start ?> -
-																<?php extract($class); echo $time_end ?>
-															</li>
-															<li><i class="fa fa-users"></i> 
-															<?php foreach($count_id as $keyCount => $valCount){
-																	if ($keyCount == $class["id"]) {
-																		echo "Has ".$valCount." /";
-																	}
-																} 
-															?>
-															<?php extract($class); echo $slot ?> Students</li>
-															<li><i class="fa fa-chalkboard-teacher"></i> <?php extract($class); echo $customer_name ?></li>
-														</ul>
-														<h5 class="title"><a href="page-course-details.html"><?php extract($class); echo $name ?></a></h5>
-														<div class="other-info">
 
-														</div>
-													</div>
-
-
-												</div>
-												<div class="center">
-													<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>&tenlop=<?php extract($class); echo $name ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
-												</div>
-											</div> 
-									<?php } ?>
-								</div>
-							</div>
 							<div class="content mt-40">
 								<div class="text">
-									<h3>What You Will Learn?</h3>
-									<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est
-										qui dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae
-										vitae dicta sunt explicabo.</p>
+									<h3>Bạn sẽ học gì ?</h3>
+									<p>
+									<?php
+									$list = ['IELTS (International English Language Testing System) là Hệ thống Kiểm 
+									tra Anh ngữ Quốc tế với 4 kỹ năng Nghe, Nói, Đọc và Viết. Chứng chỉ này ra đời 
+									vào năm 1989 bởi 3 tổ chức: ESOL thuộc Đại học Cambridge, Hội đồng Anh và Tổ 
+									chức Giáo dục IDP (ÚC).
+
+									Đây là cuộc thi kiểm tra trình độ thông thạo Anh ngữ quan trọng và phổ biến 
+									nhất thế giới cho mục đích học tập, làm việc, đi du học và đi định cư. Trước 
+									nhu cầu khách hàng ngày một tăng cao, Thiên Tú Academy đã tổ chức các khóa học 
+									Luyện thi IELTS nhằm cung cấp đến khách hàng dịch vụ luyện thi và làm hồ sơ du học, 
+									định cư trọn gói từ A – Z.',
+									'TOEIC (viết tắt của Test of English for International Communication – Bài kiểm tra 
+									tiếng Anh giao tiếp quốc tế) là một bài thi nhằm đánh giá trình độ sử dụng tiếng Anh 
+									dành cho những người sử dụng tiếng Anh như một ngoại ngữ, đặc biệt là những đối tượng 
+									muốn sử dụng tiếng Anh trong môi trường giao tiếp và làm việc quốc tế. Kết quả của bài 
+									thi TOEIC phản ánh mức độ thành thạo khi giao tiếp bằng tiếng Anh trong các hoạt động 
+									như kinh doanh, thương mại, du lịch…
+
+									Ngày nay, kỹ năng tiếng Anh vô cùng cần thiết để các bạn sinh viên chuẩn bị cho môi 
+									trường làm việc chuyên nghiệp. Nhiều trường Đại học hàng đầu Việt Nam hiện yêu cầu sinh 
+									viên sở hữu những chứng chỉ tiếng Anh quốc tế như TOEIC là điều kiện tốt nghiệp. Nhiều 
+									doanh nghiệp hàng đầu Việt Nam cũng dùng TOEIC  để sát hạch tuyển dụng đầu vào cũng như 
+									xét tăng lương thưởng, bổ nhiệm vào các vị trí cao hơn cho cán bộ công nhân viên. Vì vậy, 
+									TOEIC là 1 chứng chỉ vô cùng quan trọng để chứng tỏ năng lực tiếng Anh và hỗ trợ phát triển 
+									nghề nghiệp trong gần như tất cả các ngành nghề.',
+									'Đây là khóa học tiếng anh trực tiếp hỗ trợ cho các bạn các lớp tiếng anh giao tiếp bổ sung 
+									từ vựng và ngữ pháp, giúp cho các bạn hệ thống hóa các hiện tượng ngữ pháp cơ bản trong tiếng 
+									anh như thì, thời, câu bị động, chủ động, các loại câu điều kiện, mệnh đề quan hệ, mạo từ, giới 
+									từ…. Bên cạnh đó, các bạn cũng sẽ được học từ vựng theo các chủ đề phục vụ trực tiếp công việc, 
+									học tập hay giao tiếp hàng ngày như friends, family, home, housework, shopping, study, jobs…',
+									'Khóa học tiếng Anh cho người mất gốc được ra đời với mục tiêu xây dựng nền tảng tiếng Anh căn 
+									bản, tạo nền móng vững chắc để người học có thể phát triển và hoàn thiện bản thân. Lộ trình khóa 
+									học được xây dựng bài bản, tập trung vào những chủ đề gần gũi, thiết thực trong đời sống. Ngoài ra, 
+									khóa học hướng tới yếu tố “học sâu, nhớ lâu”, phát triển kỹ năng tập trung giúp người học tiếng Anh 
+									từ “zero” thành “hero”.'
+											];
+									if($_GET['idkh'] == 10){
+										echo $list[0];
+									} else if($_GET['idkh'] == 11) {
+										echo $list[1];
+									} else if($_GET['idkh'] == 12) {
+										echo $list[2];
+									} else{
+										echo $list[3];
+									}
+									?>	
+									</p>
 								</div>
 								<div class="row mt-30">
 									<!-- Category Block Two -->
@@ -168,14 +164,14 @@
 							</div>
 							
 							<div class=" mt-25">
-								<h3>Frequently Asked Question</h3>
+								<h3>Một số câu hỏi thường gặp</h3>
 								<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
 									dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta
 									sunt explicabo.</p>
 								<ul class="accordion-box wow fadeInRight">
 									<!--Block-->
 									<li class="accordion block">
-										<div class="acc-btn">Is my technology allowed on tech?
+										<div class="acc-btn">Lộ trình học của tôi như thế nào ?
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
@@ -188,7 +184,7 @@
 									</li>
 									<!--Block-->
 									<li class="accordion block active-block">
-										<div class="acc-btn active">How to soft launch your business?
+										<div class="acc-btn active">Tôi sẽ học trong bao lâu ? 
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content current">
@@ -201,7 +197,7 @@
 									</li>
 									<!--Block-->
 									<li class="accordion block">
-										<div class="acc-btn">How to turn visitors into contributors
+										<div class="acc-btn">Sau khi hoàn thành khóa học tôi sẽ được lợi ích gì ? 
 											<div class="icon fa fa-plus"></div>
 										</div>
 										<div class="acc-content">
@@ -213,6 +209,120 @@
 										</div>
 									</li>
 								</ul>
+							</div>
+
+							<div class="text">
+								<h3>Bình luận</h3>
+								<div class="container mt-5">
+									<div class="d-flex justify-content-center row">
+										<div class="col-md-8" style="width:100%;">
+											<div class="d-flex flex-column comment-section">
+												<?php foreach($listComment as $ltc){ extract($ltc);?>
+													<div class="bg-white p-2">
+													<div class="d-flex flex-row user-info">
+														<img class="rounded-circle" src="./img_upload/<?php echo $image ?>" style="height:50px;width:50px;">
+														<div class="d-flex flex-column justify-content-start ml-2">
+															<span class="d-block font-weight-bold name" style="color:#4C7FAC;font-weight:500;"><?php echo $name ?></span>
+															<span class="date text-black-50">Shared publicly - <?php echo $day_comment ?></span>
+														</div>
+													</div>
+													<div class="mt-2">
+														<p class="comment-text" style="font-weight:500;"><?php  echo $content ?></p>
+													</div>
+												</div>
+												<?php } ?>
+
+
+												<!-- <div class="bg-white">
+													<div class="d-flex flex-row fs-12">
+														<div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span class="ml-1">Like</span></div>
+														<div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
+														<div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span></div>
+													</div>
+												</div> -->
+												<div class="bg-light p-2">
+													<?php if(isset($_SESSION['email'])){ ?>
+														<form action="./index.php?act=upcom&idkh=<?php echo $_GET['idkh'] ?>" method="post">
+															<div class="d-flex flex-row align-items-start">
+															<img class="rounded-circle" src="./img_upload/<?php 										
+																								if(isset($info)&&($info)){
+																									echo $info['image'];
+																								} ?>" style="height:40px;width:40px;">
+															<textarea class="form-control ml-1 shadow-none textarea" style="border: 1px solid #4C7FAC;" name="content"></textarea>
+															</div>
+															<div class="mt-2 text-right">
+																<input type="submit" name="up" value="Bình luận" class="btn btn-primary btn-sm shadow-none" style="background-color: #4C7FAC;border: 1px solid #4C7FAC;">
+																<!-- <button class="btn btn-primary btn-sm shadow-none" type="submit" name="upcom" style="background-color: #4C7FAC;border: 1px solid #4C7FAC;">Post comment</button> -->
+																<button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button" style="border: 1px solid #4C7FAC;color:#4C7FAC;">Cancel</button>
+															</div>
+														</form>
+
+													<?php } ?>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+
+
+							
+
+							<!-- <img src="images/resource/course-details.jpg" alt="" /> -->
+							<h2 class="mt-4">Tất cả lớp học</h2>
+							<div class="carousel-outer">
+								<!-- Courses Carousel -->
+								<div class="grid-col-4">
+									<!-- Course Block -->
+									
+									<?php 
+										// require_once "./model/class.php";
+									foreach ($listclass as $class) {  ?>
+										
+										
+											<div class="course-block mr-10 w-30">
+												<div class="inner-box">
+													<div class="image-box">
+														<figure class="image"><a href="page-course-details.html"><img
+																	src="images/resource/course-1.jpg" alt=""></a></figure>
+														<span class="price"><?php extract($class); echo "$".$price ?></span>
+														<div class="value"><?php extract($class); echo $ca_name ?> - <?php extract($class); echo $day ?></div>
+														<!-- <a href="" class="value theme-btn btn-style-one ">BUY THIS COURSE</a> -->
+														<!-- <div class="value">BUY THIS COURSE</div> -->
+													</div>
+													<div class="content-box">
+														<ul class="course-info">
+															<li><i class="fa fa-clock"></i>
+																<?php extract($class); echo $time_start ?> -
+																<?php extract($class); echo $time_end ?>
+															</li>
+															<li><i class="fa fa-users"></i> 
+															<?php foreach($count_id as $keyCount => $valCount){
+																	if ($keyCount == $class["id"]) {
+																		echo "Có ".$valCount." /";
+																	}
+																} 
+															?>
+															<?php extract($class); echo $slot ?> học sinh</li>
+															<li><i class="fa fa-chalkboard-teacher"></i> <?php extract($class); echo $customer_name ?></li>
+														</ul>
+														<h5 class="title"><a href="page-course-details.html"><?php extract($class); echo $name ?></a></h5>
+														<div class="other-info">
+
+														</div>
+													</div>
+
+
+												</div>
+												<div class="center">
+													<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>&tenlop=<?php extract($class); echo $name ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
+												</div>
+											</div> 
+									<?php } ?>
+								</div>
 							</div>
 							
 						</div>

@@ -4,4 +4,5 @@
         VALUES (NULL, $ma_us,'$getDate',$id_course,$id_class)";
         pdo_execute($sql);
     }
+    
 ?>

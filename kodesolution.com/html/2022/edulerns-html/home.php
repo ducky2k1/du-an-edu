@@ -312,13 +312,13 @@
 									</div>
 									<div class="content-box">
 										<ul class="course-info">
-											<li><i class="fa fa-book"></i> 8 Lessons</li>
-											<li><i class="fa fa-users"></i> 16 Students</li>
+											<li><i class="fa fa-book"></i> 8 Lesson</li>
+											<li><i class="fa fa-users"></i> 20 Students</li>
 										</ul>
 										<h5 class="title"><a href="'.$link.'">'.$name.'</a></h5>
 										<div class="other-info">
 											<div class="rating-box">
-												<span class="text">(4.9 /8 Rating)</span>
+												<span class="text">(4.9 /5 Rating)</span>
 												<div class="rating"><span class="fa fa-star"></span><span
 														class="fa fa-star"></span><span class="fa fa-star"></span><span
 														class="fa fa-star"></span><span class="fa fa-star"></span></div>

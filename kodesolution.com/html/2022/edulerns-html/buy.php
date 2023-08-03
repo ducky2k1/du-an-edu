@@ -173,7 +173,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                 $hinhthuc = 'Thanh toán tại trung tâm';
                 $status = 'Chưa thanh toán';
                 $dateTime = new DateTime();
-                    $currentDateTime = $dateTime->format("Y-m-d H:i:s");
+                $currentDateTime = $dateTime->format("Y-m-d H:i:s");
                     // $_SESSION['regis-time'] = $currentDateTime;
                     // $status = 'Chưa thanh toán';
                 set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_SESSION['price-class'], NULL, $currentDateTime, NULL, $status, $hinhthuc );
@@ -241,6 +241,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
     
                 if (empty($errer)) {
                     move_uploaded_file($anh_moi['tmp_name'], './img_upload/' . $img);
+                    // move_uploaded_file($anh_moi['tmp_name'], '../../QUANLYNHANVIEN VER.2/img_upload/' . $img);
 
     
                     up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone);
@@ -255,6 +256,13 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                 case 'info':
                     include "./fi.php";
                     break;
+                case 'del_order':
+                    if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                        del_hoa_don($_GET['id']);
+                    }
+                    $listhoadon = loadall_hoadon_member($_SESSION['id_mem']);
+					require_once "./hoadon.php";
+                break;
     default:
             include "home.php";
             break;

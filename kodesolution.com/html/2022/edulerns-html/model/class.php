@@ -3,7 +3,7 @@
         $sql = "SELECT `dtb_lop`.`id`,`dtb_lop`.`course_id`,`dtb_lop`.`name`,`dtb_lop`.`customer_id`
         ,`dtb_lop`.`time`,`dtb_lop`.`ca_hoc_id`,`dtb_lop`.`day`
         , `dtb_ca_hoc`.`name` as ca_name, time_start,time_end,
-        dtb_customer.name as customer_name, dtb_lop.slot,dtb_course.price
+        dtb_customer.name as customer_name, dtb_lop.slot,dtb_course.price,dtb_course.name as course_name
         from dtb_lop 
         join dtb_ca_hoc on dtb_lop.ca_hoc_id=dtb_ca_hoc.id 
         join dtb_customer on dtb_lop.customer_id = dtb_customer.id
@@ -20,7 +20,7 @@
     function count_num($id){
         $sql ="SELECT COUNT(lop_id) as count_lop_id
         FROM dtb_hoadon
-        WHERE lop_id = $id";
+        WHERE lop_id = $id && dtb_hoadon.status = 'Đã thanh toán'";
         return pdo_query($sql);
     }
 

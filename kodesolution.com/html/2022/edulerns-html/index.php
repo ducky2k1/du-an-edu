@@ -6,7 +6,14 @@
 	include "./model/class.php";
 	include "./model/taikhoan.php";
 	include "./model/cart.php";
+	include "./model/comment.php";
 	$listcourse = loadall_course();
+	if (isset($_SESSION['email'])) {
+        $email=$_SESSION['email'];
+        $sql="SELECT * from dtb_member where email='$email'";
+        $info=pdo_query_one($sql);
+        $ma_us=$info['id'];
+    }
 
 
 	if(isset($_GET['act']) && $_GET['act'] != "") {
@@ -18,6 +25,7 @@
 					$id = $_GET['idkh'];
 					//get list class
 					$listclass = load_same_course($id);
+					$listComment = getComment($id);
 
 					// count student in class with class_id
 					foreach($listclass as $lClass) {
@@ -92,6 +100,45 @@
 					require_once "./lopcuatoi.php";
 					// header('location:home.php');
 				break;
+				case 'upcom':
+					if (isset($_POST['up']) && ($_POST['up'])) {
+						$mem_id = $ma_us;
+						$course_id = $_GET['idkh'];
+						$content = $_POST['content'];
+						date_default_timezone_set("Asia/Ho_Chi_Minh");
+						$getDate = date("Y-m-d");
+						postComment($mem_id,$content,$course_id,$getDate);
+						echo '<script>alert("Bình luận thành công. Vui lòng chờ xét duyệt");
+						</script>';
+						header('location:./index.php?act=class&idkh='.$course_id);
+						break;
+
+						// $errer = [];
+						// if (empty($password)) {
+						// 	$errer['password'] = "Vui lòng nhập mật khẩu";
+						// }
+						// if (empty($email)) {
+						// 	$errer['email'] = "Vui lòng nhập email";
+						// }
+						// if (empty($errer)) {
+						// 	$sql = "SELECT * FROM dtb_member WHERE email='" . $email . "' ";
+						// 	$data = pdo_query_one($sql);
+						// 	if ($data) {
+						// 		if ($password == $data['pass']) {
+						// 			// $_SESSION['login'] = $data['role'];
+						// 			// add_cookie('duc',serialize($data),30);
+						// 			// $_SESSION['login'] = $data['role'];
+						// 			$_SESSION['email'] = $data['email'];
+						// 			$_SESSION['id_mem'] = $data['id'];	
+						// 			header('location:index.php');
+						// 		} else {
+						// 			$errer['password'] = "Mật khẩu không đúng";
+						// 		}
+						// 	} else {
+						// 		$errer['email'] = "Không tồn tại email này";
+						// 	}
+						// }
+					} 
 		default:
 				include "home.php";
 				break;
