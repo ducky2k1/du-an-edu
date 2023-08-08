@@ -9,6 +9,28 @@
         ";
         return pdo_query($sql);
     }
+    function order_selectAll_y(){
+        $sql="SELECT dtb_hoadon.id as order_id, dtb_member.name as member_name, dtb_member.id as member_id, 
+        dtb_member.phone,dtb_member.email,dtb_member.location, sotien_vnd , register_time , dtb_lop.name as class_name,`status`,
+        payment_time,hinhthuc
+        FROM `dtb_hoadon` 
+        JOIN dtb_member ON dtb_hoadon.member_id = dtb_member.id
+        JOIN dtb_lop ON dtb_hoadon.lop_id = dtb_lop.id
+        WHERE dtb_hoadon.status = 'Đã thanh toán'
+        ";
+        return pdo_query($sql);
+    }
+    function order_selectAll_n(){
+        $sql="SELECT dtb_hoadon.id as order_id, dtb_member.name as member_name, dtb_member.id as member_id, 
+        dtb_member.phone,dtb_member.email,dtb_member.location, sotien_vnd , register_time , dtb_lop.name as class_name,`status`,
+        payment_time,hinhthuc
+        FROM `dtb_hoadon` 
+        JOIN dtb_member ON dtb_hoadon.member_id = dtb_member.id
+        JOIN dtb_lop ON dtb_hoadon.lop_id = dtb_lop.id
+        WHERE dtb_hoadon.status = 'Chưa thanh toán'
+        ";
+        return pdo_query($sql);
+    }
     function del_order($ma_us){
         $sqlDelOr="DELETE FROM `dtb_hoadon` WHERE id=".$ma_us;
         pdo_execute($sqlDelOr);
@@ -25,11 +47,11 @@
         WHERE lop_id = $id && dtb_hoadon.status = 'Đã thanh toán'";
         return pdo_query($sql);
     }
-    function setOrder($ma_us,$id_course,$getDate,$id_class,$sumAll){
-        $sql = "INSERT INTO `dtb_order` (`id`, `member_id`, `date_buy`, `course_id`, `lop_id`,`tong_tien`) 
-        VALUES (NULL, $ma_us,'$getDate',$id_course,$id_class,$sumAll)";
-        pdo_execute($sql);
-    }
+    // function setOrder($ma_us,$id_course,$getDate,$id_class,$sumAll){
+    //     $sql = "INSERT INTO `dtb_order` (`id`, `member_id`, `date_buy`, `course_id`, `lop_id`,`tong_tien`) 
+    //     VALUES (NULL, $ma_us,'$getDate',$id_course,$id_class,$sumAll)";
+    //     pdo_execute($sql);
+    // }
     function count_order(){
         $sql ="SELECT COUNT(id) as count_order FROM dtb_hoadon WHERE `status` = 'Đã thanh toán'";
         return pdo_query($sql);

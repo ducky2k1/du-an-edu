@@ -22,11 +22,8 @@ function del_mem($ma_us)
     //         $i++;
     //     }
     // }
-    // delete cart
-    $sqlDelCart= "DELETE FROM `dtb_cart` where member_id = ".$ma_us;
-    pdo_execute($sqlDelCart);
     // delete order in order
-    $sqlDelOrder= "DELETE FROM `dtb_order` where member_id = ".$ma_us;
+    $sqlDelOrder= "DELETE FROM `dtb_hoadon` where member_id = ".$ma_us;
     pdo_execute($sqlDelOrder);
     // delete recom in recom
     $sqlDelRecomn = "DELETE FROM `dtb_recomment` where member_id = ".$ma_us;

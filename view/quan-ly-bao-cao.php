@@ -97,16 +97,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="tile">
-                    <h3 class="tile-title">DỮ LIỆU HÀNG NGÀY
-                    <!-- <select name="" id="" class="select-date">
-                        <option value="7ngay">7 ngày</option>
-                        <option value="28ngay">28 ngày</option>
-                        <option value="90ngay">90 ngày</option>
-                        <option value="365ngay">365 ngày</option>
-                    </select> -->
-                    </h3>
-
-                    <!-- <div id="chart" style="height: 348.75px;width:620px"></div> -->
+                    <h3 class="tile-title">DỮ LIỆU HÀNG NGÀY</h3>
                     <div
                     id="myChart" style="width:559.6px; height:348.75px;">
                     </div>

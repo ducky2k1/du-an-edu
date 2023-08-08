@@ -9,7 +9,6 @@
       require "../model/customer.php";
       require "../model/order.php";
       require "../model/ca.php";
-      require "../model/cart.php";
       require "../model/comment.php";
 
 
@@ -354,13 +353,32 @@
           break;
 
         case 'class':
+          if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $list_class = class_selectAllByID($id);
+            $list_course = product_selectAll();
+            foreach($list_class as $lClass) {
+              $count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
+            }
+            require_once "../view/table-data-class.php";
+            require_once "../view/footer.php";
+          } else
           $list_class = class_selectAll();
+          $list_course = product_selectAll();
           foreach($list_class as $lClass) {
 						$count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
 					}
           require_once "../view/table-data-class.php";
           require_once "../view/footer.php";
           break;
+        case 'get_class':
+          $id_class = $_GET['id'];
+          $get_class = member_class($id_class);
+          require_once "../view/chi-tiet-class.php";
+          require_once "../view/footer.php";
+          break;
+          
+
         case 'add_class':
           $list_course = product_selectAll();
           $list_ca = ca_hoc_selectAll();
@@ -465,8 +483,17 @@
             require_once "../view/footer.php";
             break;         
           case 'order':
-            $list_order = order_selectAll();
-            // $list_cart = getListCart();
+              $list_order = order_selectAll();
+            require_once "../view/table-data-oder.php";
+            require_once "../view/footer.php";
+            break;
+          case 'order_y':
+            $list_order = order_selectAll_y();
+            require_once "../view/table-data-oder.php";
+            require_once "../view/footer.php";
+            break;
+          case 'order_n':
+            $list_order = order_selectAll_n();
             require_once "../view/table-data-oder.php";
             require_once "../view/footer.php";
             break;
@@ -475,43 +502,17 @@
             del_order($_GET['id']);
           }
           $list_order = order_selectAll();
-          // $list_cart = getListCart();
           require_once "../view/table-data-oder.php";
           require_once "../view/footer.php";
           break;
-          // case 'del_cart':            
-          //   if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-          //     del_cart($_GET['id']);
-          //   }
-          //   $list_order = order_selectAll();
-          //   $list_cart = getListCart();
-          //   require_once "../view/table-data-oder.php";
-          //   require_once "../view/footer.php";
-          //   break;
           case 'edit_order':
-            // $ma_us=$_GET['id'];
-            // $ma_cart=$_GET['id_cart'];
-            //     $listCartNew = getListCartNew($ma_us);
-            //     $id_course = $listCartNew[0]['course_id'];
-            //     $id_class = $listCartNew[0]['class_id'];
-            //     $sumAll = $listCartNew[0]['tong_tien'];
-            //     // date_default_timezone_set("Asia/Ho_Chi_Minh");
-            //     $getDate = $listCartNew[0]['day_buy'];
-            //     setOrder($ma_us,$id_course,$getDate,$id_class,$sumAll);
-            //     del_cart($ma_cart);
-            
-            // $list_order = order_selectAll();
-            // $list_cart = getListCart();
-            // echo '<script>window.location.href="index.php?act=order"</script>';
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-              // $dateTime = new DateTime();
-              // $currentDateTime = $dateTime->format("Y-m-d H:i:s");
               date_default_timezone_set("Asia/Ho_Chi_Minh");
               $getDate = date("Y-m-d");
               edit_order($_GET['id'],$getDate);
-            }         
+            }
+            echo '<script>alert("Thanh toán thành công.")</script>';
             $list_order = order_selectAll();
-            // $list_cart = getListCart();
             require_once "../view/table-data-oder.php";
             require_once "../view/footer.php";
             break;

@@ -175,6 +175,7 @@
                         //     break;
                         case 'dx':
                             unset($_SESSION['login']);
+                            session_destroy();
                             echo '<script>window.location.href="./index.php"</script>';
                         default:
                             include "./index.php";

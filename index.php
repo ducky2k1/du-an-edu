@@ -1,5 +1,5 @@
 <?php  
-    session_start();
+    // session_start();
     if (isset($_SESSION['login'])) {        
 
         echo '<script>window.location.href="./controller/index.php"</script>';
@@ -55,6 +55,8 @@
                             <input class="input100" type="text" placeholder="Tài khoản quản trị" name="email"
                                 id="username" value="<?= $_POST['email'] ?? "" ?>">
                             <span class="focus-input100"></span>
+                            <span style="color: red;"><?= $errer['email'] ?? "" ?></span>
+
                             <span class="symbol-input100">
                                 <i class='bx bx-user'></i>
                             </span>
@@ -64,6 +66,8 @@
                                 name="password" id="password-field" value="<?= $_POST['password'] ?? "" ?>">
                             <span toggle="#password-field" class="bx fa-fw bx-hide field-icon click-eye"></span>
                             <span class="focus-input100"></span>
+                            <span style="color: red;"><?= $errer['password'] ?? "" ?></span>
+
                             <span class="symbol-input100">
                                 <i class='bx bx-key'></i>
                             </span>

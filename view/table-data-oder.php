@@ -11,35 +11,15 @@
           <div class="tile">
             <div class="tile-body">
               <div class="row element-button">
-                <!-- <div class="col-sm-2">
-  
-                  <a class="btn btn-add btn-sm" href="form-add-don-hang.html" title="Thêm"><i class="fas fa-plus"></i>
-                    Tạo mới đơn hàng</a>
-                </div> -->
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm nhap-tu-file" type="button" title="Nhập" onclick="myFunction(this)"><i
-                      class="fas fa-file-upload"></i> Tải từ file</a>
-                </div>
   
                 <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm print-file" type="button" title="In" onclick="myApp.printTable()"><i
-                      class="fas fa-print"></i> In dữ liệu</a>
+                  <a class="btn btn-excel btn-sm" href="../controller/index.php?act=order_y">Đã thanh toán</a>
                 </div>
                 <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm print-file js-textareacopybtn" type="button" title="Sao chép"><i
-                      class="fas fa-copy"></i> Sao chép</a>
-                </div>
-  
-                <div class="col-sm-2">
-                  <a class="btn btn-excel btn-sm" href="" title="In"><i class="fas fa-file-excel"></i> Xuất Excel</a>
+                  <a class="btn btn-delete btn-sm pdf-file" href="../controller/index.php?act=order_n">Chưa thanh toán</a>
                 </div>
                 <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm pdf-file" type="button" title="In" onclick="myFunction(this)"><i
-                      class="fas fa-file-pdf"></i> Xuất PDF</a>
-                </div>
-                <div class="col-sm-2">
-                  <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
-                      class="fas fa-trash-alt"></i> Xóa tất cả </a>
+                  <a class="btn btn-delete btn-sm" href="../controller/index.php?act=order">Tất cả </a>
                 </div>
               </div>
               <table class="table table-hover table-bordered" id="sampleTable">
@@ -86,8 +66,9 @@
                                       </td>
                                     <td><?php extract($lt); echo number_format($sotien_vnd*23500) ?></td>
                                     <td>
+                                    <?php extract($lt); if($status != 'Đã thanh toán'){ ?>
                                       <a href="../controller/index.php?act=del_order&id=<?php extract($lt); echo $order_id ?>" onclick="return confirm('Bạn có chắc xóa không')"><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button></a>
-                                      <?php extract($lt); if($status != 'Đã thanh toán'){ ?>
+                                      
                                       <a href="../controller/index.php?act=edit_order&id=<?php extract($lt); echo $order_id ?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-check"></i></button></a>
                                       <?php } ?>
                                     </td>
