@@ -58,9 +58,6 @@
             update_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_GET['vnp_BankCode'], $_GET['vnp_PayDate'], $status, $hinhthuc);
         }
     }
-    // echo $_SESSION['id_class'].'<br>';
-    // echo $_SESSION['id_mem'].'<br>';
-    // echo $_SESSION['sumAll'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

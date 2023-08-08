@@ -45,10 +45,10 @@
 		<section class="page-title" style="background-image: url(images/background/page-title.jpg);">
 			<div class="auto-container">
 				<div class="title-outer">
-					<h1 class="title">Contact Us</h1>
+					<h1 class="title">Liên hệ chúng tôi</h1>
 					<ul class="page-breadcrumb">
-						<li><a href="index.html">Home</a></li>
-						<li>Contact</li>
+						<li><a href="index.html">Trang chủ</a></li>
+						<li>Liên hệ</li>
 					</ul>
 				</div>
 			</div>
@@ -59,65 +59,12 @@
 		<section class="contact-details">
 			<div class="container ">
 				<div class="row">
-					<div class="col-xl-7 col-lg-6">
-						<div class="sec-title">
-							<span class="sub-title">Send us email</span>
-							<h2>Feel free to write</h2>
-						</div>
-						<!-- Contact Form -->
-						<form id="contact_form" name="contact_form" class=""
-							action="https://kodesolution.com/html/2022/edulerns-html/includes/sendmail.php"
-							method="post">
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="mb-3">
-										<input name="form_name" class="form-control" type="text"
-											placeholder="Enter Name">
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="mb-3">
-										<input name="form_email" class="form-control required email" type="email"
-											placeholder="Enter Email">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="mb-3">
-										<input name="form_subject" class="form-control required" type="text"
-											placeholder="Enter Subject">
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="mb-3">
-										<input name="form_phone" class="form-control" type="text"
-											placeholder="Enter Phone">
-									</div>
-								</div>
-							</div>
-							<div class="mb-3">
-								<textarea name="form_message" class="form-control required" rows="7"
-									placeholder="Enter Message"></textarea>
-							</div>
-							<div class="mb-3">
-								<input name="form_botcheck" class="form-control" type="hidden" value="" />
-								<button type="submit" class="theme-btn btn-style-one"
-									data-loading-text="Please wait..."><span class="btn-title">Send
-										message</span></button>
-								<button type="reset" class="theme-btn btn-style-one bg-theme-color5"><span
-										class="btn-title">Reset</span></button>
-							</div>
-						</form>
-						<!-- Contact Form Validation-->
-					</div>
-					<div class="col-xl-5 col-lg-6">
+					<div class="col-xl col-lg-6">
 						<div class="contact-details__right">
 							<div class="sec-title">
-								<span class="sub-title">Need any help?</span>
-								<h2>Get in touch with us</h2>
-								<div class="text">Lorem ipsum is simply free text available dolor sit amet consectetur
-									notted adipisicing elit sed do eiusmod tempor incididunt simply dolore magna.</div>
+								<span class="sub-title">Bạn có cần giúp ?</span>
+								<h2>Liên lạc với chúng tôi</h2>
+								<div class="text">Nếu bạn có vấn đề, thắc mắc gì về khóa học, giảng viên, trung tâm hãy liên hệ với chúng tôi qua.</div>
 							</div>
 							<ul class="list-unstyled contact-details__info">
 								<li>
@@ -125,7 +72,7 @@
 										<span class="lnr-icon-phone-plus"></span>
 									</div>
 									<div class="text">
-										<h6>Have any question?</h6>
+										<h6>Bạn có bất kỳ câu hỏi nào ?</h6>
 										<a href="tel:980089850"><span>Free</span> +92 (020)-9850</a>
 									</div>
 								</li>
@@ -134,7 +81,7 @@
 										<span class="lnr-icon-envelope1"></span>
 									</div>
 									<div class="text">
-										<h6>Write email</h6>
+										<h6>Viết email</h6>
 										<a href="mailto:needhelp@company.com">needhelp@company.com</a>
 									</div>
 								</li>
@@ -143,7 +90,7 @@
 										<span class="lnr-icon-location"></span>
 									</div>
 									<div class="text">
-										<h6>Visit anytime</h6>
+										<h6>Trực tiếp 24/24</h6>
 										<span>66 broklyn golden street. New York</span>
 									</div>
 								</li>
@@ -161,154 +108,9 @@
 				<div class="row">
 					<!-- Google Map HTML Codes -->
 					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.843149788316!2d144.9537131159042!3d-37.81714274201087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sbn!2sbd!4v1583760510840!5m2!1sbn!2sbd"
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.3603227741282!2d-74.00725942426935!3d40.710083737733505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22e7fdbf37%3A0x75562549191dc3e5!2s80%20Gold%20Street!5e0!3m2!1svi!2s!4v1691074512734!5m2!1svi!2s"
 						data-tm-width="100%" height="500" frameborder="0" allowfullscreen=""></iframe>
-				</div>
 			</div>
 		</section>
 
-		<!-- Main Footer -->
-		<footer class="main-footer">
-			<div class="bg-image zoom-two" style="background-image: url(images/background/4.jpg)"></div>
-
-			<!--Widgets Section-->
-			<div class="widgets-section">
-				<div class="auto-container">
-					<div class="row">
-						<!--Footer Column-->
-						<div class="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
-							<div class="footer-widget about-widget">
-								<div class="logo"><a href="index.html"><img src="images/logo-2.png" alt=""></a></div>
-								<div class="text">Get 26,000+ best online courses from us</div>
-								<ul class="social-icon-two">
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!--Footer Column-->
-						<div class="footer-column col-xl-2 col-lg-4 col-md-6 col-sm-12">
-							<div class="footer-widget">
-								<h4 class="widget-title">Explore</h4>
-								<ul class="user-links">
-									<li><a href="#">Gallery</a></li>
-									<li><a href="#">News & Articles</a></li>
-									<li><a href="#">FAQ's</a></li>
-									<li><a href="#">Sign In/Registration</a></li>
-									<li><a href="#">Coming Soon</a></li>
-									<li><a href="#">Contacts</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!--Footer Column-->
-						<div class="footer-column col-xl-2 col-lg-4 col-md-6 col-sm-12">
-							<div class="footer-widget">
-								<h4 class="widget-title">Links</h4>
-								<ul class="user-links">
-									<li><a href="#">About</a></li>
-									<li><a href="#">Courses</a></li>
-									<li><a href="#">Instructor</a></li>
-									<li><a href="#">Events</a></li>
-									<li><a href="#">Instructor Profile</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!--Footer Column-->
-						<div class="footer-column col-xl-5 col-lg-4 col-md-6 col-sm-12">
-							<div class="footer-widget contact-widget">
-								<h4 class="widget-title">Contact</h4>
-								<div class="widget-content">
-									<ul class="contact-info">
-										<li><i class="fa fa-phone-square"></i> <a href="tel:+926668880000">+92 (0088)
-												6823</a></li>
-										<li><i class="fa fa-envelope"></i> <a
-												href="mailto:needhelp@potisen.com">needhelp@company.com</a></li>
-										<li><i class="fa fa-map-marker-alt"></i> 80 Broklyn Golden Street. New York. USA
-										</li>
-									</ul>
-									<div class="subscribe-form">
-
-										<form method="post" action="#">
-											<div class="form-group">
-												<input type="email" name="email" class="email" value=""
-													placeholder="Email Address" required="">
-												<button type="button" class="theme-btn btn-style-one"><i
-														class="fa fa-long-arrow-alt-right"></i></button>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!--Footer Bottom-->
-			<div class="footer-bottom">
-				<div class="auto-container">
-					<div class="inner-container">
-						<div class="copyright-text">&copy; Copyright 2022 by <a href="index.html">Company.com</a></div>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!--End Main Footer -->
-
-	</div><!-- End Page Wrapper -->
-
-
-	<!-- Scroll To Top -->
-	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
-
-	<script src="js/jquery.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/wow.js"></script>
-	<script src="js/appear.js"></script>
-	<script src="js/select2.min.js"></script>
-	<script src="js/swiper.min.js"></script>
-	<script src="js/owl.js"></script>
-	<script src="js/script.js"></script>
-
-	<!-- form submit -->
-	<script src="js/jquery.validate.min.js"></script>
-	<script src="js/jquery.form.min.js"></script>
-	<script>
-		(function ($) {
-			$("#contact_form").validate({
-				submitHandler: function (form) {
-					var form_btn = $(form).find('button[type="submit"]');
-					var form_result_div = '#form-result';
-					$(form_result_div).remove();
-					form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-					var form_btn_old_msg = form_btn.html();
-					form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-					$(form).ajaxSubmit({
-						dataType: 'json',
-						success: function (data) {
-							if (data.status == 'true') {
-								$(form).find('.form-control').val('');
-							}
-							form_btn.prop('disabled', false).html(form_btn_old_msg);
-							$(form_result_div).html(data.message).fadeIn('slow');
-							setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
-						}
-					});
-				}
-			});
-		})(jQuery);
-	</script>
-</body>
-
-<!-- Mirrored from kodesolution.com/html/2022/edulerns-html/page-contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2023 16:49:30 GMT -->
-
-</html>
+		<?php include "./footer.php"; ?>

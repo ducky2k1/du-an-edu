@@ -151,14 +151,6 @@ hr {
     
 <div class="page-content container">
     <div class="page-header text-blue-d2">
-        <!-- <h1 class="page-title text-secondary-d1">
-            Invoice
-            <small class="page-info">
-                <i class="fa fa-angle-double-right text-80"></i>
-                ID: #111-222
-            </small>
-        </h1> -->
-
         <div class="page-tools">
             <div class="action-buttons">
                 <a class="btn bg-white btn-light mx-1px text-95" href="#" data-title="Print">

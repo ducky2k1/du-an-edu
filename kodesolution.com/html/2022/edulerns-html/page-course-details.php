@@ -165,9 +165,7 @@
 							
 							<div class=" mt-25">
 								<h3>Một số câu hỏi thường gặp</h3>
-								<p>Lorem ipsum is simply free text used by copytyping refreshing. Neque porro est qui
-									dolorem ipsum quia quaed inventore veritatis et quasi architecto beatae vitae dicta
-									sunt explicabo.</p>
+								<p>Dưới đây là một số câu hỏi EduLerns hay gặp.</p>
 								<ul class="accordion-box wow fadeInRight">
 									<!--Block-->
 									<li class="accordion block">
@@ -176,9 +174,7 @@
 										</div>
 										<div class="acc-content">
 											<div class="content">
-												<div class="text">There are many variations of passages the majority
-													have suffered alteration in some fo injected humour, or randomised
-													words believable.</div>
+												<div class="text">Comming soon.</div>
 											</div>
 										</div>
 									</li>
@@ -189,9 +185,7 @@
 										</div>
 										<div class="acc-content current">
 											<div class="content">
-												<div class="text">There are many variations of passages the majority
-													have suffered alteration in some fo injected humour, or randomised
-													words believable.</div>
+												<div class="text">Mỗi khóa học thường sẽ kéo dài trong khoảng thời gian 5 tuần.</div>
 											</div>
 										</div>
 									</li>
@@ -202,9 +196,7 @@
 										</div>
 										<div class="acc-content">
 											<div class="content">
-												<div class="text">There are many variations of passages the majority
-													have suffered alteration in some fo injected humour, or randomised
-													words believable.</div>
+												<div class="text">Sau khi hoàn thành khóa học bạn sẽ cải thiện tốt các kỹ năng nghe, nói, đọc viết.</div>
 											</div>
 										</div>
 									</li>
@@ -223,7 +215,7 @@
 														<img class="rounded-circle" src="./img_upload/<?php echo $image ?>" style="height:50px;width:50px;">
 														<div class="d-flex flex-column justify-content-start ml-2">
 															<span class="d-block font-weight-bold name" style="color:#4C7FAC;font-weight:500;"><?php echo $name ?></span>
-															<span class="date text-black-50">Shared publicly - <?php echo $day_comment ?></span>
+															<span class="date text-black-50">Công khai - <?php echo $day_comment ?></span>
 														</div>
 													</div>
 													<div class="mt-2">
@@ -257,6 +249,10 @@
 															</div>
 														</form>
 
+													<?php } else { ?>
+														<div>
+															<p style="color: #4C7FAC">Bạn phải đăng nhập để bình luận.</p>
+														</div>
 													<?php } ?>
 												</div>
 											</div>
@@ -275,7 +271,7 @@
 							<h2 class="mt-4">Tất cả lớp học</h2>
 							<div class="carousel-outer">
 								<!-- Courses Carousel -->
-								<div class="grid-col-4">
+								<div class="row">
 									<!-- Course Block -->
 									
 									<?php 
@@ -283,18 +279,18 @@
 									foreach ($listclass as $class) {  ?>
 										
 										
-											<div class="course-block mr-10 w-30">
+											<div class="course-block col-sm-4">
 												<div class="inner-box">
 													<div class="image-box">
-														<figure class="image"><a href="page-course-details.html"><img
+														<figure class="image"><a href="#"><img
 																	src="images/resource/course-1.jpg" alt=""></a></figure>
-														<span class="price"><?php extract($class); echo "$".$price ?></span>
 														<div class="value"><?php extract($class); echo $ca_name ?> - <?php extract($class); echo $day ?></div>
 														<!-- <a href="" class="value theme-btn btn-style-one ">BUY THIS COURSE</a> -->
 														<!-- <div class="value">BUY THIS COURSE</div> -->
 													</div>
 													<div class="content-box">
 														<ul class="course-info">
+															<li ><i class="fa fa-tag"></i><?php extract($class); echo ' '.number_format($price*22350).' VND' ?></li>
 															<li><i class="fa fa-clock"></i>
 																<?php extract($class); echo $time_start ?> -
 																<?php extract($class); echo $time_end ?>
@@ -318,7 +314,13 @@
 
 												</div>
 												<div class="center">
-													<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>&tenlop=<?php extract($class); echo $name ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
+													<?php if(isset($_SESSION['email'])){ extract($class); if(loadsame_hoadon_member($ma_us, $id) == false){ ?>
+														<a class="value theme-btn btn-style-one course-details-price-btn" style="background-color:silver;">Đã đăng ký</a>
+													<?php } else { ?>
+														<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>&tenlop=<?php extract($class); echo $name ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
+													<?php  }} else { ?>
+														<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>&tenlop=<?php extract($class); echo $name ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
+													<?php } ?>
 												</div>
 											</div> 
 									<?php } ?>
@@ -349,7 +351,6 @@
 									<span class="course-details-info-icon"><i class="far fa-flag"></i></span>
 									Trình độ: <span>Cơ bản</span>
 								</li>
-								 
 							</ul>
 
 							<!-- <div class="course-details-price">
@@ -372,7 +373,7 @@
 										
 										<a class="latest-course-author" href="#"><span><?php extract($class); echo $mo_ta ?></span></a>										
 										<h5><a href="./index.php?act=class&idkh=<?php extract($class); echo $id ?>"><?php extract($class); echo $name ?></a></h5>
-										<h5><?php extract($class); echo "$".$price ?></h5>
+										<h5><?php extract($class); echo number_format($price*22350).' VND' ?></h5>
 										<div class="latest-course-stars">
 											<i class="fas fa-star"></i>
 											<i class="fas fa-star"></i>
@@ -400,120 +401,4 @@
 		</section>
 		<!--End courses Details-->
 
-		<!-- Main Footer -->
-		<footer class="main-footer">
-			<div class="bg-image zoom-two" style="background-image: url(images/background/4.jpg)"></div>
-
-			<!--Widgets Section-->
-			<div class="widgets-section">
-				<div class="auto-container">
-					<div class="row">
-						<!--Footer Column-->
-						<div class="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
-							<div class="footer-widget about-widget">
-								<div class="logo"><a href="index.html"><img src="images/logo-2.png" alt=""></a></div>
-								<div class="text">Get 26,000+ best online courses from us</div>
-								<ul class="social-icon-two">
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!--Footer Column-->
-						<div class="footer-column col-xl-2 col-lg-4 col-md-6 col-sm-12">
-							<div class="footer-widget">
-								<h4 class="widget-title">Explore</h4>
-								<ul class="user-links">
-									<li><a href="#">Gallery</a></li>
-									<li><a href="#">News & Articles</a></li>
-									<li><a href="#">FAQ's</a></li>
-									<li><a href="#">Sign In/Registration</a></li>
-									<li><a href="#">Coming Soon</a></li>
-									<li><a href="#">Contacts</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!--Footer Column-->
-						<div class="footer-column col-xl-2 col-lg-4 col-md-6 col-sm-12">
-							<div class="footer-widget">
-								<h4 class="widget-title">Links</h4>
-								<ul class="user-links">
-									<li><a href="#">About</a></li>
-									<li><a href="#">Courses</a></li>
-									<li><a href="#">Instructor</a></li>
-									<li><a href="#">Events</a></li>
-									<li><a href="#">Instructor Profile</a></li>
-								</ul>
-							</div>
-						</div>
-
-						<!--Footer Column-->
-						<div class="footer-column col-xl-5 col-lg-4 col-md-6 col-sm-12">
-							<div class="footer-widget contact-widget">
-								<h4 class="widget-title">Contact</h4>
-								<div class="widget-content">
-									<ul class="contact-info">
-										<li><i class="fa fa-phone-square"></i> <a href="tel:+926668880000">+92 (0088)
-												6823</a></li>
-										<li><i class="fa fa-envelope"></i> <a
-												href="mailto:needhelp@potisen.com">needhelp@company.com</a></li>
-										<li><i class="fa fa-map-marker-alt"></i> 80 Broklyn Golden Street. New York. USA
-										</li>
-									</ul>
-									<div class="subscribe-form">
-
-										<form method="post" action="#">
-											<div class="form-group">
-												<input type="email" name="email" class="email" value=""
-													placeholder="Email Address" required="">
-												<button type="button" class="theme-btn btn-style-one"><i
-														class="fa fa-long-arrow-alt-right"></i></button>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!--Footer Bottom-->
-			<div class="footer-bottom">
-				<div class="auto-container">
-					<div class="inner-container">
-						<div class="copyright-text">&copy; Copyright 2022 by <a href="index.html">Company.com</a></div>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!--End Main Footer -->
-
-	</div><!-- End Page Wrapper -->
-
-
-	<!-- Scroll To Top -->
-	<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
-
-
-
-	<script src="js/jquery.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.js"></script>
-	<script src="js/jquery-ui.js"></script>
-	<script src="js/wow.js"></script>
-	<script src="js/appear.js"></script>
-	<script src="js/select2.min.js"></script>
-	<script src="js/swiper.min.js"></script>
-	<script src="js/owl.js"></script>
-	<script src="js/script.js"></script>
-</body>
-
-<!-- Mirrored from kodesolution.com/html/2022/edulerns-html/page-course-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 02 Jul 2023 16:49:24 GMT -->
-
-</html>
+		<?php include "./footer.php"; ?>

@@ -226,17 +226,16 @@ hr {
                                 <td><?=$bank_name?></td>
                                 <td><?=$status?></td>
                                 <td><?=$hinhthuc?></td>
-                                <td>
-                                    <button>
-                                        <a href="./cart.php?id_class=<?=$lop_id?>&price=<?=$sotien_vnd?>&tenlop=<?=$name?>">
-                                        <?php if($status == 'Chưa thanh toán' && $hinhthuc == 'Thanh toán tại trung tâm') echo 'Thanh toán chuyển khoản'; ?>
-                                        </a>
-                                    </button>
-                                    <button >
-                                        <a href="./buy.php?act=del_order&id=<?=$id?>">
-                                        <?php if($status == 'Chưa thanh toán' && $hinhthuc == 'Thanh toán tại trung tâm') echo 'Hủy'; ?>
-                                        </a>
-                                    </button>
+                                <td> 
+                                    <?php if($status == 'Chưa thanh toán' && $hinhthuc == 'Thanh toán tại trung tâm'){ ?>
+                                    <a href="./cart.php?id_class=<?=$lop_id?>&price=<?=$sotien_vnd?>&tenlop=<?=$name?>"  class="btn btn-primary btn-sm trash" style="width:161px;">
+                                    Thanh toán chuyển khoản
+                                    </a>
+                                    <a href="./buy.php?act=del_order&id=<?=$id?>" onclick="return confirm('Bạn có chắc muốn hủy khóa học không?')" class="btn btn-primary btn-sm trash" style="background-color:red;width:161px;">
+                                    Hủy
+                                    </a>
+                                    <?php } ?>
+
                                 </td>
                             </tr>
                             <?php } ?>

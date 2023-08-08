@@ -185,7 +185,7 @@
 								data-y="['middle','middle','middle','middle']"
 								data-textalign="['top','top','top','top']"
 								data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-								<span class="title">START TO NEW JOURNEY</span>
+								<span class="title">BẮT ĐẦU CHO HÀNH TRÌNH MỚI</span>
 							</div>
 
 							<div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
@@ -196,7 +196,7 @@
 								data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
 								data-textalign="['top','top','top','top']"
 								data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-								<h1>Best <span class="style-font">online</span> <br>courses from eduLerns</h1>
+								<h1>Khóa học <span class="style-font">tốt nhất</span> <br>từ EduLerns</h1>
 							</div>
 
 							<div class="tp-caption" data-paddingbottom="[0,0,0,0]" data-paddingleft="[15,15,15,15]"
@@ -207,8 +207,7 @@
 								data-y="['middle','middle','middle','middle']"
 								data-textalign="['top','top','top','top']"
 								data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-								<div class="text">World-class training and development programs <br>developed by top
-									teachers</div>
+								<div class="text">Các chương trình dạy học hàng đầu thế giới <br>được giảng dạy bởi những giáo viên có trình độ cao</div>
 							</div>
 
 
@@ -220,7 +219,7 @@
 								data-x="['left','left','left','left']" data-y="['middle','middle','middle','middle']"
 								data-textalign="['top','top','top','top']"
 								data-frames='[{"delay":1000,"speed":1500,"frame":"0","from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-								<a href="page-courses.html" class="theme-btn btn-style-one">Find Course</a>
+								<a href="./page-courses.php" class="theme-btn btn-style-one">Tìm khóa học</a>
 							</div>
 						</li>
 
@@ -240,23 +239,26 @@
 					<div class="content-column col-lg-6 col-md-12 order-2 wow fadeInRight" data-wow-delay="600ms">
 						<div class="inner-column">
 							<div class="sec-title">
-								<span class="sub-title">Get to know us</span>
-								<h2>Grow your skills learn with us from anywhere</h2>
-								<div class="text">Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod
-									tempor incididunt labore dolore magna aliquaenim ad minim. Sed risus augue, commodo
-									ornare felis non, eleifend molestie metus pharetra eleifend.</div>
+								<span class="sub-title">Làm việc để hiểu</span>
+								<h2>Phát triển kỹ năng của bạn một cách tốt nhất</h2>
+								<div class="text">Được thiết kế bởi các chuyên gia tiếng Anh của chúng tôi, 
+									các lớp học và khóa học tiếng Anh tại EduLerns mang đến cho người 
+									học một cộng đồng học tập an toàn, hòa nhập. Các giáo viên có trình độ 
+									chuyên môn cao của chúng tôi giúp người học cải thiện các kỹ năng nói, 
+									nghe, đọc và viết tiếng Anh, hỗ trợ người đọc 
+									tạo dựng sự tự tin và đạt được mục tiêu của mình.</div>
 							</div>
 
 							<ul class="list-style-one two-column">
-								<li><i class="icon fa fa-check"></i> Expert trainers</li>
-								<li><i class="icon fa fa-check"></i> Online learning</li>
-								<li><i class="icon fa fa-check"></i> Lifetime access</li>
-								<li><i class="icon fa fa-check"></i> Great results</li>
+								<li><i class="icon fa fa-check"></i> Chuyên gia đào tạo</li>
+								<li><i class="icon fa fa-check"></i> Học tập trực tiếp</li>
+								<li><i class="icon fa fa-check"></i> Truy cập trọn đời</li>
+								<li><i class="icon fa fa-check"></i> Kết quả tuyệt vời</li>
 							</ul>
 
 							<div class="btn-box">
-								<a href="page-about.html" class="theme-btn btn-style-one"><span
-										class="btn-title">Discover more</span></a>
+								<a href="#commin-soon" class="theme-btn btn-style-one"><span
+										class="btn-title">Khám phá nhiều hơn</span></a>
 							</div>
 						</div>
 					</div>
@@ -273,7 +275,7 @@
 									alt=""></figure>
 							<figure class="image-2 overlay-anim wow fadeInRight"><img src="images/resource/about-2.jpg"
 									alt=""></figure>
-							<div class="experience bounce-y"><span class="count">16</span> Years of Experience</div>
+							<div class="experience bounce-y"><span class="count">16</span> Năm kinh nghiệm</div>
 						</div>
 					</div>
 				</div>
@@ -289,8 +291,8 @@
 				</div>
 
 				<div class="sec-title">
-					<span class="sub-title">popular courses</span>
-					<h2>Pick a course to<br> get started your study</h2>
+					<span class="sub-title">Các khóa học</span>
+					<h2>Chọn một khóa học<br> để bắt đầu việc học của bạn</h2>
 				</div>
 
 				<div class="carousel-outer">
@@ -307,13 +309,11 @@
 									<div class="image-box">
 										<figure class="image"><a href="'.$link.'"><img
 													src="images/resource/course-1.jpg" alt=""></a></figure>
-										<span class="price">$'.$price.'</span>
 										<div class="value">'.$mo_ta.'</div>
 									</div>
 									<div class="content-box">
 										<ul class="course-info">
-											<li><i class="fa fa-book"></i> 8 Lesson</li>
-											<li><i class="fa fa-users"></i> 20 Students</li>
+											<h6 class="title">Giá tiền:  '.number_format($price*22350).'  (VNĐ)</h6>
 										</ul>
 										<h5 class="title"><a href="'.$link.'">'.$name.'</a></h5>
 										<div class="other-info">
@@ -323,105 +323,18 @@
 														class="fa fa-star"></span><span class="fa fa-star"></span><span
 														class="fa fa-star"></span><span class="fa fa-star"></span></div>
 											</div>
-											<div class="duration"><i class="fa fa-clock"></i> 3 Weeks</div>
 										</div>
 									</div>
 								</div>
 							</div> '; }
 						?>
-						<!-- Course Block -->
-						<!-- <div class="course-block">
-							<div class="inner-box">
-								<div class="image-box">
-									<figure class="image"><a href="page-course-details.html"><img
-												src="images/resource/course-2.jpg" alt=""></a></figure>
-									<span class="price">$49.00</span>
-									<div class="value">Advanced</div>
-								</div>
-								<div class="content-box">
-									<ul class="course-info">
-										<li><i class="fa fa-book"></i> 8 Lessons</li>
-										<li><i class="fa fa-users"></i> 16 Students</li>
-									</ul>
-									<h5 class="title"><a href="page-course-details.html">TOEIC</a></h5>
-									<div class="other-info">
-										<div class="rating-box">
-											<span class="text">(4.9 /8 Rating)</span>
-											<div class="rating"><span class="fa fa-star"></span><span
-													class="fa fa-star"></span><span class="fa fa-star"></span><span
-													class="fa fa-star"></span><span class="fa fa-star"></span></div>
-										</div>
-										<div class="duration">3 Weeks</div>
-									</div>
-								</div>
-							</div>
-						</div> -->
-
-						<!-- Course Block -->
-						<!-- <div class="course-block">
-							<div class="inner-box">
-								<div class="image-box">
-									<figure class="image"><a href="page-course-details.html"><img
-												src="images/resource/course-3.jpg" alt=""></a></figure>
-									<span class="price">$49.00</span>
-									<div class="value">Advanced</div>
-								</div>
-								<div class="content-box">
-									<ul class="course-info">
-										<li><i class="fa fa-book"></i> 8 Lessons</li>
-										<li><i class="fa fa-users"></i> 16 Students</li>
-									</ul>
-									<h5 class="title"><a href="page-course-details.html">GRAMMAR
-										</a></h5>
-									<div class="other-info">
-										<div class="rating-box">
-											<span class="text">(4.9 /8 Rating)</span>
-											<div class="rating"><span class="fa fa-star"></span><span
-													class="fa fa-star"></span><span class="fa fa-star"></span><span
-													class="fa fa-star"></span><span class="fa fa-star"></span></div>
-										</div>
-										<div class="duration">3 Weeks</div>
-									</div>
-								</div>
-							</div>
-						</div> -->
-
-						<!-- Course Block -->
-						<!-- <div class="course-block">
-							<div class="inner-box">
-								<div class="image-box">
-									<figure class="image"><a href="page-course-details.html"><img
-												src="images/resource/course-4.jpg" alt=""></a></figure>
-									<span class="price">$49.00</span>
-									<div class="value">Advanced</div>
-								</div>
-								<div class="content-box">
-									<ul class="course-info">
-										<li><i class="fa fa-book"></i> 8 Lessons</li>
-										<li><i class="fa fa-users"></i> 16 Students</li>
-									</ul>
-									<h5 class="title"><a href="page-course-details.html">PRONOUNCE
-										</a></h5>
-									<div class="other-info">
-										<div class="rating-box">
-											<span class="text">(4.9 /8 Rating)</span>
-											<div class="rating"><span class="fa fa-star"></span><span
-													class="fa fa-star"></span><span class="fa fa-star"></span><span
-													class="fa fa-star"></span><span class="fa fa-star"></span>
-											</div>
-										</div>
-										<div class="duration">3 Weeks</div>
-									</div>
-								</div>
-							</div>
-						</div> -->
 					</div>
 				</div>
 
 				<div class="bottom-text">
 					<div class="content">
-						<strong>23,000+</strong> more skillful courses you can explore <a href="page-courses.html"
-							class="theme-btn btn-style-one small">Explore All Courses</a>
+						<strong>23,000+</strong> các khóa học kỹ năng bạn có thể khám phá <a href="./page-courses.php"
+							class="theme-btn btn-style-one small">Khám phá tất cả khóa học</a>
 					</div>
 				</div>
 			</div>
@@ -436,7 +349,7 @@
 					<div class="feature-block col-lg-3 col-md-6 col-sm-6 wow fadeInUp">
 						<div class="inner-box ">
 							<i class="icon flaticon-online-learning"></i>
-							<h5 class="title">Online<br> Certifications</h5>
+							<h5 class="title">Chứng nhận<br> Trực tuyến, trực tiếp</h5>
 						</div>
 					</div>
 
@@ -444,7 +357,7 @@
 					<div class="feature-block col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="400ms">
 						<div class="inner-box ">
 							<i class="icon flaticon-elearning"></i>
-							<h5 class="title">Top<br> Instructors</h5>
+							<h5 class="title">Giảng viên<br> hàng đầu</h5>
 						</div>
 					</div>
 
@@ -452,7 +365,7 @@
 					<div class="feature-block col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="800ms">
 						<div class="inner-box ">
 							<i class="icon flaticon-web-2"></i>
-							<h5 class="title">Unlimited <br>Online Courses</h5>
+							<h5 class="title">Vố số <br>khóa học</h5>
 						</div>
 					</div>
 
@@ -460,7 +373,7 @@
 					<div class="feature-block col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="1200ms">
 						<div class="inner-box ">
 							<i class="icon flaticon-users"></i>
-							<h5 class="title">Experienced <br>Members</h5>
+							<h5 class="title">Các thành viên <br>có kinh nghiệm</h5>
 						</div>
 					</div>
 				</div>
@@ -477,8 +390,8 @@
 				</div>
 
 				<div class="sec-title text-center">
-					<span class="sub-title">Checkout our categories</span>
-					<h2>Top categories for popular <br>courses to show</h2>
+					<span class="sub-title">Danh mục của chúng tôi</span>
+					<h2>Danh mục các khóa học <br>hàng đầu</h2>
 				</div>
 
 				<div class="row justify-content-center">
@@ -558,9 +471,8 @@
 						<!-- Title Column -->
 						<div class="title-column col-lg-6 col-md-12 col-sm-12">
 							<div class="sec-title light">
-								<h2>Sign up for a<br> free trial lesson<br> by zoom</h2>
-								<div class="text">Quisque commodo, magna nec accu man euismod <br> tellus mi ornare
-									enim, quis congue elit.</div>
+								<h2>Đăng ký<br> học thử<br> qua zoom</h2>
+								<div class="text">Đăng ký để trải nghiệm một buổi học tập cùng đội ngũ giảng viên hàng đầu.</div>
 							</div>
 						</div>
 
@@ -570,27 +482,34 @@
 								<!-- Sign Form -->
 								<div class="signup-form wow fadeInLeft">
 									<!--Contact Form-->
-									<form method="post" action="https://kodesolution.com/html/2022/edulerns-html/get"
+									<form method="post" action=""
 										id="contact-form">
 										<div class="form-group">
-											<input type="text" name="full_name" placeholder="Your name" required>
+											<input type="text" name="full_name" placeholder="Tên của bạn" required>
 										</div>
 
 										<div class="form-group">
-											<input type="text" name="Email" placeholder="Email address" required>
+											<input type="text" name="Email" placeholder="Địa chỉ email" required>
 										</div>
 
 										<div class="form-group">
 											<select class="custom-select">
-												<option value="">Select course</option>
-												<option value="UI/UX Designing">UI/UX Designing</option>
-												<option value="Digital Marketing">Digital Marketing</option>
+												<option value="">Chọn khóa học</option>
+												<?php
+													foreach ($listcourse as $course) {
+														extract($course);
+														$link = "index.php?act=class&idkh=".$id;
+														echo '
+															<option value="'.$link.'">'.$name.'</option>
+															';
+													}
+												?>
 											</select>
 										</div>
 
 										<div class="form-group">
 											<button class="theme-btn btn-style-one" type="submit"
-												name="submit-form">Send Request</button>
+												name="submit-form">Gửi yêu cầu</button>
 										</div>
 									</form>
 								</div>
@@ -607,8 +526,8 @@
 		<section class="team-section">
 			<div class="auto-container">
 				<div class="sec-title text-center">
-					<span class="sub-title">qualified teachers</span>
-					<h2>Meet the teacher who <br>teaches you online</h2>
+					<span class="sub-title">GIÁO VIÊN CÓ TRÌNH ĐỘ</span>
+					<h2>Gặp gỡ giáo viên của bạn <br>trực tuyến</h2>
 				</div>
 
 				<div class="row">
@@ -628,7 +547,7 @@
 							</div>
 							<div class="info-box">
 								<h4 class="name"><a href="#">Edward norton</a></h4>
-								<span class="designation">Musian</span>
+								<span class="designation"></span>
 							</div>
 						</div>
 					</div>
@@ -649,7 +568,7 @@
 							</div>
 							<div class="info-box">
 								<h4 class="name"><a href="#">Jane seymour</a></h4>
-								<span class="designation">Designer</span>
+								<span class="designation"></span>
 							</div>
 						</div>
 					</div>
@@ -670,7 +589,7 @@
 							</div>
 							<div class="info-box">
 								<h4 class="name"><a href="#">Mike hardson</a></h4>
-								<span class="designation">Developer</span>
+								<span class="designation"></span>
 							</div>
 						</div>
 					</div>
@@ -691,7 +610,7 @@
 							</div>
 							<div class="info-box">
 								<h4 class="name"><a href="#">Christine eve</a></h4>
-								<span class="designation">Artisit</span>
+								<span class="designation"></span>
 							</div>
 						</div>
 					</div>
@@ -713,10 +632,10 @@
 					<div class="title-column col-lg-8 col-md-12">
 						<div class="inner-column">
 							<div class="sec-title light">
-								<span class="style-font">Get your quality</span>
-								<h1>Skills certificate <br>from the edulerns</h1>
-								<a href="page-course-details.html" class="theme-btn btn-style-one"><span
-										class="btn-title">Get started now</span></a>
+								<span class="style-font">chất lượng giảng dạy</span>
+								<h1>Luyện các kỹ năng của <br>bạn cùng EduLerns</h1>
+								<a href="./page-course-details.php" class="theme-btn btn-style-one"><span
+										class="btn-title">Bắt đầu ngay bây giờ</span></a>
 							</div>
 						</div>
 					</div>
@@ -740,143 +659,40 @@
 					<div class="title-column col-xl-4 col-lg-5 col-md-12">
 						<div class="inner-column">
 							<div class="sec-title">
-								<span class="sub-title">Our testimonials</span>
-								<h2>What they’re <br>saying about our <br>courses</h2>
-								<div class="text">Quisque commodo, magna nec accu man euismod tellus mi ornare enim.
-								</div>
+								<span class="sub-title">Ý kiến của mọi người</span>
+								<h2>Mọi người đã <br>nói gì về <br>khóa học của chúng tôi</h2>
 							</div>
 						</div>
 					</div>
-
+					<?php $comment = getAllComment(); ?>
 					<!-- Testimonial Column -->
 					<div class="testimonial-column col-xl-8 col-lg-7 col-md-12">
 						<div class="carousel-outer">
 							<div class="testimonial-carousel owl-carousel owl-theme">
 								<!-- Testimonial Block -->
-								<div class="testimonial-block">
-									<div class="inner-box">
-										<div class="content-box">
-											<figure class="thumb"><img src="images/resource/testi-thumb-1.jpg" alt="">
-											</figure>
-											<div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i></div>
-											<div class="text">Lorem ipsum is simply free text dolor sit amet,
-												consectetur adipisicing elit, sed do incididunt ut labore et dolore
-												magna aliqua.</div>
-											<div class="info-box">
-												<span class="icon-quote"></span>
-												<h4 class="name">Jame sickres</h4>
-												<span class="designation">Market Manager</span>
+								<?php foreach($comment as $cm){
+									extract($cm); ?>
+									<div class="testimonial-block">
+										<div class="inner-box">
+											<div class="content-box">
+												<figure class="thumb"><img src="./img_upload/<?php echo $image ?>" alt="" style="height: 140px;">
+												</figure>
+												<div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+														class="fa fa-star"></i><i class="fa fa-star"></i><i
+														class="fa fa-star"></i></div>
+												<div class="text"><?php echo $content ?></div>
+												<div class="info-box">
+													<span class="icon-quote"></span>
+													<h4 class="name"><?php echo $name ?></h4>
+													<span class="designation"><?php echo $course_name ?></span>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
+								<?php } ?>
 
-								<!-- Testimonial Block -->
-								<div class="testimonial-block">
-									<div class="inner-box">
-										<div class="content-box">
-											<figure class="thumb"><img src="images/resource/testi-thumb-2.jpg" alt="">
-											</figure>
-											<div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i></div>
-											<div class="text">Lorem ipsum is simply free text dolor sit amet,
-												consectetur adipisicing elit, sed do incididunt ut labore et dolore
-												magna aliqua.</div>
-											<div class="info-box">
-												<span class="icon-quote"></span>
-												<h4 class="name">Aleesha brown</h4>
-												<span class="designation">Market Manager</span>
-											</div>
-										</div>
-									</div>
-								</div>
 
-								<!-- Testimonial Block -->
-								<div class="testimonial-block">
-									<div class="inner-box">
-										<div class="content-box">
-											<figure class="thumb"><img src="images/resource/testi-thumb-1.jpg" alt="">
-											</figure>
-											<div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i></div>
-											<div class="text">Lorem ipsum is simply free text dolor sit amet,
-												consectetur adipisicing elit, sed do incididunt ut labore et dolore
-												magna aliqua.</div>
-											<div class="info-box">
-												<span class="icon-quote"></span>
-												<h4 class="name">Jame sickres</h4>
-												<span class="designation">Market Manager</span>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Testimonial Block -->
-								<div class="testimonial-block">
-									<div class="inner-box">
-										<div class="content-box">
-											<figure class="thumb"><img src="images/resource/testi-thumb-2.jpg" alt="">
-											</figure>
-											<div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i></div>
-											<div class="text">Lorem ipsum is simply free text dolor sit amet,
-												consectetur adipisicing elit, sed do incididunt ut labore et dolore
-												magna aliqua.</div>
-											<div class="info-box">
-												<span class="icon-quote"></span>
-												<h4 class="name">Aleesha brown</h4>
-												<span class="designation">Market Manager</span>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Testimonial Block -->
-								<div class="testimonial-block">
-									<div class="inner-box">
-										<div class="content-box">
-											<figure class="thumb"><img src="images/resource/testi-thumb-1.jpg" alt="">
-											</figure>
-											<div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i></div>
-											<div class="text">Lorem ipsum is simply free text dolor sit amet,
-												consectetur adipisicing elit, sed do incididunt ut labore et dolore
-												magna aliqua.</div>
-											<div class="info-box">
-												<span class="icon-quote"></span>
-												<h4 class="name">Jame sickres</h4>
-												<span class="designation">Market Manager</span>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Testimonial Block -->
-								<div class="testimonial-block">
-									<div class="inner-box">
-										<div class="content-box">
-											<figure class="thumb"><img src="images/resource/testi-thumb-2.jpg" alt="">
-											</figure>
-											<div class="rating"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i><i class="fa fa-star"></i><i
-													class="fa fa-star"></i></div>
-											<div class="text">Lorem ipsum is simply free text dolor sit amet,
-												consectetur adipisicing elit, sed do incididunt ut labore et dolore
-												magna aliqua.</div>
-											<div class="info-box">
-												<span class="icon-quote"></span>
-												<h4 class="name">Aleesha brown</h4>
-												<span class="designation">Market Manager</span>
-											</div>
-										</div>
-									</div>
-								</div>
+								
 
 							</div>
 						</div>
@@ -897,16 +713,16 @@
 					<div class="content-column col-lg-6 col-md-12 order-2 wow fadeInRight" data-wow-delay="600ms">
 						<div class="inner-column">
 							<div class="sec-title">
-								<h2>Over 36 years in distant learning for skills</h2>
-								<div class="text">Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod
-									tempor incididunt labore dolore magna aliquaenim ad minim. Sed risus augue, commodo
-									ornare felis non, eleifend molestie metus pharetra eleifend.</div>
+								<h2>Với hơn 36 năm kinh nghiệm đào tạo các kỹ năng</h2>
+								<div class="text">Chúng tôi tạo ra môi trường để mỗi học viên có thể thực hành nhiều 
+									hơn - giao tiếp, trò chuyện với giáo viên bản xứ một cách tự nhiên nhất. Và cuối 
+									cùng là sử dụng tiếng Anh nhuần nhuyễn</div>
 							</div>
 
 							<div class="row">
 								<div class="about-block col-lg-6 col-md-6 col-sm-6 wow fadeInUp">
 									<div class="inner-box">
-										<span class="info-text">Best off canvas program</span>
+										<span class="info-text">Học sinh tiêu biểu</span>
 										<div class="info-box">
 											<div class="thumb"><img src="images/resource/avatar-1.jpg" alt=""></div>
 											<h5 class="name">John Doe</h5>
@@ -917,7 +733,7 @@
 
 								<div class="about-block style-two col-lg-6 col-md-6 col-sm-6 wow fadeInRight">
 									<div class="inner-box">
-										<span class="info-text">Best degree program</span>
+										<span class="info-text">Giáo viên luyện thi IELTS tốt nhất</span>
 										<div class="info-box">
 											<div class="thumb"><img src="images/resource/avatar-2.jpg" alt=""></div>
 											<h5 class="name">Albart Brown</h5>
@@ -953,11 +769,11 @@
 			<div class="auto-container">
 				<div class="content-box">
 					<div class="sec-title light text-center">
-						<span class="sub-title">Book your seat now</span>
-						<h2>Upcoming study trip</h2>
+						<span class="sub-title">Đặt chỗ ngay bây giờ</span>
+						<h2>Chuyến du học sắp tới</h2>
 					</div>
 					<div class="time-counter wow fadeInUp">
-						<div class="time-countdown" data-countdown="2/2/2023"></div>
+						<div class="time-countdown" data-countdown="12/12/2023"></div>
 					</div>
 				</div>
 			</div>
@@ -969,8 +785,8 @@
 
 			<div class="auto-container">
 				<div class="sec-title text-center">
-					<span class="sub-title">directly from blog</span>
-					<h2>Our latest news &<br> upcoming blog posts</h2>
+					<span class="sub-title">Trực tiếp từ BLOG</span>
+					<h2>Tin tức mới nhất của chúng tôi &<br> bài viết sắp tới</h2>
 				</div>
 
 				<div class="row">
@@ -988,9 +804,8 @@
 										<li><i class="fa fa-user"></i> by Admin</li>
 										<li><i class="fa fa-comments"></i> 2 Comments</li>
 									</ul>
-									<h4 class="title"><a href="news-details.html">The quality role of the elementary
-											teacher in education</a></h4>
-									<a href="news-details.html" class="read-more">Read More <i
+									<h4 class="title"><a href="news-details.html">Vai trò chất lượng của giáo viên tiểu học trong giáo dục</a></h4>
+									<a href="news-details.html" class="read-more">Đọc thêm <i
 											class="fa fa-long-arrow-alt-right"></i></a>
 								</div>
 							</div>
@@ -1011,9 +826,8 @@
 										<li><i class="fa fa-user"></i> by Admin</li>
 										<li><i class="fa fa-comments"></i> 2 Comments</li>
 									</ul>
-									<h4 class="title"><a href="news-details.html">The quality role of the elementary
-											teacher in education</a></h4>
-									<a href="news-details.html" class="read-more">Read More <i
+									<h4 class="title"><a href="news-details.html">Vai trò chất lượng của giáo viên tiểu học trong giáo dục</a></h4>
+									<a href="news-details.html" class="read-more">Đọc thêm <i
 											class="fa fa-long-arrow-alt-right"></i></a>
 								</div>
 							</div>
@@ -1034,9 +848,8 @@
 										<li><i class="fa fa-user"></i> by Admin</li>
 										<li><i class="fa fa-comments"></i> 2 Comments</li>
 									</ul>
-									<h4 class="title"><a href="news-details.html">The quality role of the elementary
-											teacher in education</a></h4>
-									<a href="news-details.html" class="read-more">Read More <i
+									<h4 class="title"><a href="news-details.html">Vai trò chất lượng của giáo viên tiểu học trong giáo dục</a></h4>
+									<a href="news-details.html" class="read-more">Đọc thêm <i
 											class="fa fa-long-arrow-alt-right"></i></a>
 								</div>
 							</div>
@@ -1066,7 +879,7 @@
 		<!--End Clients Section -->
 
 		<!-- Main Footer -->
-		<footer class="main-footer">
+<footer class="main-footer">
 			<div class="bg-image zoom-two" style="background-image: url(images/background/4.jpg)"></div>
 
 			<!--Widgets Section-->
@@ -1077,7 +890,7 @@
 						<div class="footer-column col-xl-3 col-lg-12 col-md-6 col-sm-12">
 							<div class="footer-widget about-widget">
 								<div class="logo"><a href="index.html"><img src="images/logo-2.png" alt=""></a></div>
-								<div class="text">Get 26,000+ best online courses from us</div>
+								<div class="text"></div>
 								<ul class="social-icon-two">
 									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
 									<li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -1090,14 +903,14 @@
 						<!--Footer Column-->
 						<div class="footer-column col-xl-2 col-lg-4 col-md-6 col-sm-12">
 							<div class="footer-widget">
-								<h4 class="widget-title">Explore</h4>
+								<h4 class="widget-title">Khám phá</h4>
 								<ul class="user-links">
-									<li><a href="#">Gallery</a></li>
-									<li><a href="#">News & Articles</a></li>
-									<li><a href="#">FAQ's</a></li>
-									<li><a href="#">Sign In/Registration</a></li>
-									<li><a href="#">Coming Soon</a></li>
-									<li><a href="#">Contacts</a></li>
+									<li><a href="#">Phòng trưng bày</a></li>
+									<li><a href="#">Bài báo</a></li>
+									<li><a href="#">Câu hỏi thường gặp</a></li>
+									<li><a href="#">Đăng ký / Đăng nhập</a></li>
+									<li><a href="#">Sắp ra mắt</a></li>
+									<li><a href="#">Liên hệ</a></li>
 								</ul>
 							</div>
 						</div>
@@ -1105,13 +918,13 @@
 						<!--Footer Column-->
 						<div class="footer-column col-xl-2 col-lg-4 col-md-6 col-sm-12">
 							<div class="footer-widget">
-								<h4 class="widget-title">Links</h4>
+								<h4 class="widget-title">Liên kết</h4>
 								<ul class="user-links">
-									<li><a href="#">About</a></li>
-									<li><a href="#">Courses</a></li>
-									<li><a href="#">Instructor</a></li>
-									<li><a href="#">Events</a></li>
-									<li><a href="#">Instructor Profile</a></li>
+									<li><a href="#">Về chúng tôi</a></li>
+									<li><a href="#">Khóa học</a></li>
+									<li><a href="#">Giảng viên</a></li>
+									<li><a href="#">Sự kiện</a></li>
+									<li><a href="#">Hồ sơ giảng viên</a></li>
 								</ul>
 							</div>
 						</div>
@@ -1119,7 +932,7 @@
 						<!--Footer Column-->
 						<div class="footer-column col-xl-5 col-lg-4 col-md-6 col-sm-12">
 							<div class="footer-widget contact-widget">
-								<h4 class="widget-title">Contact</h4>
+								<h4 class="widget-title">Liên hệ</h4>
 								<div class="widget-content">
 									<ul class="contact-info">
 										<li><i class="fa fa-phone-square"></i> <a href="tel:+926668880000">+92 (0088)
@@ -1134,7 +947,7 @@
 										<form method="post" action="#">
 											<div class="form-group">
 												<input type="email" name="email" class="email" value=""
-													placeholder="Email Address" required="">
+													placeholder="Địa chỉ email" required="">
 												<button type="button" class="theme-btn btn-style-one"><i
 														class="fa fa-long-arrow-alt-right"></i></button>
 											</div>
@@ -1148,13 +961,6 @@
 			</div>
 
 			<!--Footer Bottom-->
-			<div class="footer-bottom">
-				<div class="auto-container">
-					<div class="inner-container">
-						<div class="copyright-text">&copy; Copyright 2022 by <a href="index.html">Company.com</a></div>
-					</div>
-				</div>
-			</div>
 		</footer>
 		<!--End Main Footer -->
 

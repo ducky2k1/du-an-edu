@@ -1,14 +1,3 @@
-<?php
-    // var_dump($listhoadon);
-    // die();
-?>
-<?php
-    // var_dump($listhoadon);
-    // die();
-    // session_start();
-    // $_SESSION['id_class'] = $_GET['id_class'];
-    // $_SESSION['price-class'] = $_GET['price'];
-?>
 <head>
 	<meta charset="utf-8">
 	<title>Edulerns | Education HTML Template</title>
@@ -166,14 +155,6 @@ hr {
 ?>
 <div class="page-content container">
     <div class="page-header text-blue-d2">
-        <!-- <h1 class="page-title text-secondary-d1">
-            Invoice
-            <small class="page-info">
-                <i class="fa fa-angle-double-right text-80"></i>
-                ID: #111-222
-            </small>
-        </h1> -->
-
         <div class="page-tools">
             <div class="action-buttons">
                 <a class="btn bg-white btn-light mx-1px text-95" href="#" data-title="Print">
@@ -194,7 +175,6 @@ hr {
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center text-150">
-                            <!-- <i class="fa fa-book fa-2x text-success-m2 mr-1"></i> -->
                             <span class="text-default-d3">Lớp học của tôi</span>
                         </div>
                     </div>
@@ -202,13 +182,6 @@ hr {
                 <!-- .row -->
 
                 <hr class="row brc-default-l1 mx-n1 mb-4" />
-
-               
-                
-                <?php 
-                    // $listCart = getListCart($ma_us);
-                    // $getList = getListCartNew($ma_us);
-                ?>
                 <form action="./buy.php?act=payment" method="post">
                     <table class="table table-striped" id="myTable">
                         <thead class="thead-dark">
@@ -240,53 +213,7 @@ hr {
                     </table>
                     <div class="row border-b-2 brc-default-l2"></div>
 
-                    <!-- <div class="row mt-3">
-                        <div class="col-12 col-sm-7 text-grey-d2 text-95 mt-2 mt-lg-0">
-                            Extra note such as company or payment information...
-                        </div>
 
-                        <div class="col-12 col-sm-5 text-grey text-90 order-first order-sm-last">
-                            <div class="row my-2">
-                                <div class="col-7 text-right" id="columnSum">
-                                    Total price
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-120 text-secondary-d1"><?php echo $all ?></span>
-                                </div>
-                            </div>
-
-                            <div class="row my-2">
-                                <div class="col-7 text-right">
-                                    Tax (10%)
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-110 text-secondary-d1"><?php $tax = $price*0.1; echo $tax ?></span>
-                                </div>
-                            </div>
-
-                            <div class="row my-2 align-items-center bgc-primary-l3 p-2">
-                                <div class="col-7 text-right">
-                                    Total Amount
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-150 text-success-d3 opacity-2">
-                                        <?php $sumAll = $all + $tax; echo $sumAll;
-                                            $_SESSION['sumAll'] = $sumAll;
-                                        ?>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div> -->
-                        <!-- <span class="text-secondary-d1 text-105">Thank you for your business</span> -->
-                        <!-- <button class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0" value="Pay Now"></button> -->
-                        <!-- <a href="./buy.php?act=add_order" class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0" name="pay">Pay Now</a> -->
-                        <!-- <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"> -->
-                            <!-- <input type="submit" name="pay" value="Chuyển khoản" class="mr10 btn btn-primary btn-lg"> -->
-                            <!-- <input type="submit" name="pay-center" value="Thanh toán tại trung tâm" class="btn btn-primary btn-lg"> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
                 </form>
 
             </div>

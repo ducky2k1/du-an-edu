@@ -5,9 +5,8 @@
 	include "./model/class.php";
 	include "./model/taikhoan.php";
     require "./model/cart.php";
-    require "./model/order.php";
+	$listcourse = loadall_course();
 
-    // $listhoadon = loadall_hoadon_member($_SESSION['id_mem']);
     if (isset($_SESSION['email'])) {
         $email=$_SESSION['email'];
         $sql="SELECT * from dtb_member where email='$email'";
@@ -20,34 +19,11 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         case 'buy':
             if (isset($_SESSION['email'])) {
                 if(isset($info)&&($info)){
-                    // $err=[];
                     if(($info['image'] == '') || ($info['location'] == '') || ($info['phone'] == '0')){
-                        // $err['image']="Thiếu ảnh";
                         echo '<script>alert("Bạn phải cập nhật thông tin.")</script>';
                         require_once "./fi.php";
-
                     } else {
-                        if(loadsame_hoadon_member($_SESSION['id_mem'], $_GET['id_class']) == false) {
-                            echo '<script>alert("Bạn đã đăng ký khóa học này trước đó, vui lòng kiểm tra hóa đơn");
-                                        window.location.href="index.php?act=hoadon";</script>';
-                        } else {
-                    // $listCart = getListCart($ma_us);
-                    // $id_course = $_GET['id_course'];
-                    // $id_class = $_GET['id_class'];
-                    // date_default_timezone_set("Asia/Ho_Chi_Minh");
-                    // $getDate = date("Y-m-d");
-                    // setCart($ma_us,$id_course,$getDate,$id_class);
-
-                    // echo '<script>alert("Đặt chỗ lớp học thành công. Vui lòng thanh toán!")</script>';
-                    
                     require "./cart.php";
-                    // Lấy thời gian đăng ký
-                    // $dateTime = new DateTime();
-                    // $currentDateTime = $dateTime->format("Y-m-d H:i:s");
-                    // $_SESSION['regis-time'] = $currentDateTime;
-                    // $status = 'Chưa thanh toán';
-                    // set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_SESSION['price-class'], NULL, $_SESSION['regis-time'], NULL, $status, NULL );
-                        }
                     }             
                 } } else{
                     echo '<script>
@@ -58,7 +34,6 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                     } </script> ';
                 }
         break;
-
         case 'payment':
             
             if(isset($_POST['pay']) && ($_POST['pay'])){
@@ -165,37 +140,14 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                             }
             }
             else if(isset($_POST['pay-center']) && ($_POST['pay-center'])) {
-                
-                // var_dump($currentDateTime);
-                // die();
-                // var_dump($_SESSION['regis-time']);
-                // die();
                 $hinhthuc = 'Thanh toán tại trung tâm';
                 $status = 'Chưa thanh toán';
                 $dateTime = new DateTime();
                 $currentDateTime = $dateTime->format("Y-m-d H:i:s");
-                    // $_SESSION['regis-time'] = $currentDateTime;
-                    // $status = 'Chưa thanh toán';
                 set_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], $_SESSION['price-class'], NULL, $currentDateTime, NULL, $status, $hinhthuc );
-                // update_hoadon($_SESSION['id_mem'], $_SESSION['id_class'], NULL, NULL, $status, $hinhthuc );
                 echo '<script>alert("Thành công! Vui lòng đến trung tâm để thanh toán!")</script>';
                 echo '<script>window.location.href="index.php";</script>';            }
             break;
-        case 'add_order':
-            $listCartNew = getListCartNew($ma_us);
-            if(isset($_POST['pay']) && ($_POST['pay'])){
-                $listCart = getListCart($ma_us);
-                $id_course = $listCartNew[0]['course_id'];
-                $id_class = $listCartNew[0]['class_id'];
-                date_default_timezone_set("Asia/Ho_Chi_Minh");
-                $getDate = date("Y-m-d");
-                setOrder($ma_us,$id_course,$getDate,$id_class);
-                delCartNew($ma_us);
-                echo '<script>alert("Mua hàng thành công.")</script>';
-                echo '<script>window.location.href="index.php";</script>';
-            }
-            break;
-
         case 'up_mem':
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $ma_us=$info['id'];
@@ -205,7 +157,10 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                 $phone = $_POST['num'];
                 $pass = $_POST['pass'];
                 $anh = $_POST['img-member'];
-                $anh_moi = $_FILES['anh'];
+                // $anh_moi = $_FILES['anh'];
+                if($_FILES['anh']) {
+                    $anh_moi = $_FILES['anh'];
+                  }
                 $errer = [];
 
     
@@ -238,17 +193,18 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                 } else {
                     $img = $anh;
                 }
-    
+                // $imgCopy = './img_upload/'.$img;
+                // $imgPaste = '../../../../../QUANLYNHANVIEN VER.2/img_upload';
+                // var_dump($imgCopy);die;
                 if (empty($errer)) {
                     move_uploaded_file($anh_moi['tmp_name'], './img_upload/' . $img);
-                    // move_uploaded_file($anh_moi['tmp_name'], '../../QUANLYNHANVIEN VER.2/img_upload/' . $img);
-
-    
+                    // move_uploaded_file($anh_moi['tmp_name'], '../../../../../QUANLYNHANVIEN VER.2/img_upload/' . $img);
+                    $imgCopy = './img_upload/'.$img;
+                    $imgPaste = '../../../../../QUANLYNHANVIEN VER.2/img_upload/';
+                    copy($imgCopy,$imgPaste.basename($imgCopy));
                     up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone);
                     $thongbao = "Thêm thành công";
-
                     echo '<script>alert("Cập nhật thành công")</script>';
-
                     echo '<script>window.location.href="index.php"</script>';;
                 }
                 }
@@ -261,7 +217,8 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                         del_hoa_don($_GET['id']);
                     }
                     $listhoadon = loadall_hoadon_member($_SESSION['id_mem']);
-					require_once "./hoadon.php";
+                    // header('Location: ./hoadon.php');
+					require "./hoadon.php";
                 break;
     default:
             include "home.php";

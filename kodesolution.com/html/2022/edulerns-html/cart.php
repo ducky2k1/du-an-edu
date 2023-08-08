@@ -164,14 +164,6 @@ hr {
     
 <div class="page-content container">
     <div class="page-header text-blue-d2">
-        <!-- <h1 class="page-title text-secondary-d1">
-            Invoice
-            <small class="page-info">
-                <i class="fa fa-angle-double-right text-80"></i>
-                ID: #111-222
-            </small>
-        </h1> -->
-
         <div class="page-tools">
             <div class="action-buttons">
                 <a class="btn bg-white btn-light mx-1px text-95" href="#" data-title="Print">
@@ -235,13 +227,6 @@ hr {
                         </div>
                     </div>
                 </div>
-                
-                <?php 
-                    // $hoadon = loadone_hoadon_member($_SESSION['id_mem'], $_GET['id_class']);
-                    // extract($hoadon);
-                    // $listCart = getListCart($ma_us);
-                    // $getList = getListCartNew($ma_us);
-                ?>
                 <form action="./buy.php?act=payment" method="post">
                     <table class="table" id="myTable">
                         <thead class="thead-dark">
@@ -264,7 +249,6 @@ hr {
                         <div class="col-12 col-sm-7 text-grey-d2 text-95 mt-2 mt-lg-0">
                         Cảm ơn quý khách đã tin tưởng và đến với EduLearn
                         </div>
-
                         <div class="col-12 col-sm-5 text-grey text-90 order-first order-sm-last">
                             <div class="row my-2">
                                 <div class="col-7 text-right" id="columnSum">
@@ -280,8 +264,6 @@ hr {
                         </div>
                     </div>
                     <div>
-                        <!-- <button class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0" value="Pay Now"></button> -->
-                        <!-- <a href="./buy.php?act=add_order" class="btn btn-info btn-bold px-4 float-right mt-3 mt-lg-0" name="pay">Pay Now</a> -->
                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                             <input type="submit" name="pay" value="Thanh toán online" class="mr10 btn btn-primary btn-lg">
                             <?php 
