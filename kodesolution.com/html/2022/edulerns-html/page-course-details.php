@@ -296,7 +296,8 @@
 																<?php extract($class); echo $time_end ?>
 															</li>
 															<li><i class="fa fa-users"></i> 
-															<?php foreach($count_id as $keyCount => $valCount){
+															<?php
+															foreach($count_id as $keyCount => $valCount){
 																	if ($keyCount == $class["id"]) {
 																		echo "Có ".$valCount." /";
 																	}
@@ -316,11 +317,15 @@
 												<div class="center">
 													<?php if(isset($_SESSION['email'])){ extract($class); if(loadsame_hoadon_member($ma_us, $id) == false){ ?>
 														<a class="value theme-btn btn-style-one course-details-price-btn" style="background-color:silver;">Đã đăng ký</a>
+													<?php } else {if($count_id[$class["id"]]==20){ ?>
+														<a class="value theme-btn btn-style-one course-details-price-btn" style="background-color:silver;">Đã đủ học sinh</a>
+													<?php } else{ ?>
+														<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>&tenlop=<?php extract($class); echo $name ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
+													<?php  }}} else {if($count_id[$class["id"]]==20) { ?>
+														<a class="value theme-btn btn-style-one course-details-price-btn" style="background-color:silver;">Đã đủ học sinh</a>
 													<?php } else { ?>
 														<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>&tenlop=<?php extract($class); echo $name ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
-													<?php  }} else { ?>
-														<a href="./buy.php?act=buy&id_course=<?php extract($class); echo $course_id ?>&id_class=<?php extract($class); echo $id ?>&price=<?php extract($class); echo $price ?>&tenlop=<?php extract($class); echo $name ?>" class="value theme-btn btn-style-one course-details-price-btn">Đăng ký</a>
-													<?php } ?>
+													<?php }} ?>
 												</div>
 											</div> 
 									<?php } ?>
