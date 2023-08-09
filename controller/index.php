@@ -343,15 +343,23 @@
               move_uploaded_file($anh_moi['tmp_name'], '../img_customer/' . $img);
 
               up_cus($_GET['id'],$name,$pass, $mail, $img, $phone, $loca, $date);
-              $thongbao = "Thêm thành công";
+              $thongbao = "Cập nhật thành công";
             }
           }
-          $list_customer = customer_selectAll();
+          if($info['role']=='admin' ){
+            $list_customer = customer_selectAll();
 
-          require_once "../view/table-data-customer.php";
+            require_once "../view/table-data-customer.php";
+          } else {
+            echo '<script>window.location="./index.php?act=teacher"</script>';
+          }
+
           require_once "../view/footer.php";
           break;
-
+        case 'teacher':
+          $list_customer = customer_selectAll();
+          require_once "../view/teacher-details.php";
+          break;
         case 'class':
           if(isset($_GET['id'])){
             $id = $_GET['id'];
@@ -371,8 +379,45 @@
           require_once "../view/table-data-class.php";
           require_once "../view/footer.php";
           break;
+        case 'class_teacher':
+          if(isset($_GET['idlh'])&&isset($_GET['id'])){
+          $list_class = class_selectAll_teacher($_GET['id']);
+          $list_class = class_selectAllByID_teacher($_GET['idlh'],$_GET['id']);
+          $list_course = product_selectAll();
+          foreach($list_class as $lClass) {
+						$count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
+					}
+          require_once "../view/table-data-class.php";
+          require_once "../view/footer.php";
+          } else {
+            $list_class = class_selectAll_teacher($_GET['id']);
+            $list_course = product_selectAll();
+            foreach($list_class as $lClass) {
+              $count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
+            }
+            require_once "../view/table-data-class.php";
+            require_once "../view/footer.php";
+          }
+          break;
+        case 'library':
+          if(isset($_GET['idlh'])&&isset($_GET['id'])){
+            $list_class = class_selectAll_teacher($_GET['id']);
+            $list_class = class_selectAllByID_teacher($_GET['idlh'],$_GET['id']);
+            $list_course = product_selectAll();
+            require_once "../view/library-teacher.php";
+            require_once "../view/footer.php";
+          } else {
+            $list_class = class_selectAll_teacher($_GET['id']);
+            $list_course = product_selectAll();
+            require_once "../view/library-teacher.php";
+            require_once "../view/footer.php";
+          }
+
+          break;
+
         case 'get_class':
           $id_class = $_GET['id'];
+          $classAll = get_class_all($id_class);
           $get_class = member_class($id_class);
           require_once "../view/chi-tiet-class.php";
           require_once "../view/footer.php";
@@ -625,7 +670,15 @@
 
     }
   }else {
-    // require_once "../view/home.php";
+    if(isset($info)&&($info)){ 
+      if($info['role']=='gv' ){
+        $countStudent = count_order_for_teacher($ma_us);
+        $countClassForTeacher = count_class_for_teacher($ma_us); 
+        $get_class = member_class_for_teacher($ma_us);
+        require "../view/dashboard-teacher.php";
+        require_once "../view/footer.php";
+      }
+    }
       require_once "../doc/footer.php";
   }
 

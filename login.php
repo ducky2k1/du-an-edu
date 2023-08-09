@@ -7,19 +7,7 @@
     //     $info=pdo_query_one($sql);
     //     $ma_us=$info['ma_us'];
     // }
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[url('./IMG/background.jpg')]">
-    <div class="container w-[30%] h-[500px] m-auto ">
-        <div class="boxcontent mt-[150px] w-full border-[1px] pb-[20px]">
-            <?php
+
                 if (isset($_GET['act'])) {
                     $act = $_GET['act'];
                     switch ($act) {
@@ -186,7 +174,3 @@
                 }
 
             ?>
-        </div>
-    </div>
-</body>
-</html>

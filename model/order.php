@@ -56,6 +56,14 @@
         $sql ="SELECT COUNT(id) as count_order FROM dtb_hoadon WHERE `status` = 'Đã thanh toán'";
         return pdo_query($sql);
     }
+    function count_order_for_teacher($id){
+        $sql ="SELECT COUNT(dtb_hoadon.id) as count_order 
+        FROM dtb_hoadon 
+        JOIN dtb_lop ON dtb_hoadon.lop_id = dtb_lop.id
+        JOIN dtb_customer ON dtb_lop.customer_id = dtb_customer.id
+        WHERE `status` = 'Đã thanh toán' && dtb_customer.id=$id";
+        return pdo_query($sql);
+    }
     function count_not_order(){
         $sql ="SELECT COUNT(id) as count_order FROM dtb_hoadon WHERE `status` = 'Chưa thanh toán'";
         return pdo_query($sql);

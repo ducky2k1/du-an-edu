@@ -138,30 +138,49 @@
     <ul class="app-menu">
       <!-- <li><a class="app-menu__item haha" href="phan-mem-ban-hang.html"><i class='app-menu__icon bx bx-cart-alt'></i>
           <span class="app-menu__label">POS Bán Hàng</span></a></li> -->
-      <li><a class="app-menu__item active" href="./index.php"><i class='app-menu__icon bx bx-tachometer'></i><span
-            class="app-menu__label">Bảng điều khiển</span></a></li>
-      <li><a class="app-menu__item " href="./index.php?act=cus"><i class='app-menu__icon bx bx-id-card'></i> <span
-            class="app-menu__label">Customer</span></a></li>
-      <li><a class="app-menu__item" href="./index.php?act=mem"><i class='app-menu__icon bx bx-user-voice'></i><span
-            class="app-menu__label">Quản lý khách hàng</span></a></li>
-      <li><a class="app-menu__item" href="./index.php?act=comment"><i class="app-menu__icon  far fa-comment-dots"></i><span
-            class="app-menu__label">Quản lý bình luận</span></a></li>
-      <li><a class="app-menu__item" href="./index.php?act=pro"><i
-            class='app-menu__icon fas fa-school'></i><span class="app-menu__label">Quản lý Khóa học</span></a>
-      </li>
-      <li><a class="app-menu__item" href="./index.php?act=class"><i
-            class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý lớp học</span></a>
-      </li>
-      <li><a class="app-menu__item" href="./index.php?act=ca"><i
-            class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý ca học</span></a>
-      </li>
-      <li><a class="app-menu__item" href="./index.php?act=order"><i class='app-menu__icon bx bx-task'></i>
-      <span
-            class="app-menu__label">Quản lý đơn hàng</span></a>
-      </li>
-      <li><a class="app-menu__item" href="./index.php?act=dt"><i
-            class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Báo cáo doanh thu</span></a>
-      </li>
+      <?php if(isset($info)&&($info)){ ?>
+        <?php if($info['role']=='admin' ){ ?>
+          <li><a class="app-menu__item active" href="./index.php"><i class='app-menu__icon bx bx-tachometer'></i><span
+          class="app-menu__label">Bảng điều khiển</span></a></li>
+          <li><a class="app-menu__item " href="./index.php?act=cus"><i class='app-menu__icon bx bx-id-card'></i> <span
+          class="app-menu__label">Customer</span></a></li>
+          <li><a class="app-menu__item" href="./index.php?act=mem"><i class='app-menu__icon bx bx-user-voice'></i><span
+                class="app-menu__label">Quản lý khách hàng</span></a></li>
+          <li><a class="app-menu__item" href="./index.php?act=comment"><i class="app-menu__icon  far fa-comment-dots"></i><span
+                class="app-menu__label">Quản lý bình luận</span></a></li>
+          <li><a class="app-menu__item" href="./index.php?act=pro"><i
+                class='app-menu__icon fas fa-school'></i><span class="app-menu__label">Quản lý Khóa học</span></a>
+          </li>
+          <li><a class="app-menu__item" href="./index.php?act=class"><i
+                class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý lớp học</span></a>
+          </li>
+          <li><a class="app-menu__item" href="./index.php?act=ca"><i
+                class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Quản lý ca học</span></a>
+          </li>
+          <li><a class="app-menu__item" href="./index.php?act=order"><i class='app-menu__icon bx bx-task'></i>
+          <span
+                class="app-menu__label">Quản lý đơn hàng</span></a>
+          </li>
+          <li><a class="app-menu__item" href="./index.php?act=dt"><i
+                class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Báo cáo doanh thu</span></a>
+          </li>
+        <?php } else { ?>
+          <li><a class="app-menu__item active" href="./index.php"><i class='app-menu__icon bx bx-tachometer'></i><span
+          class="app-menu__label">Bảng điều khiển</span></a></li>
+          <li><a class="app-menu__item" href="./index.php?act=teacher"><i
+                class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">My profile</span></a>
+          </li> 
+          <li><a class="app-menu__item" href="./index.php?act=class_teacher&id=<?php echo $ma_us ?>"><i
+                class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Lớp học của tôi</span></a>
+          </li>
+          <li><a class="app-menu__item" href="./index.php?act=library&id=<?php echo $ma_us ?>"><i
+                class='app-menu__icon bx bx-purchase-tag-alt'></i><span class="app-menu__label">Lịch dạy học</span></a>
+          </li>
+        <?php } ?>
+
+
+      <?php    } ?>
+
     </ul>
   </aside>
   <main class="app-content">

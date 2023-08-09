@@ -2,7 +2,7 @@
   <main class="">
     <div class="app-title">
       <ul class="app-breadcrumb breadcrumb side">
-        <li class="breadcrumb-item active"><a href="#"><b>Danh sách thành viên lớp <?php echo $get_class[0]['lop_name'] ?></b></a></li>
+        <li class="breadcrumb-item active"><a href="#"><b>Danh sách thành viên lớp <?php echo $classAll[0]['name'] ?></b></a></li>
       </ul>
       <div id="clock"></div>
     </div>
@@ -15,7 +15,7 @@
             <div class="row element-button">
               <div class="col-sm-2">
 
-                <a class="btn btn-add btn-sm" href=".#" title="Thêm">Lớp <?php echo $get_class[0]['lop_name'] ?></a>
+                <a class="btn btn-add btn-sm" href=".#" title="Thêm">Lớp <?php echo $classAll[0]['name'] ?></a>
               </div>
             </div>
             <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"

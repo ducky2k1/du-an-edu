@@ -1,24 +1,36 @@
 
 <main class="">
+<?php if($info['role']=='admin' ){?> 
     <div class="app-title">
+        
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item">Danh sách nhân viên</li>
             <li class="breadcrumb-item"><a href="#">Cập nhật thông tin nhân viên</a></li>
         </ul>
+        
         </div>
+        <?php } ?>
         <div class="app-title">
         <h5 class=""><?php if (isset($thongbao) && ($thongbao != ""))  {
-                                                                                    echo $thongbao;
-                                                                                } else {
-                                                                                    echo "Đang cập nhật thông tin nhân viên";
-                                                                                } ?></h5>
+            echo $thongbao; } else {
+                if($info['role']=='admin' ){
+                    echo "Đang cập nhật thông tin nhân viên";
+                } else {
+                    echo "Đang cập nhật thông tin";
+                }
+                
+            } ?>
+        </h5>
         </div>
         <div class="row">
             <div class="col-md-12">
 
             <div class="tile">
-
+                <?php if($info['role']=='admin' ){?> 
                 <h3 class="tile-title">Cập nhật thông tin nhân viên</h3>
+                <?php } else { ?>
+                <h3 class="tile-title">Cập nhật thông tin</h3>
+                <?php } ?>
                 <div class="tile-body">
                     <form class="row" action="../controller/index.php?act=up_cus&id=<?php extract($edit_cus); echo $id ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group col-md-4">
@@ -104,7 +116,11 @@
                             <span class="" style="color:red;"><?= $errer['img-nv'] ?? "" ?></span>
                         </div>
                         <input type="submit" name="capnhat" value="Cập nhật" class="btn btn-save">
+                        <?php if($info['role']=='admin' ){?> 
                         <a class="btn btn-cancel" href="../controller/index.php?act=cus">Hủy bỏ</a>
+                        <?php } else { ?>
+                        <a class="btn btn-cancel" href="../controller/index.php?act=teacher">Hủy bỏ</a>
+                        <?php } ?>
                     </form>
 
 

@@ -1,16 +1,9 @@
 <?php  
     // session_start();
     if (isset($_SESSION['login'])) {        
-
         echo '<script>window.location.href="./controller/index.php"</script>';
         die;
         }
-    //         if (isset($_SESSION['login'])) {
-    //     $email=$_SESSION['email'];
-    //     $sql="SELECT * from customer where email='$email'";
-    //     $info=pdo_query_one($sql);
-    //     $ma_us=$info['ma_us'];
-    // }
 ?>
 
 
