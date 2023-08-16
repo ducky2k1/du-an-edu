@@ -9,7 +9,7 @@
 
             <div class="tile">
 
-                <h3 class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Cập nhật thông tin khách hàng</h3>
+                <h3 class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Thông tin</h3>
                 <div class="tile-body">
                     <form class="mx-1 mx-md-4"action="./buy.php?act=up_mem" method="post" enctype="multipart/form-data">
                         <div class="d-flex flex-row align-items-center mb-4">
@@ -28,6 +28,18 @@
                                                         echo $info['name'];
                                                     } ?>">
                                     <span class="" style="color:red;"><?= $errer['ten'] ?? "" ?></span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <div class="form-outline flex-fill mb-0">
+                                <label class="control-label">Ngày sinh</label>
+                                    <input class="form-control" type="date" name="day" required
+                                                    value="<?php if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                                                        echo $_POST['day'];
+                                                    } else {
+                                                        echo $info['birth_day'];
+                                                    } ?>">
+                                    <span class="" style="color:red;"><?= $errer['day'] ?? "" ?></span>
                             </div>
                         </div>
                         <div class="d-flex flex-row align-items-center mb-4">

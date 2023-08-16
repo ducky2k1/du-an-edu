@@ -232,14 +232,12 @@ hr {
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Tên lớp</th>
-                                <th scope="col">Giá($)</th>
                                 <th scope="col">Thành tiền(vnd)</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td scope="row"><?php echo $_GET['tenlop']; ?></td>
-                                <td scope="row"><?php echo $_GET['price']; ?></td>
                                 <td scope="row"><?php echo number_format($_GET['price'] *23500); ?></td>
                         </tbody>
                     </table>

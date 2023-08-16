@@ -51,27 +51,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
                         //Add Params of 2.0.1 Version
                         $vnp_ExpireDate = '20230927143043';
-                        //Billing
-                        // $vnp_Bill_Mobile = $_POST['txt_billing_mobile'];
-                        // $vnp_Bill_Email = $_POST['txt_billing_email'];
-                        // $fullName = trim($_POST['txt_billing_fullname']);
-                        // if (isset($fullName) && trim($fullName) != '') {
-                        //     $name = explode(' ', $fullName);
-                        //     $vnp_Bill_FirstName = array_shift($name);
-                        //     $vnp_Bill_LastName = array_pop($name);
-                        // }
-                        // $vnp_Bill_Address=$_POST['txt_inv_addr1'];
-                        // $vnp_Bill_City=$_POST['txt_bill_city'];
-                        // $vnp_Bill_Country=$_POST['txt_bill_country'];
-                        // $vnp_Bill_State=$_POST['txt_bill_state'];
-                        // // Invoice
-                        // $vnp_Inv_Phone=$_POST['txt_inv_mobile'];
-                        // $vnp_Inv_Email=$_POST['txt_inv_email'];
-                        // $vnp_Inv_Customer=$_POST['txt_inv_customer'];
-                        // $vnp_Inv_Address=$_POST['txt_inv_addr1'];
-                        // $vnp_Inv_Company=$_POST['txt_inv_company'];
-                        // $vnp_Inv_Taxcode=$_POST['txt_inv_taxcode'];
-                        // $vnp_Inv_Type=$_POST['cbo_inv_type'];
+
                         $inputData = array(
                             "vnp_Version" => "2.1.0",
                             "vnp_TmnCode" => $vnp_TmnCode,
@@ -86,30 +66,11 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                             "vnp_ReturnUrl" => $vnp_Returnurl,
                             "vnp_TxnRef" => $vnp_TxnRef,
                             "vnp_ExpireDate"=>$vnp_ExpireDate
-                            // "vnp_Bill_Mobile"=>$vnp_Bill_Mobile,
-                            // "vnp_Bill_Email"=>$vnp_Bill_Email,
-                            // "vnp_Bill_FirstName"=>$vnp_Bill_FirstName,
-                            // "vnp_Bill_LastName"=>$vnp_Bill_LastName,
-                            // "vnp_Bill_Address"=>$vnp_Bill_Address,
-                            // "vnp_Bill_City"=>$vnp_Bill_City,
-                            // "vnp_Bill_Country"=>$vnp_Bill_Country,
-                            // "vnp_Inv_Phone"=>$vnp_Inv_Phone,
-                            // "vnp_Inv_Email"=>$vnp_Inv_Email,
-                            // "vnp_Inv_Customer"=>$vnp_Inv_Customer,
-                            // "vnp_Inv_Address"=>$vnp_Inv_Address,
-                            // "vnp_Inv_Company"=>$vnp_Inv_Company,
-                            // "vnp_Inv_Taxcode"=>$vnp_Inv_Taxcode,
-                            // "vnp_Inv_Type"=>$vnp_Inv_Type
                         );
                         
                         if (isset($vnp_BankCode) && $vnp_BankCode != "") {
                             $inputData['vnp_BankCode'] = $vnp_BankCode;
                         }
-                        // if (isset($vnp_Bill_State) && $vnp_Bill_State != "") {
-                        //     $inputData['vnp_Bill_State'] = $vnp_Bill_State;
-                        // }
-                        
-                        //var_dump($inputData);
                         ksort($inputData);
                         $query = "";
                         $i = 0;
@@ -152,15 +113,15 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
             if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
                 $ma_us=$info['id'];
                 $name = $_POST['ten'];
+                $day = $_POST['day'];
                 $mail = $_POST['email'];
                 $loca = $_POST['loca'];
                 $phone = $_POST['num'];
                 $pass = $_POST['pass'];
                 $anh = $_POST['img-member'];
-                // $anh_moi = $_FILES['anh'];
                 if($_FILES['anh']) {
                     $anh_moi = $_FILES['anh'];
-                  }
+                }
                 $errer = [];
 
     
@@ -193,16 +154,12 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                 } else {
                     $img = $anh;
                 }
-                // $imgCopy = './img_upload/'.$img;
-                // $imgPaste = '../../../../../QUANLYNHANVIEN VER.2/img_upload';
-                // var_dump($imgCopy);die;
                 if (empty($errer)) {
                     move_uploaded_file($anh_moi['tmp_name'], './img_upload/' . $img);
-                    // move_uploaded_file($anh_moi['tmp_name'], '../../../../../QUANLYNHANVIEN VER.2/img_upload/' . $img);
                     $imgCopy = './img_upload/'.$img;
                     $imgPaste = '../../../../../QUANLYNHANVIEN VER.2/img_upload/';
                     copy($imgCopy,$imgPaste.basename($imgCopy));
-                    up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone);
+                    up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone,$day);
                     $thongbao = "Thêm thành công";
                     echo '<script>alert("Cập nhật thành công")</script>';
                     echo '<script>window.location.href="index.php"</script>';;
@@ -217,7 +174,6 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                         del_hoa_don($_GET['id']);
                     }
                     $listhoadon = loadall_hoadon_member($_SESSION['id_mem']);
-                    // header('Location: ./hoadon.php');
 					require "./hoadon.php";
                 break;
     default:

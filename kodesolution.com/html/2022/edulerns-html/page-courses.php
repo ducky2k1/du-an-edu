@@ -68,6 +68,7 @@
 						$link = "index.php?act=class&idkh=".$id;
 						echo '
 							<div class="course-block-two col-lg-4 col-md-6 col-sm-12">
+								
 								<div class="inner-box">
 									<div class="image-box">
 										<figure class="image"><a href="'.$link.'"><img
@@ -76,7 +77,7 @@
 									</div>
 									<div class="content-box">
 										<ul class="course-info">
-										<h6 class="title">Giá tiền:  '.number_format($price*22350).'  (VNĐ)</h6>
+										<h6 class="title"><a href="'.$link.'">Giá tiền:  '.number_format($price*22350).'  (VNĐ)</a></h6>
 										</ul>
 										<h5 class="title"><a href="'.$link.'">'.$name.'</a></h5>
 										<div class="other-info">
@@ -89,6 +90,7 @@
 										</div>
 									</div>
 								</div>
+								
 							</div> ';
 					}
 					

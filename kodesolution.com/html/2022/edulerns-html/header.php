@@ -1,7 +1,6 @@
 
 <?php
-    // session_start();
-    // require "./model/pdo.php";
+
     if (isset($_SESSION['email'])) {
         $email=$_SESSION['email'];
         $sql="SELECT * from dtb_member where email='$email'";
@@ -37,7 +36,6 @@
 												';
 										}
 									?>
-									<!-- <li><a href="page-course-details.html">Course Details</a></li> -->
 								</ul>
 							</li>
 
@@ -46,8 +44,6 @@
 					</nav>
 					<!-- Main Menu End-->
 					<div class="" style="margin-left: 340px;">
-							<!-- <a href="./signin.php" style="margin-right:14px"><button class="theme-btn btn-style-one">Signin</button></a>
-							<a href="./signup.php"><button class="theme-btn btn-style-one">Signup</button></a> -->
 							<?php
 								if (!isset($_SESSION['email'])) {
 									echo '

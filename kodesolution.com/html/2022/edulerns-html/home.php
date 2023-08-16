@@ -634,7 +634,7 @@
 							<div class="sec-title light">
 								<span class="style-font">chất lượng giảng dạy</span>
 								<h1>Luyện các kỹ năng của <br>bạn cùng EduLerns</h1>
-								<a href="./page-course-details.php" class="theme-btn btn-style-one"><span
+								<a href="./page-courses.php" class="theme-btn btn-style-one"><span
 										class="btn-title">Bắt đầu ngay bây giờ</span></a>
 							</div>
 						</div>
