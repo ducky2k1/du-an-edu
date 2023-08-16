@@ -21,7 +21,7 @@
                             </div>
                                 <?php foreach($list_course as $lc){ ?>
                                   <div class="col-sm-2">
-                                  <a class="btn btn-add btn-sm" href="../controller/index.php?act=class&id=<?php extract($lc); echo $id ?>">
+                                  <a class="btn btn-dark btn-sm" href="../controller/index.php?act=class&id=<?php extract($lc); echo $id ?>">
                                   <?php extract($lc); echo $name ?></a>
                                   </div>
                             <?php                               

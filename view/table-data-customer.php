@@ -43,7 +43,7 @@
                   <tr>
                     <td></td>
                     <td><?php extract($lt); echo $id ?></td>
-                    <td><a href="../controller/index.php?act=teacher&id=<?php extract($lt); echo $id ?>"><?php extract($lt); echo $name ?></a></td>
+                    <td><a href="../controller/index.php?act=teacher&id=<?php extract($lt); echo $id ?>" class="badge bg-info"><?php extract($lt); echo $name ?></a></td>
                     <td><img src="../img_customer/<?php extract($lt); echo $image ?>" alt="" class="img-ad"></td>
                     <td><?php extract($lt); echo $location?></td>
                     <td><?php extract($lt); echo $phone ?></td>
