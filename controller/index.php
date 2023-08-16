@@ -94,6 +94,7 @@
         case 'add_mem':
           if (isset($_POST['them']) && ($_POST['them'])){
             $name = $_POST['ten'];
+            $birthDay = $_POST['day'];
             $mail = $_POST['email'];
 
             $pass = $_POST['pass'];
@@ -111,6 +112,9 @@
 
             if(empty($name)){
               $errer['ten']="Họ tên không được bỏ trống!";
+            }
+            if(empty($mail)){
+              $errer['mail']="Ngày sinh không được bỏ trống!";
             }
             if(empty($mail)){
               $errer['mail']="Email không được bỏ trống!";
@@ -138,7 +142,7 @@
 
             if (empty($errer)) {
               move_uploaded_file($anh['tmp_name'], '../img_upload/' . $img);
-              add_mem($name, $pass, $mail, $anh['name'], $loca, $phone);
+              add_mem($name, $pass, $mail, $anh['name'], $loca, $phone,$birthDay);
               $thongbao = "Thêm thành công";
             }
 
@@ -166,6 +170,7 @@
           if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
             $ma_us=$_GET['id'];
             $name = $_POST['ten'];
+            $birthDay = $_POST['day'];
             $mail = $_POST['email'];
             $loca = $_POST['loca'];
             $phone = $_POST['num'];
@@ -206,7 +211,7 @@
             if (empty($errer)) {
               move_uploaded_file($anh_moi['tmp_name'], '../img_upload/' . $img);
 
-              up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone);
+              up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone,$birthDay);
               $thongbao = "Thêm thành công";
             }
           }
@@ -357,8 +362,14 @@
           require_once "../view/footer.php";
           break;
         case 'teacher':
+          if(isset($_GET['id'])){
+            $id=$_GET['id'];
+            $sql="SELECT * from dtb_customer where id='$id'";
+            $info=pdo_query_one($sql);
+          } 
           $list_customer = customer_selectAll();
           require_once "../view/teacher-details.php";
+
           break;
         case 'class':
           if(isset($_GET['id'])){

@@ -36,6 +36,16 @@
                             <span class="" style="color:red;"><?= $errer['ten'] ?? "" ?></span>
                         </div>
                         <div class="form-group col-md-4">
+                            <label class="control-label">Ngày sinh</label>
+                            <input class="form-control" type="date" name="day" 
+                                            value="<?php if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                                                echo $_POST['day'];
+                                            } else {
+                                                extract($edit_mem); echo $birth_day;
+                                            } ?>">
+                            <span class="" style="color:red;"><?= $errer['ten'] ?? "" ?></span>
+                        </div>
+                        <div class="form-group col-md-4">
                             <label class="control-label">Địa chỉ email</label>
                             <input class="form-control" type="text" name="email" 
                                             value="<?php if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {

@@ -29,6 +29,11 @@
                 <span class="" style="color:red;"><?= $errer['ten'] ?? "" ?></span>
               </div>
               <div class="form-group col-md-4">
+                <label class="control-label">Ngày sinh</label>
+                <input class="form-control" type="date" name="day">
+                <span class="" style="color:red;"><?= $errer['day'] ?? "" ?></span>
+              </div>
+              <div class="form-group col-md-4">
                 <label class="control-label">Địa chỉ email</label>
                 <input class="form-control" type="text" name="email">
                 <span class="" style="color:red;"><?= $errer['email'] ?? "" ?></span>

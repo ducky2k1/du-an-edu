@@ -44,7 +44,11 @@
                                     <th>ID lớp học</th>
                                     <th>Khóa học</th>
                                     <th>Tên lớp</th>
+                                    <?php
+                                      if(isset($info)&&($info)){
+                                        if($info['role']=='admin' ){ ?>
                                     <th>Tên giáo viên</th>
+                                    <?php } }?>
                                     <th>Thành viên</th>
                                     <th>Thời gian</th>
                                     <th>Lịch học</th>
@@ -66,8 +70,12 @@
                                     <td></td>
                                     <td><?php extract($lt); echo $id ?></td>
                                     <td><?php extract($lt); echo $ten_khoa ?></td>
-                                    <td><a href="../controller/index.php?act=get_class&id=<?php extract($lt); echo $id ?>"><?php extract($lt); echo $name ?></a></td>
+                                    <td><a href="../controller/index.php?act=get_class&id=<?php extract($lt); echo $id ?>" class="btn btn-add btn-sm"><?php extract($lt); echo $name ?></a></td>
+                                    <?php
+                                      if(isset($info)&&($info)){
+                                        if($info['role']=='admin' ){ ?>
                                     <td><?php extract($lt); echo $ten_customer ?> - <?php extract($lt); echo $customer_id ?></td>
+                                    <?php } }?>
                                     <td>															
                                       <?php extract($lt); foreach($count_id as $keyCount => $valCount){
                                           if ($keyCount == $id) {

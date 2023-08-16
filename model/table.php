@@ -3,9 +3,9 @@ function member_selectAll(){
     $sql="SELECT * FROM `dtb_member`";
     return pdo_query($sql);
 }
-function add_mem($name, $pass, $mail, $anh, $loca, $phone){
-    $sql="INSERT INTO `dtb_member`(`name`, `pass`, `email`, `image`, `location`, `phone`) VALUES (?,?,?,?,?,?)";
-    pdo_execute($sql,$name,$pass, $mail, $anh, $loca, $phone);
+function add_mem($name, $pass, $mail, $anh, $loca, $phone,$day){
+    $sql="INSERT INTO `dtb_member`(`name`, `pass`, `email`, `image`, `location`, `phone`,`birth_day`) VALUES (?,?,?,?,?,?,?)";
+    pdo_execute($sql,$name,$pass, $mail, $anh, $loca, $phone,$day);
 }
 function del_mem($ma_us)
 {
@@ -36,8 +36,8 @@ function edit_member($ma_us){
     $sql="SELECT * FROM `dtb_member` where id=".$ma_us;
     return pdo_query_one($sql);
 }
-function up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone){
-    $sql="UPDATE `dtb_member` SET `name`=?,`pass`=?,`email`=?,`image`=?,`location`=?,`phone`=? WHERE id=".$ma_us;
-    pdo_execute($sql,$name,$pass, $mail, $img, $loca, $phone);
+function up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone,$birthDay){
+    $sql="UPDATE `dtb_member` SET `name`=?,`pass`=?,`email`=?,`image`=?,`location`=?,`phone`=?,`birth_day`=? WHERE id=".$ma_us;
+    pdo_execute($sql,$name,$pass, $mail, $img, $loca, $phone,$birthDay);
 }
 ?>

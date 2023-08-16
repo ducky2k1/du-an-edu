@@ -26,8 +26,9 @@
                   <th width="10"><input type="checkbox" id="all"></th>
                   <th>ID khách hàng</th>
                   <th width="150">Họ và tên</th>
+                  <th>Ngày sinh</th>
                   <th width="20">Ảnh thẻ</th>
-                  <th width="300">Địa chỉ</th>
+                  <th width="250">Địa chỉ</th>
                   <th>SĐT</th>
                   <th>Email</th>
                   <th>Password</th>
@@ -44,6 +45,7 @@
                     <td></td>
                     <td><?php extract($lt); echo $id ?></td>
                     <td><?php extract($lt); echo $name ?></td>
+                    <td><?php extract($lt); echo $birth_day ?></td>
                     <td><img src="../img_upload/<?php extract($lt); echo $image ?>" alt="" class="img-ad"></td>
                     <td><?php extract($lt); echo $location?></td>
                     <td><?php extract($lt); echo $phone ?></td>
@@ -63,6 +65,7 @@
                     <td></td>
                     <td><?php extract($lt); echo $id ?></td>
                     <td><?php extract($lt); echo $name ?></td>
+                    <td><?php extract($lt); echo $birth_day ?></td>
                     <td><img src="../img_upload/<?php extract($lt); echo $image ?>" alt="" class="img-ad"></td>
                     <td><?php extract($lt); echo $location?></td>
                     <td><?php extract($lt); echo $phone ?></td>
