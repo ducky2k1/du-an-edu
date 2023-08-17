@@ -158,7 +158,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
                     move_uploaded_file($anh_moi['tmp_name'], './img_upload/' . $img);
                     $imgCopy = './img_upload/'.$img;
                     $imgPaste = '../../../../../QUANLYNHANVIEN VER.2/img_upload/';
-                    copy($imgCopy,$imgPaste.basename($imgCopy));
+                    // copy($imgCopy,$imgPaste.basename($imgCopy));
                     up_mem($ma_us,$name,$pass, $mail, $img, $loca, $phone,$day);
                     $thongbao = "Thêm thành công";
                     echo '<script>alert("Cập nhật thành công")</script>';
