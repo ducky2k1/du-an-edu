@@ -19,7 +19,7 @@ if(isset($_GET['act']) && $_GET['act'] != "") {
         case 'buy':
             if (isset($_SESSION['email'])) {
                 if(isset($info)&&($info)){
-                    if(($info['image'] == '') || ($info['location'] == '') || ($info['phone'] == '0')){
+                    if(($info['image'] == '') || ($info['location'] == '') || ($info['phone'] == '0') || ($info['birth_day'] == '0000-00-00')){
                         echo '<script>alert("Bạn phải cập nhật thông tin.")</script>';
                         require_once "./fi.php";
                     } else {
