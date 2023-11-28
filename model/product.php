@@ -15,9 +15,6 @@ function del_course($ma_us){
     $sqlDelClass= "DELETE FROM `dtb_lop` where course_id = ".$ma_us;
     pdo_execute($sqlDelClass);
 
-    $sqlDelOrItem= "DELETE FROM `dtb_order` where course_id = ".$ma_us;
-    pdo_execute($sqlDelOrItem);
-
     $sql= "DELETE FROM `dtb_course` where id = ".$ma_us;
     pdo_execute($sql);
 }

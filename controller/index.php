@@ -483,6 +483,7 @@
             foreach($list_class as $lClass) {
               $count_id[$lClass["id"]] = count_num($lClass["id"])[0]["count_lop_id"];
             }
+            $list_course = product_selectAll();
             require_once "../view/table-data-class.php";
             require_once "../view/footer.php";
             break;

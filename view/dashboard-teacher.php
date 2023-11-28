@@ -3,7 +3,7 @@
 
         <div class="row">
             <div class="col-md-6 col-lg-3">
-                <a href="../controller/index.php?act=cus">
+                <a href="#">
                     <div class="widget-small primary coloured-icon"><i class='icon  bx bxs-user fa-3x'></i>
                         <div class="info">
                             <h4>Tổng học sinh của bạn</h4>
@@ -13,7 +13,7 @@
                 </a>
             </div>
             <div class="col-md-6 col-lg-3">
-                <a href="../controller/index.php?act=class">
+                <a href="../controller/index.php?act=class_teacher&id=<?php echo $ma_us ?>">
                     <div class="widget-small info coloured-icon"><i class='icon bx bxs-purchase-tag-alt fa-3x' ></i>
                         <div class="info">
                             <h4>Tổng lớp học của bạn</h4>
