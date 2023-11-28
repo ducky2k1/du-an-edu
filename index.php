@@ -40,7 +40,7 @@
                 <!--=====TIÊU ĐỀ======-->
                 <form class="login100-form validate-form" action="./login.php?act=dn" method="post">
                     <span class="login100-form-title">
-                        <b>ĐĂNG NHẬP HỆ THỐNG POS</b>
+                        <b>ĐĂNG NHẬP HỆ THỐNG</b>
                     </span>
                     <!--=====FORM INPUT TÀI KHOẢN VÀ PASSWORD======-->
                     
