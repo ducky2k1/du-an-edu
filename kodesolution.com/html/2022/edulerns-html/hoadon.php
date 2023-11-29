@@ -228,9 +228,8 @@ hr {
                                 <td><?=$hinhthuc?></td>
                                 <td> 
                                     <?php if($status == 'Chưa thanh toán' && $hinhthuc == 'Thanh toán tại trung tâm'){ ?>
-                                    <a href="./cart.php?id_class=<?=$lop_id?>&price=<?=$sotien_vnd?>&tenlop=<?=$name?>"  class="btn btn-primary btn-sm trash" style="width:161px;">
-                                    Thanh toán chuyển khoản
-                                    </a>
+                                    <input type="submit" name="pay" value="Thanh toán online" class="btn btn-primary btn-sm trash" style="width:161px;">
+
                                     <a href="./buy.php?act=del_order&id=<?=$id?>" onclick="return confirm('Bạn có chắc muốn hủy khóa học không?')" class="btn btn-primary btn-sm trash" style="background-color:red;width:161px;">
                                     Hủy
                                     </a>

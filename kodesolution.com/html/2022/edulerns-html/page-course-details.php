@@ -304,7 +304,7 @@
 															<?php extract($class); echo $slot ?> học sinh</li>
 															<li><i class="fa fa-chalkboard-teacher"></i> <?php extract($class); echo $customer_name ?></li>
 														</ul>
-														<h5 class="title"><a href="page-course-details.html"><?php extract($class); echo $name ?></a></h5>
+														<h5 class="title"><a href="#"><?php extract($class); echo $name ?></a></h5>
 														<div class="other-info">
 
 														</div>
